@@ -35,13 +35,14 @@ do
   }" > $MAIN_PATH/$MAIN_CLASS.java
   echo "package com.harcyah.kata.codingbat.warmup2.$TEST;
 
+  import org.junit.Assert;
   import org.junit.Test;
 
   public class $TEST_CLASS {
 
     @Test
     public void test$TEST() {
-      $TEST_CLASS $MAIN_INSTANCE = new $TEST_CLASS();
+      $MAIN_CLASS $MAIN_INSTANCE = new $MAIN_CLASS();
     }
 
   }" > $TEST_PATH/$TEST_CLASS.java
