@@ -11,4 +11,4 @@ Some code kata from different sources
 
 [CodeKata](http://codekata.com/)
 
-
+[CodingDojo](http://codingdojo.org)
