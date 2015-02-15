@@ -1,18 +1,17 @@
 
 #!/bin/bash
 
-TESTS=(stringTimes frontTimes countXX doubleX stringBits \
-  stringSplosion last2 arrayCount9 \
-  arrayFront9 array123 stringMatch \
-  stringX altPairs stringYak array667 noTriples has271);
+FOLDER=string1
+TESTS=(helloName  makeAbba  makeTags makeOutWord extraEnd firstTwo firstHalf withoutEnd comboString nonStart left2 right2 theEnd withouEnd2 middleTwo endsLy nTwice twoChar middleThree hasBad atFirst lastChars conCat lastTwo seeColor frontAgain minCat extraFront without2 deFront startWord withoutX withoutX2);
 
 for TEST in "${TESTS[@]}"
 do
   MAIN_CLASS=$(echo $TEST | perl -ne 'print ucfirst($_)')
   TEST_CLASS=$MAIN_CLASS"Test"
   MAIN_INSTANCE=$TEST
-  MAIN_PATH=src/main/java/com/harcyah/kata/codingbat/warmup2/$TEST
-  TEST_PATH=src/test/java/com/harcyah/kata/codingbat/warmup2/$TEST
+  PACKAGE=com.harcyah.kata.codingbat.$FOLDER.$TEST
+  MAIN_PATH=src/main/java/com/harcyah/kata/codingbat/$FOLDER/$TEST
+  TEST_PATH=src/test/java/com/harcyah/kata/codingbat/$FOLDER/$TEST
 
   echo 'MAIN_CLASS: ' $MAIN_CLASS;
   echo 'TEST_CLASS: ' $TEST_CLASS;
@@ -24,7 +23,7 @@ do
   mkdir -p $MAIN_PATH
   mkdir -p $TEST_PATH
 
-  echo "package com.harcyah.kata.codingbat.warmup2.$TEST;
+  echo "package $PACKAGE;
 
   public class $MAIN_CLASS {
 
@@ -32,8 +31,9 @@ do
       // TODO
     }
 
-  }" > $MAIN_PATH/$MAIN_CLASS.java
-  echo "package com.harcyah.kata.codingbat.warmup2.$TEST;
+  }
+  " > $MAIN_PATH/$MAIN_CLASS.java
+  echo "package $PACKAGE;
 
   import org.junit.Assert;
   import org.junit.Test;
@@ -45,5 +45,6 @@ do
       $MAIN_CLASS $MAIN_INSTANCE = new $MAIN_CLASS();
     }
 
-  }" > $TEST_PATH/$TEST_CLASS.java
+  }
+  " > $TEST_PATH/$TEST_CLASS.java
 done
