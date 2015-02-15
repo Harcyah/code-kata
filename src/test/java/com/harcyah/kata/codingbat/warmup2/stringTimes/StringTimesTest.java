@@ -6,7 +6,7 @@ import org.junit.Test;
 public class StringTimesTest {
 
 	@Test
-	public void teststringTimes() {
+	public void testStringTimes() {
 		StringTimes stringTimes = new StringTimes();
 		Assert.assertEquals("HiHi", stringTimes.stringTimes("Hi", 2));
 		Assert.assertEquals("HiHiHi", stringTimes.stringTimes("Hi", 3));

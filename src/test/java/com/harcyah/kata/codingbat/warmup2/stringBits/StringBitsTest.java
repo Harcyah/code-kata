@@ -6,7 +6,7 @@ import org.junit.Test;
 public class StringBitsTest {
 
 	@Test
-	public void teststringBits() {
+	public void testStringBits() {
 		StringBits stringBits = new StringBits();
 		Assert.assertEquals("Hlo", stringBits.stringBits("Hello"));
 		Assert.assertEquals("H", stringBits.stringBits("Hi"));

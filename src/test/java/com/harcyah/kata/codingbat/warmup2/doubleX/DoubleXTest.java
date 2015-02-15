@@ -6,7 +6,7 @@ import org.junit.Test;
 public class DoubleXTest {
 
 	@Test
-	public void testdoubleX() {
+	public void testDoubleX() {
 		DoubleX doubleX = new DoubleX();
 		Assert.assertEquals(true, doubleX.doubleX("axxbb"));
 		Assert.assertEquals(false, doubleX.doubleX("axaxax"));

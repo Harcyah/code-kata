@@ -6,7 +6,7 @@ import org.junit.Test;
 public class StringSplosionTest {
 
 	@Test
-	public void teststringSplosion() {
+	public void testStringSplosion() {
 		StringSplosion stringSplosion = new StringSplosion();
 		Assert.assertEquals("CCoCodCode", stringSplosion.stringSplosion("Code"));
 		Assert.assertEquals("aababc", stringSplosion.stringSplosion("abc"));

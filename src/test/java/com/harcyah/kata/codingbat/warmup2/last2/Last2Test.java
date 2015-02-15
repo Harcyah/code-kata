@@ -6,7 +6,7 @@ import org.junit.Test;
 public class Last2Test {
 
 	@Test
-	public void testlast2() {
+	public void testLast2() {
 		Last2 last2 = new Last2();
 		Assert.assertEquals(1, last2.last2("hixxhi"));
 		Assert.assertEquals(1, last2.last2("xaxxaxaxx"));

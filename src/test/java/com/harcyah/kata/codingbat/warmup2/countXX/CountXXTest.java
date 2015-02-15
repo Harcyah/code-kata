@@ -6,7 +6,7 @@ import org.junit.Test;
 public class CountXXTest {
 
 	@Test
-	public void testcountXX() {
+	public void testCountXX() {
 		CountXX countXX = new CountXX();
 		Assert.assertEquals(1, countXX.countXX("abcxx"));
 		Assert.assertEquals(2, countXX.countXX("xxx"));

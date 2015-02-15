@@ -6,7 +6,7 @@ import org.junit.Test;
 public class FrontTimesTest {
 
 	@Test
-	public void testfrontTimes() {
+	public void testFrontTimes() {
 		FrontTimes frontTimes = new FrontTimes();
 		Assert.assertEquals("ChoCho", frontTimes.frontTimes("Chocolate", 2));
 		Assert.assertEquals("ChoChoCho", frontTimes.frontTimes("Chocolate", 3));
