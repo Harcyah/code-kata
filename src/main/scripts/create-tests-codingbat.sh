@@ -43,6 +43,7 @@ do
     @Test
     public void test$TEST() {
       $MAIN_CLASS $MAIN_INSTANCE = new $MAIN_CLASS();
+      Assert.assertTrue(false);
     }
 
   }
