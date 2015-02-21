@@ -2,6 +2,7 @@ package com.harcyah.kata.reddit.medium_20150218;
 
 import org.joda.time.LocalDate;
 
+// http://www.reddit.com/r/dailyprogrammer/comments/2wbvuu/20150218_challenge_202_intermediate_easter/
 public class EasterComputer {
 
 	// Butcher/Meess algorithm

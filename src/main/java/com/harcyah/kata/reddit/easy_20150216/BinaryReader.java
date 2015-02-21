@@ -1,5 +1,6 @@
 package com.harcyah.kata.reddit.easy_20150216;
 
+// http://www.reddit.com/r/dailyprogrammer/comments/2w84hl/20150216_challenge_202_easy_i_am_bender_please/
 public class BinaryReader {
 
 	public String read(String binary) {
