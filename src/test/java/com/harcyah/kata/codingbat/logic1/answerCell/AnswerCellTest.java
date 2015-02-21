@@ -8,9 +8,12 @@ public class AnswerCellTest {
 	@Test
 	public void testAnswerCell() {
 		AnswerCell answerCell = new AnswerCell();
-		Assert.assertTrue(false);
+		Assert.assertEquals(true, answerCell.answerCell(false, false, false));
+		Assert.assertEquals(false, answerCell.answerCell(false, false, true));
+		Assert.assertEquals(false, answerCell.answerCell(true, false, false));
+		Assert.assertEquals(true, answerCell.answerCell(true, true, false));
+		Assert.assertEquals(true, answerCell.answerCell(false, true, false));
+		Assert.assertEquals(false, answerCell.answerCell(true, true, true));
 	}
 
 }
-
-
