@@ -1,4 +1,4 @@
-package com.harcyah.kata.codingdojo.katafizzbuzz;
+package com.harcyah.kata.misc.fizzbuzz;
 
 public interface Filter {
 

@@ -1,4 +1,4 @@
-package com.harcyah.kata.nurse;
+package com.harcyah.kata.misc.nurse;
 
 public enum Heal {
 

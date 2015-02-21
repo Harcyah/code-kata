@@ -1,4 +1,4 @@
-package com.harcyah.kata.codingdojo.katafizzbuzz;
+package com.harcyah.kata.misc.fizzbuzz;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
