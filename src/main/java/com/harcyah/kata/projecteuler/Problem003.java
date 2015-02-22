@@ -5,19 +5,15 @@ import java.util.List;
 
 public class Problem003 {
 
-	public static void main(String[] args) {
-		long value = 600851475143L;
-
+	public long largestPrimeFactor(long n) {
 		List<Long> factors = new ArrayList<Long>();
-		for (long i = 2; i <= value; i++) {
-			while (value % i == 0) {
+		for (long i = 2; i <= n; i++) {
+			while (n % i == 0) {
 				factors.add(i);
-				value /= i;
+				n /= i;
 			}
 		}
-
-		System.out.println(factors);
-
+		return factors.get(factors.size() - 1);
 	}
 
 }

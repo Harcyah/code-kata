@@ -2,20 +2,14 @@ package com.harcyah.kata.projecteuler;
 
 public class Problem001 {
 
-	public static void main(String[] args) {
-
+	public int sumMultipleThreeAndFive(int goal) {
 		int sum = 0;
-
-		for (int i = 0; i < 1000; i++) {
-
+		for (int i = 0; i < goal; i++) {
 			if ((i % 3 == 0) || (i % 5 == 0)) {
 				sum += i;
 			}
-
 		}
-
-		System.out.println(sum);
-
+		return sum;
 	}
 
 }

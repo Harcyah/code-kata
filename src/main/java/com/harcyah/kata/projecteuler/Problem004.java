@@ -4,23 +4,24 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Problem004 {
 
-	public static void main(String[] args) {
-
-		long max = 0;
-
-		for (int i = 100; i < 999; i++) {
-			for (int j = 100; j < 999; j++) {
-				long product = i * j;
-				String p = String.valueOf(product);
-				String q = StringUtils.reverse(p);
-				if (p.equals(q) && max <= product) {
+	public int getLargestPalindrome(int width) {
+		int rMin = (int) Math.pow(10, width - 1);
+		int rMax = (int) (Math.pow(10, width) - 1);
+		int max = 0;
+		for (int i = rMin; i <= rMax; i++) {
+			for (int j = rMin; j <= rMax; j++) {
+				int product = i * j;
+				if (max <= product && isPalindrome(product)) {
 					max = product;
 				}
 			}
 		}
+		return max;
+	}
 
-		System.out.println(max);
-
+	private boolean isPalindrome(long number) {
+		String v = String.valueOf(number);
+		return v.equals(StringUtils.reverse(v));
 	}
 
 }
