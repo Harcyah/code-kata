@@ -1,4 +1,4 @@
-package com.harcyah.kata.stringcalculator;
+package com.harcyah.kata.misc.stringcalculator;
 
 import org.junit.Assert;
 import org.junit.Test;
