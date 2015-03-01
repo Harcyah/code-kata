@@ -2,10 +2,8 @@ package com.harcyah.kata.codingbat.string2.bobThere;
 
 public class BobThere {
 
-	public void bobThere() {
-		// TODO
+	public boolean bobThere(String str) {
+		return str.matches(".*b.b.*");
 	}
 
 }
-
-
