@@ -1,18 +1,16 @@
 package com.harcyah.kata.misc.square;
 
-import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 
 public class Square {
 
-	protected Vector2D a;
-	protected Vector2D b;
-	protected Vector2D c;
-	protected Vector2D d;
+	protected Point a;
+	protected Point b;
+	protected Point c;
+	protected Point d;
 
-	public Square(Vector2D a, Vector2D b, Vector2D c, Vector2D d) {
+	public Square(Point a, Point b, Point c, Point d) {
 		Preconditions.checkArgument(!a.equals(b));
 		Preconditions.checkArgument(!a.equals(c));
 		Preconditions.checkArgument(!a.equals(d));
@@ -25,19 +23,19 @@ public class Square {
 		this.d = d;
 	}
 
-	public Vector2D getA() {
+	public Point getA() {
 		return a;
 	}
 
-	public Vector2D getB() {
+	public Point getB() {
 		return b;
 	}
 
-	public Vector2D getC() {
+	public Point getC() {
 		return c;
 	}
 
-	public Vector2D getD() {
+	public Point getD() {
 		return d;
 	}
 

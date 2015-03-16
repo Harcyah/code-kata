@@ -2,12 +2,13 @@ package com.harcyah.kata.misc.square;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.TreeSet;
 
-import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 public class SquareSolverTest {
 
@@ -15,43 +16,43 @@ public class SquareSolverTest {
 
 	@Test
 	public void testExerciseExample() {
-		Vector2D a = new Vector2D(-1, -1);
-		Vector2D b = new Vector2D(2, 1);
-		Vector2D c = new Vector2D(4, -2);
-		Vector2D d = new Vector2D(1, -4);
-		List<Vector2D> points = Lists.newArrayList(a, b, c, d);
-		List<Square> squares = solver.findSquares(points);
+		Point a = new Point(-1, -1);
+		Point b = new Point(2, 1);
+		Point c = new Point(4, -2);
+		Point d = new Point(1, -4);
+		List<Point> points = Lists.newArrayList(a, b, c, d);
+		List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 		Assert.assertFalse(squares.isEmpty());
 	}
 
 	@Test
 	public void testObviousCaseSuccess() {
-		Vector2D a = new Vector2D(-1, -1);
-		Vector2D b = new Vector2D(1, -1);
-		Vector2D c = new Vector2D(-1, 1);
-		Vector2D d = new Vector2D(1, 1);
-		List<Vector2D> points = Lists.newArrayList(a, b, c, d);
+		Point a = new Point(-1, -1);
+		Point b = new Point(1, -1);
+		Point c = new Point(-1, 1);
+		Point d = new Point(1, 1);
+		List<Point> points = Lists.newArrayList(a, b, c, d);
 
-		List<Square> squares = solver.findSquares(points);
+		List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
 		Assert.assertFalse(squares.isEmpty());
 		Square square = squares.get(0);
 		Assert.assertNotNull(square);
 		Assert.assertEquals(a, square.a);
-		Assert.assertEquals(b, square.b);
-		Assert.assertEquals(c, square.c);
+		Assert.assertEquals(b, square.c);
+		Assert.assertEquals(c, square.b);
 		Assert.assertEquals(d, square.d);
 	}
 
 	@Test
 	public void testSimpleCaseSuccess() {
-		Vector2D a = new Vector2D(-2, 1);
-		Vector2D b = new Vector2D(-1, -2);
-		Vector2D c = new Vector2D(2, -1);
-		Vector2D d = new Vector2D(1, 2);
-		List<Vector2D> points = Lists.newArrayList(a, b, c, d);
+		Point a = new Point(-2, 1);
+		Point b = new Point(-1, -2);
+		Point c = new Point(2, -1);
+		Point d = new Point(1, 2);
+		List<Point> points = Lists.newArrayList(a, b, c, d);
 
-		List<Square> squares = solver.findSquares(points);
+		List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
 		Assert.assertFalse(squares.isEmpty());
 		Square square = squares.get(0);
@@ -64,13 +65,13 @@ public class SquareSolverTest {
 
 	@Test
 	public void testObviousCaseFailure() {
-		Vector2D a = new Vector2D(-1, -1);
-		Vector2D b = new Vector2D(1, -1);
-		Vector2D c = new Vector2D(-1, 1);
-		Vector2D d = new Vector2D(1, 10);
-		List<Vector2D> points = Lists.newArrayList(a, b, c, d);
+		Point a = new Point(-1, -1);
+		Point b = new Point(1, -1);
+		Point c = new Point(-1, 1);
+		Point d = new Point(1, 10);
+		List<Point> points = Lists.newArrayList(a, b, c, d);
 
-		List<Square> squares = solver.findSquares(points);
+		List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
 		Assert.assertTrue(squares.isEmpty());
 	}
@@ -78,7 +79,7 @@ public class SquareSolverTest {
 	@Test
 	public void testWithLaurentDataset() throws IOException {
 		Reader reader = new Reader();
-		List<Vector2D> points = reader.read();
+		TreeSet<Point> points = reader.read();
 
 		List<Square> squares = solver.findSquares(points);
 
