@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
@@ -77,6 +78,7 @@ public class SquareSolverTest {
 	}
 
 	@Test
+	@Ignore
 	public void testWithLaurentDataset() throws IOException {
 		Reader reader = new Reader();
 		TreeSet<Point> points = reader.read();
