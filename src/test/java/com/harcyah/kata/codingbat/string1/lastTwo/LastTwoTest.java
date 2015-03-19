@@ -8,9 +8,11 @@ public class LastTwoTest {
 	@Test
 	public void testLastTwo() {
 		LastTwo lastTwo = new LastTwo();
-		Assert.assertTrue(false);
+		Assert.assertEquals("codign", lastTwo.lastTwo("coding"));
+		Assert.assertEquals("cta", lastTwo.lastTwo("cat"));
+		Assert.assertEquals("ba", lastTwo.lastTwo("ab"));
+		Assert.assertEquals("a", lastTwo.lastTwo("a"));
+		Assert.assertEquals("", lastTwo.lastTwo(""));
 	}
 
 }
-
-
