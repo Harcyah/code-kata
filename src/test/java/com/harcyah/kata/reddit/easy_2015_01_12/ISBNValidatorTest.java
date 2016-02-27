@@ -1,4 +1,4 @@
-package com.harcyah.kata.reddit.easy_20150112;
+package com.harcyah.kata.reddit.easy_2015_01_12;
 
 import org.junit.Assert;
 import org.junit.Test;

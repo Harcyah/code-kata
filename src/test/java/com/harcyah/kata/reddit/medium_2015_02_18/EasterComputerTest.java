@@ -1,4 +1,4 @@
-package com.harcyah.kata.reddit.medium_20150218;
+package com.harcyah.kata.reddit.medium_2015_02_18;
 
 import org.joda.time.LocalDate;
 import org.junit.Assert;
