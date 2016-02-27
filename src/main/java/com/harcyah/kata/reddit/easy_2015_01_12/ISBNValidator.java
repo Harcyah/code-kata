@@ -1,4 +1,4 @@
-package com.harcyah.kata.reddit.easy_20150112;
+package com.harcyah.kata.reddit.easy_2015_01_12;
 
 import java.util.regex.Pattern;
 
@@ -26,7 +26,7 @@ public class ISBNValidator {
 			sum += value * index;
 			index--;
 		}
-		return sum % 11 == 0;
+		return (sum % 11) == 0;
 	}
 
 	private boolean isValidFormat(String isbn) {
