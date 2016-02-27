@@ -5,7 +5,7 @@ import org.junit.extensions.cpsuite.ClasspathSuite.ClassnameFilters;
 import org.junit.runner.RunWith;
 
 @RunWith(ClasspathSuite.class)
-@ClassnameFilters({ ".*string2.*" })
+@ClassnameFilters({ ".*string3.*" })
 public class CodingBatString3 {
 
 }
