@@ -5,7 +5,7 @@ import org.junit.extensions.cpsuite.ClasspathSuite.ClassnameFilters;
 import org.junit.runner.RunWith;
 
 @RunWith(ClasspathSuite.class)
-@ClassnameFilters({ ".*logic2.*" })
+@ClassnameFilters({ "com\\.harcyah\\.kata\\.codingbat\\.logic2\\..*" })
 public class CodingBatLogic2 {
 
 }
