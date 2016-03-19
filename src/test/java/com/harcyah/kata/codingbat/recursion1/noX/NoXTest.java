@@ -1,6 +1,6 @@
 package com.harcyah.kata.codingbat.recursion1.noX;
 
-import org.junit.Assert;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 public class NoXTest {
@@ -8,9 +8,12 @@ public class NoXTest {
 	@Test
 	public void testNoX() {
 		NoX noX = new NoX();
-		Assert.assertTrue(false);
+		Assertions.assertThat(noX.noX("xaxb")).isEqualTo("ab");
+		Assertions.assertThat(noX.noX("abc")).isEqualTo("abc");
+		Assertions.assertThat(noX.noX("xx")).isEqualTo("");
+		Assertions.assertThat(noX.noX("")).isEqualTo("");
+		Assertions.assertThat(noX.noX("axxbxx")).isEqualTo("ab");
+		Assertions.assertThat(noX.noX("Hellox")).isEqualTo("Hello");
 	}
 
 }
-
-

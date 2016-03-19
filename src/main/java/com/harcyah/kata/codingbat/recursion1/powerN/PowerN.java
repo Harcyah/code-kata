@@ -2,10 +2,12 @@ package com.harcyah.kata.codingbat.recursion1.powerN;
 
 public class PowerN {
 
-	public void powerN() {
-		// TODO
+	public int powerN(int base, int n) {
+		if (n == 1) {
+			return base;
+		}
+
+		return base * powerN(base, n - 1);
 	}
 
 }
-
-
