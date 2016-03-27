@@ -8,7 +8,7 @@ public class Problem_056Test {
 	@Test
 	public void testGetPowerfulDigitSum() throws Exception {
 		Problem_056 problem_056 = new Problem_056();
-		Assert.assertEquals(100L, problem_056.getPowerfulDigitSum());
+		Assert.assertEquals(972L, problem_056.getPowerfulDigitSum());
 	}
 
 	@Test
