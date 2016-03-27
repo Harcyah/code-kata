@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Reader {
 
 	public TreeSet<Point> read() throws IOException {
-		InputStream stream = Reader.class.getResourceAsStream("/squares.txt");
+		InputStream stream = getClass().getResourceAsStream("squares.txt");
 		List<String> lines = IOUtils.readLines(stream);
 		TreeSet<Point> points = new TreeSet<Point>();
 		for (String line : lines) {

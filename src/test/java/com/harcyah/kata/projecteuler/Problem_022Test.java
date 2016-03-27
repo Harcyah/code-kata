@@ -29,7 +29,7 @@ public class Problem_022Test {
 	@Test
 	public void testGetNamesScoreHardCase() throws Exception {
 		Problem_022 problem_022 = new Problem_022();
-		String resource = Resources.toString(Resources.getResource("projecteuler_022.txt"), StandardCharsets.UTF_8);
+		String resource = Resources.toString(getClass().getResource("projecteuler_022.txt"), StandardCharsets.UTF_8);
 		String[] tokens = resource.split(",");
 		List<String> names = Lists.newArrayList();
 		for (String token : tokens) {

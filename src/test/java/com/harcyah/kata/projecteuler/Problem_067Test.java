@@ -14,7 +14,7 @@ public class Problem_067Test {
 	@Test
 	public void testProblem_067() throws IOException {
 		int[][] triangle = new int[100][];
-		List<String> lines = Resources.readLines(Resources.getResource("projecteuler_067.txt"), StandardCharsets.UTF_8);
+		List<String> lines = Resources.readLines(getClass().getResource("projecteuler_067.txt"), StandardCharsets.UTF_8);
 		for (int i = 0; i < lines.size(); i++) {
 			String[] tokens = lines.get(i).split(" ");
 			triangle[i] = new int[tokens.length];
