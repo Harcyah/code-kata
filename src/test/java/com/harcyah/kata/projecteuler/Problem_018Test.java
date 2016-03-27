@@ -36,7 +36,7 @@ public class Problem_018Test {
 		triangle[14] = new int[] { 04, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23 };
 
 		Problem_018 problem_018 = new Problem_018();
-		Assert.assertEquals(221, problem_018.getMaximumSumPath(triangle));
+		Assert.assertEquals(1074, problem_018.getMaximumSumPath(triangle));
 	}
 
 }

@@ -24,7 +24,7 @@ public class Problem_067Test {
 		}
 
 		Problem_067 problem_067 = new Problem_067();
-		Assert.assertEquals(221, problem_067.getMaximumSumPath(triangle));
+		Assert.assertEquals(7273, problem_067.getMaximumSumPath(triangle));
 	}
 
 }

@@ -36,7 +36,7 @@ public class Problem_022Test {
 			names.add(token.substring(1, token.length() - 1));
 		}
 		Collections.sort(names);
-		Assert.assertEquals(30, problem_022.getNamesScores(names));
+		Assert.assertEquals(871198282L, problem_022.getNamesScores(names));
 	}
 
 }
