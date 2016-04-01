@@ -1,14 +1,13 @@
 package com.harcyah.kata.reddit.easy_2016_03_28;
 
 import com.google.common.collect.ImmutableList;
-import com.harcyah.kata.reddit.easy_2016_03_28.GarageDoorOpening.State;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.util.List;
 
-public class GarageDoorOpeningTest {
+public class GarageDoorOpeningSystemTest {
 
 	@Test
 	public void testGarageDoorOpening() {
@@ -22,7 +21,7 @@ public class GarageDoorOpeningTest {
 			new EventButton(),
 			new EventCycleComplete());
 
-		GarageDoorOpening door = new GarageDoorOpening();
+		GarageDoor door = new GarageDoor();
 		door.process(events);
 		Assertions.assertThat(door.state).isEqualTo(State.CLOSED);
 	}
