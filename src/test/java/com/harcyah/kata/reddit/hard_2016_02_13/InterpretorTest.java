@@ -10,13 +10,12 @@ public class InterpretorTest {
 		// Given
 		Terminal terminal = new Terminal();
 		Interpretor interpretor = new Interpretor();
-		String input = Examples.EXAMPLE_1;
 
 		// When
-		interpretor.process(terminal, input);
+		interpretor.process(terminal, Examples.EXAMPLE_1);
 
 		// Then
-		System.out.println(terminal.toString(System.lineSeparator(), " "));
+		System.out.println(terminal.toString());
 		Assert.assertEquals(Examples.RESULTS_1, terminal.toString("", ""));
 	}
 
@@ -25,13 +24,12 @@ public class InterpretorTest {
 		// Given
 		Terminal terminal = new Terminal();
 		Interpretor interpretor = new Interpretor();
-		String input = Examples.EXAMPLE_2;
 
 		// When
-		interpretor.process(terminal, input);
+		interpretor.process(terminal, Examples.EXAMPLE_2);
 
 		// Then
-		System.out.println(terminal.toString(System.lineSeparator(), " "));
+		System.out.println(terminal.toString());
 		Assert.assertEquals(Examples.RESULTS_2, terminal.toString("", ""));
 	}
 

@@ -81,7 +81,7 @@ public class Terminal {
 	}
 
 	protected void putCharAtCurrentPosition(char c) {
-		buffer[col][row] = c;
+		buffer[row][col] = c;
 	}
 
 	public void shiftRight() {

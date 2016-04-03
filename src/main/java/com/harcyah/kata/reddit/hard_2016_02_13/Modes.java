@@ -8,6 +8,7 @@ public enum Modes implements Mode {
 		public void putChar(Terminal terminal, char c) {
 			terminal.shiftRight();
 			terminal.putCharAtCurrentPosition(c);
+			terminal.moveOneColRight();
 		}
 
 	},
@@ -16,6 +17,7 @@ public enum Modes implements Mode {
 		@Override
 		public void putChar(Terminal terminal, char c) {
 			terminal.putCharAtCurrentPosition(c);
+			terminal.moveOneColRight();
 		}
 
 	}

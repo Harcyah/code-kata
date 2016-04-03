@@ -130,10 +130,54 @@ public class TerminalTest {
 	}
 
 	@Test
+	public void testPutCharInsert() throws Exception {
+		terminal.mode = Modes.INSERT;
+
+		// PutChar on empty line
+		terminal.putChar('a');
+		terminal.putChar('b');
+		terminal.putChar('c');
+		Assert.assertEquals(0, terminal.row);
+		Assert.assertEquals(3, terminal.col);
+		Assert.assertEquals("abc       ", new String(terminal.buffer[0]));
+
+		// PutChar on non-empty line
+		terminal.moveToBeginningOfLine();
+		terminal.putChar('x');
+		terminal.putChar('y');
+		terminal.putChar('z');
+		Assert.assertEquals(0, terminal.row);
+		Assert.assertEquals(3, terminal.col);
+		Assert.assertEquals("xyzabc    ", new String(terminal.buffer[0]));
+	}
+
+	@Test
+	public void testPutCharOverwrite() throws Exception {
+		terminal.mode = Modes.OVERWRITE;
+
+		// PutChar on empty line
+		terminal.putChar('a');
+		terminal.putChar('b');
+		terminal.putChar('c');
+		Assert.assertEquals(0, terminal.row);
+		Assert.assertEquals(3, terminal.col);
+		Assert.assertEquals("abc       ", new String(terminal.buffer[0]));
+
+		// PutChar on non-empty line
+		terminal.moveToBeginningOfLine();
+		terminal.putChar('x');
+		terminal.putChar('y');
+		terminal.putChar('z');
+		Assert.assertEquals(0, terminal.row);
+		Assert.assertEquals(3, terminal.col);
+		Assert.assertEquals("xyz       ", new String(terminal.buffer[0]));
+	}
+
+	@Test
 	public void testPutCharAtCurrentPosition() throws Exception {
 		terminal.moveTo(1, 2);
 		terminal.putCharAtCurrentPosition('z');
-		Assert.assertEquals('z', terminal.buffer[1][2]);
+		Assert.assertEquals('z', terminal.buffer[2][1]);
 	}
 
 	@Test
