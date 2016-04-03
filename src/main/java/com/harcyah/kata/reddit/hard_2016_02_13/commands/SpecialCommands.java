@@ -1,6 +1,9 @@
-package com.harcyah.kata.reddit.hard_2016_02_13;
+package com.harcyah.kata.reddit.hard_2016_02_13.commands;
 
-public enum Commands implements Command {
+import com.harcyah.kata.reddit.hard_2016_02_13.Command;
+import com.harcyah.kata.reddit.hard_2016_02_13.Terminal;
+
+public enum SpecialCommands implements Command {
 
 	CLEAR {
 
@@ -16,7 +19,7 @@ public enum Commands implements Command {
 
 	},
 
-	MOVE_TO_X_Y {
+	MOVE_TO_HEAD {
 
 		@Override
 		public String getInput() {
