@@ -86,19 +86,23 @@ public class Terminal {
 
 	public void shiftRight() {
 		for (int i = SIZE - 1; i >= col; i--) {
-			buffer[row][i] = buffer[row][i - 1];
+			buffer[row][i] = buffer[row][Math.max(0, i - 1)];
 		}
 	}
 
 	@Override
 	public String toString() {
+		return toString(System.lineSeparator(), " ");
+	}
+
+	public String toString(String rowSeparator, String colSeparator) {
 		StringBuffer out = new StringBuffer();
 		for (int row = 0; row < SIZE; row++) {
 			for (int col = 0; col < SIZE; col++) {
 				out.append(buffer[row][col]);
-				out.append(' ');
+				out.append(colSeparator);
 			}
-			out.append(System.lineSeparator());
+			out.append(rowSeparator);
 		}
 		return out.toString();
 	}

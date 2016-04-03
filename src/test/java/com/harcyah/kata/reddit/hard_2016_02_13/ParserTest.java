@@ -41,4 +41,20 @@ public class ParserTest {
 		}
 	}
 
+	@Test
+	public void testCanParseExample1() throws Exception {
+		List<Command> commands = parser.parse(Examples.EXAMPLE_1);
+		Assertions.assertThat(commands).isNotEmpty();
+		Assertions.assertThat(commands).filteredOn(x -> x.equals(SpecialCommands.MOVE_ONE_ROW_DOWN)).hasSize(4);
+		Assertions.assertThat(commands.get(commands.size() - 1)).isInstanceOf(PutCharCommand.class);
+	}
+
+	@Test
+	public void testCanParseExample2() throws Exception {
+		List<Command> commands = parser.parse(Examples.EXAMPLE_2);
+		Assertions.assertThat(commands).isNotEmpty();
+		Assertions.assertThat(commands).filteredOn(x -> x.equals(SpecialCommands.MOVE_ONE_ROW_DOWN)).hasSize(9);
+		Assertions.assertThat(commands.get(commands.size() - 1)).isInstanceOf(PutCharCommand.class);
+	}
+
 }
