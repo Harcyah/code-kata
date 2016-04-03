@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class GarageDoorOpeningSystemTest {
+public class GarageDoorTest {
 
 	@Test
 	public void testGarageDoorOpening() {
