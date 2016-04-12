@@ -13,7 +13,7 @@ public class Problem_019Test {
 		DateTime start = new DateTime(1901, 1, 1, 0, 0);
 		DateTime end = new DateTime(2000, 12, 31, 23, 59);
 		int sundaysInTwentiethCentury = problem.countDays(DateTimeConstants.SUNDAY, start, end);
-		Assertions.assertThat(sundaysInTwentiethCentury).isEqualTo(500);
+		Assertions.assertThat(sundaysInTwentiethCentury).isEqualTo(171);
 	}
 
 }
