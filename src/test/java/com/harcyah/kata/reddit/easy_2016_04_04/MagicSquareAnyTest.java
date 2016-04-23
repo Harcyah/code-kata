@@ -10,9 +10,9 @@ public class MagicSquareAnyTest {
 
 	@Test
 	public void testComputeMagicConstant() throws Exception {
-		Assert.assertEquals(15, msa.computeMagicConstant(3));
-		Assert.assertEquals(65, msa.computeMagicConstant(5));
-		Assert.assertEquals(175, msa.computeMagicConstant(7));
+		Assert.assertEquals(15, MagicSquareAny.computeMagicConstant(3));
+		Assert.assertEquals(65, MagicSquareAny.computeMagicConstant(5));
+		Assert.assertEquals(175, MagicSquareAny.computeMagicConstant(7));
 	}
 
 	@Test

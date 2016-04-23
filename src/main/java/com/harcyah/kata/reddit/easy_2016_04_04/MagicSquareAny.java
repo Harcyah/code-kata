@@ -35,7 +35,7 @@ public class MagicSquareAny {
 		return IntStream.iterate(size - 1, k -> (k + size) - 1).limit(size).toArray();
 	}
 
-	protected int computeMagicConstant(int size) {
+	public static int computeMagicConstant(int size) {
 		return (size * ((size * size) + 1)) / 2;
 	}
 
