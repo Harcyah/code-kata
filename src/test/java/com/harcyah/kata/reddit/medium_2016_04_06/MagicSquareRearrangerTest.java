@@ -9,7 +9,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.google.common.collect.Lists;
 import com.google.common.io.Resources;
 
 public class MagicSquareRearrangerTest {
@@ -34,10 +33,10 @@ public class MagicSquareRearrangerTest {
 	@Test
 	public void testGetSolutions() throws Exception {
 		Integer[][] square = { { 8, 1, 6 }, { 4, 9, 2 }, { 3, 5, 7 } };
-		List<List<Integer>> solutions = rearranger.getSolutions(square);
+		List<Integer[]> solutions = rearranger.getSolutions(square);
 		Assertions.assertThat(solutions).hasSize(2);
-		Assertions.assertThat(solutions.get(0)).isEqualTo(Lists.newArrayList(0, 2, 1));
-		Assertions.assertThat(solutions.get(1)).isEqualTo(Lists.newArrayList(1, 2, 0));
+		Assertions.assertThat(solutions.get(0)).isEqualTo(new Integer[] { 0, 2, 1 });
+		Assertions.assertThat(solutions.get(1)).isEqualTo(new Integer[] { 1, 2, 0 });
 	}
 
 	private static Integer[][] readSquareFromResource(String resourceName) throws IOException {
@@ -56,28 +55,28 @@ public class MagicSquareRearrangerTest {
 
 	@Test
 	public void testGetSolutionsForSample8x8_0() throws IOException {
-		List<List<Integer>> solutions = rearranger.getSolutions(square8x8_0);
+		List<Integer[]> solutions = rearranger.getSolutions(square8x8_0);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
 	@Test
 	public void testGetSolutionsForSample8x8_1() throws IOException {
-		List<List<Integer>> solutions = rearranger.getSolutions(square8x8_1);
+		List<Integer[]> solutions = rearranger.getSolutions(square8x8_1);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
 	@Test
 	public void testGetSolutionsForSample8x8_2() throws IOException {
-		List<List<Integer>> solutions = rearranger.getSolutions(square8x8_2);
+		List<Integer[]> solutions = rearranger.getSolutions(square8x8_2);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 	/*
 	 * @Test public void testGetSolutionsForSample12x12_0() throws IOException {
-	 * List<List<Integer>> solutions = rearranger.getSolutions(square12x12_0);
+	 * List<Integer[]> solutions = rearranger.getSolutions(square12x12_0);
 	 * Assertions.assertThat(solutions).hasSize(3646); }
-	 * 
+	 *
 	 * @Test public void testGetSolutionsForSample12x12_1() throws IOException {
-	 * List<List<Integer>> solutions = rearranger.getSolutions(square12x12_1);
+	 * List<Integer[]> solutions = rearranger.getSolutions(square12x12_1);
 	 * Assertions.assertThat(solutions).hasSize(3212); }
 	 */
 }

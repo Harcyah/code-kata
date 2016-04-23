@@ -1,7 +1,5 @@
 package com.harcyah.kata.reddit.medium_2016_04_06;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,59 +11,59 @@ import com.harcyah.kata.reddit.easy_2016_04_04.MagicSquareAny;
 
 public class MagicSquareRearranger {
 
-	public List<List<Integer>> getSolutions(Integer[][] square) {
+	private static final List<Integer[]> EMPTY = Lists.newArrayList();
+
+	public List<Integer[]> getSolutions(Integer[][] square) {
 		int target = MagicSquareAny.computeMagicConstant(square.length);
-		List<List<Integer>> solutions = Lists.newArrayList();
+		List<Integer[]> solutions = Lists.newArrayList();
 		for (int i = 0; i < square.length; i++) {
 			Set<Integer> remaining = IntStream
 				.range(0, square.length)
 				.boxed()
 				.collect(Collectors.toSet());
 			remaining.remove(i);
-			int leftSum = square[i][0];
-			int rightSum = square[i][square.length - 1];
-			List<Integer> current = Lists.newArrayList(i);
-			solutions.addAll(runOn(square, current, remaining, leftSum, rightSum, target));
+			int left = target - square[i][0];
+			int right = target - square[i][square.length - 1];
+			Integer[] current = new Integer[square.length];
+			current[0] = i;
+			solutions.addAll(runOn(1, square, current, remaining, left, right));
 		}
 		return solutions;
 	}
 
-	private List<List<Integer>> runOn(Integer[][] square, List<Integer> current, Set<Integer> remaining, int leftSum, int rightSum, int target) {
-		List<List<Integer>> solutions = Lists.newArrayList();
+	private List<Integer[]> runOn(int index, Integer[][] square, Integer[] current, Set<Integer> remaining, int left, int right) {
 
-		// Left diagonal overflow
-		if ((leftSum > target) && (remaining.size() > 0)) {
-			return solutions;
-		}
-
-		// Right diagonal overflow
-		if ((rightSum > target) && (remaining.size() > 0)) {
-			return solutions;
-		}
-
+		// Leaf case
 		if (remaining.isEmpty()) {
-			boolean leftSuccess = leftSum == target;
-			boolean rightSuccess = rightSum == target;
-			if (leftSuccess && rightSuccess) {
+			if ((left == 0) && (right == 0)) {
+				List<Integer[]> solutions = Lists.newArrayList();
 				solutions.add(current);
 				return solutions;
 			} else {
-				return solutions;
+				return EMPTY;
 			}
 		} else {
-			int index = current.size();
-			Iterator<Integer> iterator = remaining.iterator();
-			while (iterator.hasNext()) {
-				Integer x = iterator.next();
-				Integer[] row = square[x];
+			// Left diagonal overflow
+			if (left < 0) {
+				return EMPTY;
+			}
 
-				int thisLeftSum = leftSum + row[index];
-				int thisRightSum = rightSum + row[row.length - 1 - index];
+			// Right diagonal overflow
+			if (right < 0) {
+				return EMPTY;
+			}
+
+			List<Integer[]> solutions = Lists.newArrayList();
+			for (Integer r : remaining) {
+				Integer[] row = square[r];
+				int thisLeft = left - row[index];
+				int thisRight = right - row[row.length - 1 - index];
 				Set<Integer> thisRemaining = Sets.newHashSet(remaining);
-				thisRemaining.remove(x);
-				List<Integer> thisCurrent = new ArrayList<>(current);
-				thisCurrent.add(x);
-				solutions.addAll(runOn(square, thisCurrent, thisRemaining, thisLeftSum, thisRightSum, target));
+				thisRemaining.remove(r);
+				Integer[] thisCurrent = new Integer[square.length];
+				System.arraycopy(current, 0, thisCurrent, 0, index);
+				thisCurrent[index] = r;
+				solutions.addAll(runOn(index + 1, square, thisCurrent, thisRemaining, thisLeft, thisRight));
 			}
 			return solutions;
 		}
