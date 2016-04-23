@@ -53,30 +53,39 @@ public class MagicSquareRearrangerTest {
 		return square;
 	}
 
+	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_0() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_0);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
+	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_1() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_1);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
+	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_2() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_2);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
-	/*
-	 * @Test public void testGetSolutionsForSample12x12_0() throws IOException {
-	 * List<Integer[]> solutions = rearranger.getSolutions(square12x12_0);
-	 * Assertions.assertThat(solutions).hasSize(3646); }
-	 *
-	 * @Test public void testGetSolutionsForSample12x12_1() throws IOException {
-	 * List<Integer[]> solutions = rearranger.getSolutions(square12x12_1);
-	 * Assertions.assertThat(solutions).hasSize(3212); }
-	 */
+
+	// Runs in 141s
+	@Test
+	public void testGetSolutionsForSample12x12_0() throws IOException {
+		List<Integer[]> solutions = rearranger.getSolutions(square12x12_0);
+		Assertions.assertThat(solutions).hasSize(3646);
+	}
+
+	// Runs in 146s
+	@Test
+	public void testGetSolutionsForSample12x12_1() throws IOException {
+		List<Integer[]> solutions = rearranger.getSolutions(square12x12_1);
+		Assertions.assertThat(solutions).hasSize(3212);
+	}
+
 }

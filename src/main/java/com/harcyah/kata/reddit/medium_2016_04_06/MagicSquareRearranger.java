@@ -1,9 +1,12 @@
 package com.harcyah.kata.reddit.medium_2016_04_06;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import org.apache.commons.lang3.ArrayUtils;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -55,13 +58,19 @@ public class MagicSquareRearranger {
 
 			List<Integer[]> solutions = Lists.newArrayList();
 			for (Integer r : remaining) {
+
+				// Skip this branch if solution already contains this value
+				if (ArrayUtils.indexOf(current, r) >= 0) {
+					System.out.println("Skipped illegal solution");
+					return EMPTY;
+				}
+
 				Integer[] row = square[r];
 				int thisLeft = left - row[index];
 				int thisRight = right - row[row.length - 1 - index];
 				Set<Integer> thisRemaining = Sets.newHashSet(remaining);
 				thisRemaining.remove(r);
-				Integer[] thisCurrent = new Integer[square.length];
-				System.arraycopy(current, 0, thisCurrent, 0, index);
+				Integer[] thisCurrent = Arrays.copyOf(current, current.length);
 				thisCurrent[index] = r;
 				solutions.addAll(runOn(index + 1, square, thisCurrent, thisRemaining, thisLeft, thisRight));
 			}
