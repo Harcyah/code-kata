@@ -6,29 +6,44 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.assertj.core.api.Assertions;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.io.Resources;
 
-public class MagicSquareRearrangerTest {
+public abstract class AbstractMagicSquareRearrangerTest {
 
-	protected MagicSquareRearranger rearranger = new MagicSquareRearranger();
+	protected MagicSquareRearranger rearranger;
 
 	protected static Integer[][] square8x8_0;
 	protected static Integer[][] square8x8_1;
 	protected static Integer[][] square8x8_2;
 	protected static Integer[][] square12x12_0;
 	protected static Integer[][] square12x12_1;
+	protected static Integer[][] square16x16;
+	protected static Integer[][] square20x20;
+	protected static Integer[][] square24x24;
 
 	@BeforeClass
-	public static void setUp() throws IOException {
+	public static void setUpClass() throws IOException {
 		square8x8_0 = readSquareFromResource("./8x8_0");
 		square8x8_1 = readSquareFromResource("./8x8_1");
 		square8x8_2 = readSquareFromResource("./8x8_2");
 		square12x12_0 = readSquareFromResource("./12x12_0");
 		square12x12_1 = readSquareFromResource("./12x12_1");
+		square16x16 = readSquareFromResource("./16x16");
+		square20x20 = readSquareFromResource("./20x20");
+		square24x24 = readSquareFromResource("./24x24");
 	}
+
+	@Before
+	public void setUp() {
+		rearranger = getRearranger();
+	}
+
+	protected abstract MagicSquareRearranger getRearranger();
 
 	@Test
 	public void testGetSolutions() throws Exception {
@@ -40,7 +55,7 @@ public class MagicSquareRearrangerTest {
 	}
 
 	private static Integer[][] readSquareFromResource(String resourceName) throws IOException {
-		URL resource = MagicSquareRearranger.class.getResource(resourceName);
+		URL resource = MagicSquareRearrangerRecursiveImpl.class.getResource(resourceName);
 		List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
 		Integer[][] square = new Integer[lines.size()][];
 		for (int j = 0; j < lines.size(); j++) {
@@ -53,39 +68,57 @@ public class MagicSquareRearrangerTest {
 		return square;
 	}
 
-	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_0() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_0);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
-	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_1() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_1);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
-	// Runs in 0.026s
 	@Test
 	public void testGetSolutionsForSample8x8_2() throws IOException {
 		List<Integer[]> solutions = rearranger.getSolutions(square8x8_2);
 		Assertions.assertThat(solutions).hasSize(2);
 	}
 
-	// Runs in 141s
 	@Test
+	@Ignore
 	public void testGetSolutionsForSample12x12_0() throws IOException {
-		// List<Integer[]> solutions = rearranger.getSolutions(square12x12_0);
-		// Assertions.assertThat(solutions).hasSize(3646);
+		List<Integer[]> solutions = rearranger.getSolutions(square12x12_0);
+		Assertions.assertThat(solutions).hasSize(3646);
 	}
 
-	// Runs in 146s
 	@Test
+	@Ignore
 	public void testGetSolutionsForSample12x12_1() throws IOException {
-		// List<Integer[]> solutions = rearranger.getSolutions(square12x12_1);
-		// Assertions.assertThat(solutions).hasSize(3212);
+		List<Integer[]> solutions = rearranger.getSolutions(square12x12_1);
+		Assertions.assertThat(solutions).hasSize(3212);
+	}
+
+	@Test
+	@Ignore
+	public void testGetSolutionsForSample16x16() throws IOException {
+		List<Integer[]> solutions = rearranger.getSolutions(square16x16);
+		Assertions.assertThat(solutions).hasSize(3646);
+	}
+
+	@Test
+	@Ignore
+	public void testGetSolutionsForSample20x20() throws IOException {
+		List<Integer[]> solutions = rearranger.getSolutions(square20x20);
+		Assertions.assertThat(solutions).hasSize(3646);
+	}
+
+	@Test
+	@Ignore
+	public void testGetSolutionsForSample24x24() throws IOException {
+		List<Integer[]> solutions = rearranger.getSolutions(square24x24);
+		Assertions.assertThat(solutions).hasSize(3212);
 	}
 
 }
