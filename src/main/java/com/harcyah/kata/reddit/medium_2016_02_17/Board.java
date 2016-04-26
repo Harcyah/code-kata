@@ -19,7 +19,7 @@ public class Board {
 	}
 
 	public boolean hasSquare(Square square) {
-		return (square.col >= 0) && (square.col <= SIZE) && (square.row >= 0) && (square.row <= SIZE);
+		return (square.col >= 0) && (square.col < SIZE) && (square.row >= 0) && (square.row < SIZE);
 	}
 
 }

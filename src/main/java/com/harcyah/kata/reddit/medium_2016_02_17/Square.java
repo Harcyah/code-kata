@@ -38,10 +38,6 @@ public class Square {
 		return true;
 	}
 
-	public boolean isLegal() {
-		return (col >= 0) && (col < Board.SIZE) && (row >= 0) && (row < Board.SIZE);
-	}
-
 	@Override
 	public String toString() {
 		return "Col: " + col + ", Row: " + row;
