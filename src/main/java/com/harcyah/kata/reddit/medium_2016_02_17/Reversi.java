@@ -6,8 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
 
-import org.assertj.core.util.Sets;
-
+import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
 
 // https://www.reddit.com/r/dailyprogrammer/comments/468pvf/20160217_challenge_254_intermediate_finding_legal/

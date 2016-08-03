@@ -2,7 +2,7 @@ package com.harcyah.kata.projecteuler;
 
 import java.util.List;
 
-import org.assertj.core.util.Lists;
+import com.google.common.collect.Lists;
 
 public class Problem_024 {
 
