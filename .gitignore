@@ -1,5 +1,7 @@
-/target/
-/.project
-/.classpath
+/.idea/
 /.settings/
+/target/
 .DS_Store
+.project
+.classpath
+code-kata.iml
