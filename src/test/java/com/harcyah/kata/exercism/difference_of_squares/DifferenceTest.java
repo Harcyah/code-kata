@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.difference_of_squares;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public final class DifferenceTest {
