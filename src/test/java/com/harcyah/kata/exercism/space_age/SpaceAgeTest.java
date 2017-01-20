@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.space_age;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class SpaceAgeTest {
 

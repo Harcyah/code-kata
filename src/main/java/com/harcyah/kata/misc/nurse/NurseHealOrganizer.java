@@ -1,10 +1,10 @@
 package com.harcyah.kata.misc.nurse;
 
+import org.apache.commons.lang3.time.DurationFormatUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.lang3.time.DurationFormatUtils;
 
 public class NurseHealOrganizer {
 

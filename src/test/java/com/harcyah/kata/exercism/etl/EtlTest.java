@@ -1,14 +1,13 @@
 package com.harcyah.kata.exercism.etl;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import com.google.common.collect.ImmutableMap;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
-
-import com.google.common.collect.ImmutableMap;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class EtlTest {
 	private final Etl etl = new Etl();

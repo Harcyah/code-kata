@@ -1,5 +1,8 @@
 package com.harcyah.kata.exercism.meetup;
 
+import org.joda.time.DateTime;
+import org.junit.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.joda.time.DateTimeConstants.FRIDAY;
 import static org.joda.time.DateTimeConstants.MONDAY;
@@ -8,9 +11,6 @@ import static org.joda.time.DateTimeConstants.SUNDAY;
 import static org.joda.time.DateTimeConstants.THURSDAY;
 import static org.joda.time.DateTimeConstants.TUESDAY;
 import static org.joda.time.DateTimeConstants.WEDNESDAY;
-
-import org.joda.time.DateTime;
-import org.junit.Test;
 
 /*
  * We use Joda Time here to encourage the use of a saner date manipulation library.

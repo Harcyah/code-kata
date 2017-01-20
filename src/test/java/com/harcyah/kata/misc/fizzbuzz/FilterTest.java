@@ -1,9 +1,8 @@
 package com.harcyah.kata.misc.fizzbuzz;
 
+import com.harcyah.kata.misc.fizzbuzz.Filter.Filters;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.harcyah.kata.misc.fizzbuzz.Filter.Filters;
 
 public class FilterTest {
 

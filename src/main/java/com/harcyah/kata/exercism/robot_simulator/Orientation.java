@@ -1,7 +1,5 @@
 package com.harcyah.kata.exercism.robot_simulator;
 
-import com.harcyah.kata.exercism.robot_simulator.MovementHandler;
-
 enum Orientation implements MovementHandler {
 
     NORTH {

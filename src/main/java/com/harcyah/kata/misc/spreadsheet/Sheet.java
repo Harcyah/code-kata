@@ -1,15 +1,13 @@
 package com.harcyah.kata.misc.spreadsheet;
 
-import java.util.Map;
+import com.google.common.collect.Maps;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
-
-import com.google.common.collect.Maps;
+import java.util.Map;
 
 public class Sheet {
 

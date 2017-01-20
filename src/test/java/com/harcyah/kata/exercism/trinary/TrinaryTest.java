@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.trinary;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TrinaryTest {
 	@Test

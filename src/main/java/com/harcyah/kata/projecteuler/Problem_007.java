@@ -1,11 +1,11 @@
 package com.harcyah.kata.projecteuler;
 
+import com.google.common.io.Resources;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.google.common.io.Resources;
 
 public class Problem_007 {
 

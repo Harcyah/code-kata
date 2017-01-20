@@ -1,7 +1,6 @@
 package com.harcyah.kata.reddit.easy_2016_03_28;
 
 import com.google.common.collect.ImmutableList;
-
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 

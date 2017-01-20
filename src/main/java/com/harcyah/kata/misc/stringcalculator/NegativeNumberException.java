@@ -1,9 +1,9 @@
 package com.harcyah.kata.misc.stringcalculator;
 
-import java.util.List;
-
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
+
+import java.util.List;
 
 public class NegativeNumberException extends Exception {
 

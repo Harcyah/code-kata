@@ -1,15 +1,14 @@
 package com.harcyah.kata.projecteuler;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.Resources;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.List;
 
 public class Problem_022Test {
 

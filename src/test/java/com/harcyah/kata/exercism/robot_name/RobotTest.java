@@ -1,11 +1,11 @@
 package com.harcyah.kata.exercism.robot_name;
 
+import org.junit.Test;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
 
 public class RobotTest {
 

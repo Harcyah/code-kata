@@ -1,13 +1,13 @@
 package com.harcyah.kata.exercism.grade_school;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SchoolTest {
 	private final School school = new School();

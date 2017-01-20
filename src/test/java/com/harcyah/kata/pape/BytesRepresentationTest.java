@@ -1,9 +1,8 @@
 package com.harcyah.kata.pape;
 
+import com.harcyah.kata.pape.BytesRepresentation.Unit;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.harcyah.kata.pape.BytesRepresentation.Unit;
 
 public class BytesRepresentationTest {
 

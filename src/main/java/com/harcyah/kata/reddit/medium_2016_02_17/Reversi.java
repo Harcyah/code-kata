@@ -1,13 +1,13 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
+import com.google.common.collect.Sets;
+import com.google.common.io.Resources;
+
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
-
-import com.google.common.collect.Sets;
-import com.google.common.io.Resources;
 
 // https://www.reddit.com/r/dailyprogrammer/comments/468pvf/20160217_challenge_254_intermediate_finding_legal/
 public class Reversi {

@@ -1,17 +1,16 @@
 package com.harcyah.kata.reddit.medium_2016_04_06;
 
-import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
-
+import com.google.common.io.Resources;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.google.common.io.Resources;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public abstract class AbstractMagicSquareRearrangerTest {
 

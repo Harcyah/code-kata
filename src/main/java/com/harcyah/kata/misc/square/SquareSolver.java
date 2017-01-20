@@ -1,11 +1,11 @@
 package com.harcyah.kata.misc.square;
 
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 
 public class SquareSolver {
 

@@ -1,5 +1,8 @@
 package com.harcyah.kata.reddit.easy_2016_03_07;
 
+import com.google.common.io.Resources;
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -7,10 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.google.common.io.Resources;
 
 public class PresidentsAlive {
 

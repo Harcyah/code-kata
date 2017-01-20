@@ -1,14 +1,13 @@
 package com.harcyah.kata.misc.square;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.TreeSet;
-
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
+import java.io.IOException;
+import java.util.List;
+import java.util.TreeSet;
 
 public class SquareSolverTest {
 

@@ -1,10 +1,10 @@
 package com.harcyah.kata.reddit.easy_2016_02_22;
 
-import java.io.IOException;
-import java.util.Arrays;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 public class PlayingWithLightSwitchesTest {
 

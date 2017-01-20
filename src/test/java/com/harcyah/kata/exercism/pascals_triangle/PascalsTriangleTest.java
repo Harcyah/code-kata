@@ -1,9 +1,9 @@
 package com.harcyah.kata.exercism.pascals_triangle;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
 
 public class PascalsTriangleTest {
 

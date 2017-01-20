@@ -1,9 +1,9 @@
 package com.harcyah.kata.exercism.simple_cipher;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class SubstitutionCipherTest {
 

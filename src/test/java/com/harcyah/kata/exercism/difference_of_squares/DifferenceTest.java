@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.difference_of_squares;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public final class DifferenceTest {
 

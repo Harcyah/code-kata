@@ -1,12 +1,12 @@
 package com.harcyah.kata.exercism.gigasecond;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class GigasecondTest {
 

@@ -1,9 +1,8 @@
 package com.harcyah.kata.codingbat.ap1.wordsWithoutList;
 
+import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableList;
 
 public class WordsWithoutListTest {
 

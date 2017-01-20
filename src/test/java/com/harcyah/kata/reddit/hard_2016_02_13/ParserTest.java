@@ -1,12 +1,11 @@
 package com.harcyah.kata.reddit.hard_2016_02_13;
 
-import java.util.List;
-
+import com.harcyah.kata.reddit.hard_2016_02_13.commands.PutCharCommand;
+import com.harcyah.kata.reddit.hard_2016_02_13.commands.SpecialCommands;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import com.harcyah.kata.reddit.hard_2016_02_13.commands.PutCharCommand;
-import com.harcyah.kata.reddit.hard_2016_02_13.commands.SpecialCommands;
+import java.util.List;
 
 public class ParserTest {
 

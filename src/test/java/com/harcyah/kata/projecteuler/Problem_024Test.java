@@ -1,10 +1,10 @@
 package com.harcyah.kata.projecteuler;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem_024Test {
 

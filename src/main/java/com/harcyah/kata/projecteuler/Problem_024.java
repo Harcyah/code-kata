@@ -1,8 +1,8 @@
 package com.harcyah.kata.projecteuler;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
+
+import java.util.List;
 
 public class Problem_024 {
 

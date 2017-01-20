@@ -1,14 +1,13 @@
 package com.harcyah.kata.misc.stringcalculator;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 
 public class StringCalculator {
 

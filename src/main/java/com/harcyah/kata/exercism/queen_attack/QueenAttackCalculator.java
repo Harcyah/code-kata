@@ -1,7 +1,5 @@
 package com.harcyah.kata.exercism.queen_attack;
 
-import com.harcyah.kata.exercism.queen_attack.BoardCoordinate;
-
 public final class QueenAttackCalculator {
 
     private final BoardCoordinate q1;

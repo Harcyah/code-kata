@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.robot_simulator;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public final class RobotTest {
 

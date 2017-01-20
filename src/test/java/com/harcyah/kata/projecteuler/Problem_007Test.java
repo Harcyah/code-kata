@@ -1,9 +1,9 @@
 package com.harcyah.kata.projecteuler;
 
-import java.io.IOException;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.IOException;
 
 public class Problem_007Test {
 

@@ -1,11 +1,11 @@
 package com.harcyah.kata.exercism.simple_linked_list;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 import java.util.NoSuchElementException;
 
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SimpleLinkedListTest {
 

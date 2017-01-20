@@ -1,9 +1,9 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
-import java.util.Set;
-
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
+
+import java.util.Set;
 
 public class ReversiTest {
 

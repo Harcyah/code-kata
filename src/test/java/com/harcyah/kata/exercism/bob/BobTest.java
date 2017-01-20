@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.bob;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class BobTest {
 	private final Bob bob = new Bob();

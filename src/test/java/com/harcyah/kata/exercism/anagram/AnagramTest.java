@@ -1,11 +1,11 @@
 package com.harcyah.kata.exercism.anagram;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AnagramTest {
 

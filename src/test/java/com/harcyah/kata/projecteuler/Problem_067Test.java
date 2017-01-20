@@ -1,13 +1,12 @@
 package com.harcyah.kata.projecteuler;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
-
+import com.google.common.io.Resources;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.google.common.io.Resources;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class Problem_067Test {
 

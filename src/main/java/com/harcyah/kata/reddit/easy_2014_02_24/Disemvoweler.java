@@ -1,9 +1,9 @@
 package com.harcyah.kata.reddit.easy_2014_02_24;
 
-import java.util.Arrays;
-
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.Arrays;
 
 public class Disemvoweler {
 

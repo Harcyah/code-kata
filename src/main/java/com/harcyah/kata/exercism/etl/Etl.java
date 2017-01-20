@@ -1,10 +1,10 @@
 package com.harcyah.kata.exercism.etl;
 
+import com.google.common.collect.Maps;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import com.google.common.collect.Maps;
 
 public class Etl {
 	public Map<String, Integer> transform(Map<Integer, List<String>> old) {

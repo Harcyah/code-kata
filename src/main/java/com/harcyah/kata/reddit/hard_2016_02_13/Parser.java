@@ -1,13 +1,13 @@
 package com.harcyah.kata.reddit.hard_2016_02_13;
 
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.harcyah.kata.reddit.hard_2016_02_13.commands.MoveToCommand;
 import com.harcyah.kata.reddit.hard_2016_02_13.commands.PutCharCommand;
 import com.harcyah.kata.reddit.hard_2016_02_13.commands.SpecialCommands;
+
+import java.util.List;
+import java.util.Map;
 
 public class Parser {
 

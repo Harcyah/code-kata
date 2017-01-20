@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.nth_prime;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PrimeTest {
 	@Test

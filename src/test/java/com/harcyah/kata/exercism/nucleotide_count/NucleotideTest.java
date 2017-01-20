@@ -1,9 +1,9 @@
 package com.harcyah.kata.exercism.nucleotide_count;
 
+import org.junit.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
-
-import org.junit.Test;
 
 public class NucleotideTest {
 	@Test

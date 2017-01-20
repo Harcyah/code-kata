@@ -1,16 +1,15 @@
 package com.harcyah.kata.reddit.medium_2016_04_06;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.harcyah.kata.reddit.easy_2016_04_04.MagicSquareAny;
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import org.apache.commons.lang3.ArrayUtils;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-import com.harcyah.kata.reddit.easy_2016_04_04.MagicSquareAny;
 
 public class MagicSquareRearrangerRecursiveImpl implements MagicSquareRearranger {
 

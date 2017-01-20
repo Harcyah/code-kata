@@ -1,10 +1,10 @@
 package com.harcyah.kata.exercism.largest_series_product;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import static org.junit.Assert.assertEquals;
 
 public final class LargestSeriesProductCalculatorTest {
 

@@ -1,12 +1,12 @@
 package com.harcyah.kata.exercism.all_your_base;
 
-import static org.junit.Assert.assertArrayEquals;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public final class BaseConverterTest {
 
