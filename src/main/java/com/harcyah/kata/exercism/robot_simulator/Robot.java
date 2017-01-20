@@ -33,10 +33,17 @@ final class Robot {
     public void simulate(String orders) {
         for (char c : orders.toCharArray()) {
             switch (c) {
-                case 'A': advance(); break;
-                case 'R': turnRight(); break;
-                case 'L': turnLeft(); break;
-                default: throw new IllegalArgumentException();
+                case 'A':
+                    advance();
+                    break;
+                case 'R':
+                    turnRight();
+                    break;
+                case 'L':
+                    turnLeft();
+                    break;
+                default:
+                    throw new IllegalArgumentException();
             }
         }
     }

@@ -6,12 +6,12 @@ import java.util.function.Function;
 
 public class Accumulate {
 
-	public static <T> List<T> accumulate(List<T> input, Function<T, T> lambda) {
-		List<T> output = new ArrayList<>();
-		for (T element : input) {
-			output.add(lambda.apply(element));
-		}
-		return output;
-	}
+    public static <T> List<T> accumulate(List<T> input, Function<T, T> lambda) {
+        List<T> output = new ArrayList<>();
+        for (T element : input) {
+            output.add(lambda.apply(element));
+        }
+        return output;
+    }
 
 }

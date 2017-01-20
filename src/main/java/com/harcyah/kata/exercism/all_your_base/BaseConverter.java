@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.all_your_base;
 
 final class BaseConverter {
 
-    private static final int[] ZERO = new int[] { 0 };
+    private static final int[] ZERO = new int[]{0};
     private final int valueBase10;
 
     public BaseConverter(int base, int[] digits) {
@@ -23,7 +23,7 @@ final class BaseConverter {
 
         int leadingZeroes = 0;
         int acc = 0;
-        for (int i=0; i<digits.length; i++) {
+        for (int i = 0; i < digits.length; i++) {
             int pow = digits.length - i - 1;
             int digit = digits[i];
             acc += digit * Math.pow(base, pow);

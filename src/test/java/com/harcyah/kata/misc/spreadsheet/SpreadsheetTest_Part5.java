@@ -3,9 +3,9 @@ package com.harcyah.kata.misc.spreadsheet;
 import junit.framework.TestCase;
 
 public class SpreadsheetTest_Part5 extends TestCase {
-	public void testDummy() {
-	}
-	/*
+    public void testDummy() {
+    }
+    /*
 	 * private Sheet sheet;
 	 * 
 	 * protected void setUp() { sheet = new Sheet(); }

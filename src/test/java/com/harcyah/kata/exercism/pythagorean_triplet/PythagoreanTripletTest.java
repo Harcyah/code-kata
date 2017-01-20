@@ -44,13 +44,13 @@ public class PythagoreanTripletTest {
     public void shouldMakeTripletsUpToTen() {
         final List<Long> actual
                 = PythagoreanTriplet
-                        .makeTripletsList()
-                        .withFactorsLessThanOrEqualTo(10)
-                        .build()
-                        .stream()
-                        .map(t -> t.calculateProduct())
-                        .sorted()
-                        .collect(Collectors.toList());
+                .makeTripletsList()
+                .withFactorsLessThanOrEqualTo(10)
+                .build()
+                .stream()
+                .map(t -> t.calculateProduct())
+                .sorted()
+                .collect(Collectors.toList());
         final List<Long> expected = Arrays.asList(60l, 480l);
         assertEquals(expected, actual);
     }
@@ -59,14 +59,14 @@ public class PythagoreanTripletTest {
     public void shouldMakeTripletsElevenToTwenty() {
         final List<Long> actual
                 = PythagoreanTriplet
-                        .makeTripletsList()
-                        .withFactorsGreaterThanOrEqualTo(11)
-                        .withFactorsLessThanOrEqualTo(20)
-                        .build()
-                        .stream()
-                        .map(t -> t.calculateProduct())
-                        .sorted((p1, p2) -> Double.compare(p1, p2))
-                        .collect(Collectors.toList());
+                .makeTripletsList()
+                .withFactorsGreaterThanOrEqualTo(11)
+                .withFactorsLessThanOrEqualTo(20)
+                .build()
+                .stream()
+                .map(t -> t.calculateProduct())
+                .sorted((p1, p2) -> Double.compare(p1, p2))
+                .collect(Collectors.toList());
         final List<Long> expected = Arrays.asList(3840l);
         assertEquals(expected, actual);
     }
@@ -75,14 +75,14 @@ public class PythagoreanTripletTest {
     public void shouldMakeTripletsAndFilterOnSum() {
         final List<Long> actual
                 = PythagoreanTriplet
-                        .makeTripletsList()
-                        .withFactorsLessThanOrEqualTo(100)
-                        .thatSumTo(180)
-                        .build()
-                        .stream()
-                        .map(t -> t.calculateProduct())
-                        .sorted((p1, p2) -> Double.compare(p1, p2))
-                        .collect(Collectors.toList());
+                .makeTripletsList()
+                .withFactorsLessThanOrEqualTo(100)
+                .thatSumTo(180)
+                .build()
+                .stream()
+                .map(t -> t.calculateProduct())
+                .sorted((p1, p2) -> Double.compare(p1, p2))
+                .collect(Collectors.toList());
         final List<Long> expected = Arrays.asList(118080l, 168480l, 202500l);
         assertEquals(expected, actual);
     }

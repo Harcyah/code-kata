@@ -8,21 +8,21 @@ import java.util.List;
 
 public class GarageDoorTest {
 
-	@Test
-	public void testGarageDoorOpening() {
-		List<Event> events = ImmutableList.of(
-			new EventButton(),
-			new EventCycleComplete(),
-			new EventButton(),
-			new EventButton(),
-			new EventButton(),
-			new EventButton(),
-			new EventButton(),
-			new EventCycleComplete());
+    @Test
+    public void testGarageDoorOpening() {
+        List<Event> events = ImmutableList.of(
+                new EventButton(),
+                new EventCycleComplete(),
+                new EventButton(),
+                new EventButton(),
+                new EventButton(),
+                new EventButton(),
+                new EventButton(),
+                new EventCycleComplete());
 
-		GarageDoor door = new GarageDoor();
-		door.process(events);
-		Assertions.assertThat(door.state).isEqualTo(State.CLOSED);
-	}
+        GarageDoor door = new GarageDoor();
+        door.process(events);
+        Assertions.assertThat(door.state).isEqualTo(State.CLOSED);
+    }
 
 }

@@ -16,25 +16,25 @@ public class BinarySearchTest {
 
     public static final List<Integer> LIST_OF_UNIT_LENGTH
             = Collections.unmodifiableList(
-                    Arrays.asList(6)
-            );
+            Arrays.asList(6)
+    );
 
     private static final List<Integer> SORTED_LIST
             = Collections.unmodifiableList(
-                    Arrays.asList(1, 3, 4, 6, 8, 9, 11)
-            );
+            Arrays.asList(1, 3, 4, 6, 8, 9, 11)
+    );
 
     public static final List<Integer> SORTED_LIST_OF_ODD_LENGTH
             = Collections.unmodifiableList(
-                    Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
-                            89, 144, 233, 377, 634)
-            );
+            Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+                    89, 144, 233, 377, 634)
+    );
 
     public static final List<Integer> SORTED_LIST_OF_EVEN_LENGTH
             = Collections.unmodifiableList(
-                    Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
-                            89, 144, 233, 377)
-            );
+            Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+                    89, 144, 233, 377)
+    );
 
     @Test
     public void findsAValueInAnArrayWithOneElement() {

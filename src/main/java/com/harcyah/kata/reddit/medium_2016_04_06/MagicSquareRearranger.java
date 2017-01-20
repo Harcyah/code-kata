@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface MagicSquareRearranger {
 
-	List<Integer[]> getSolutions(Integer[][] square);
+    List<Integer[]> getSolutions(Integer[][] square);
 
 }

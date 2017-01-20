@@ -15,11 +15,11 @@ public class StudentsCommaParser implements Parser {
     public Student parse(String line) throws IOException, ParseException {
         String[] tokens = StringUtils.split(line, ", ");
         return new Student(
-            tokens[1],
-            "",
-            tokens[0],
-            Gender.from(tokens[2]),
-            Color.getColor(tokens[3]),
-            dateFormat.parse(tokens[4]));
+                tokens[1],
+                "",
+                tokens[0],
+                Gender.from(tokens[2]),
+                Color.getColor(tokens[3]),
+                dateFormat.parse(tokens[4]));
     }
 }

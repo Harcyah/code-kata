@@ -3,7 +3,7 @@ package com.harcyah.kata.exercism.pythagorean_triplet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PythagoreanTriplet  {
+public class PythagoreanTriplet {
 
     private final int a;
     private final int b;
@@ -46,7 +46,9 @@ public class PythagoreanTriplet  {
         public TripletsListBuilder thatSumTo(int sum) {
             this.sum = sum;
             return this;
-        };
+        }
+
+        ;
 
         public List<PythagoreanTriplet> build() {
             List<PythagoreanTriplet> triplets = new ArrayList<>();

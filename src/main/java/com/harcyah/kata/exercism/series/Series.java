@@ -9,8 +9,8 @@ public class Series {
 
     public Series(String source) {
         this.digits = new ArrayList<>();
-        for (int i=0; i<source.length(); i++) {
-            String character = source.substring(i, i+1);
+        for (int i = 0; i < source.length(); i++) {
+            String character = source.substring(i, i + 1);
             Integer value = Integer.parseInt(character);
             digits.add(value);
         }
@@ -26,8 +26,8 @@ public class Series {
         }
 
         List<List<Integer>> slices = new ArrayList<>();
-        for (int i=0; i<digits.size() - length + 1; i++) {
-            slices.add(digits.subList(i, i+length));
+        for (int i = 0; i < digits.size() - length + 1; i++) {
+            slices.add(digits.subList(i, i + length));
         }
 
         return slices;

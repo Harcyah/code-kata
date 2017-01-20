@@ -5,21 +5,21 @@ import org.junit.Test;
 
 public class JosephusRecursiveImplTest {
 
-	protected JosephusRecursiveImpl josephus = new JosephusRecursiveImpl();
+    protected JosephusRecursiveImpl josephus = new JosephusRecursiveImpl();
 
-	@Test
-	public void testWith5PeopleAndStep3() {
-		Assertions.assertThat(josephus.getLastManStanding(5, 3)).isEqualTo(3);
-	}
+    @Test
+    public void testWith5PeopleAndStep3() {
+        Assertions.assertThat(josephus.getLastManStanding(5, 3)).isEqualTo(3);
+    }
 
-	@Test
-	public void testWith10PeopleAndStep4() {
-		Assertions.assertThat(josephus.getLastManStanding(10, 4)).isEqualTo(4);
-	}
+    @Test
+    public void testWith10PeopleAndStep4() {
+        Assertions.assertThat(josephus.getLastManStanding(10, 4)).isEqualTo(4);
+    }
 
-	@Test
-	public void testWith100PeopleAndStep2() {
-		Assertions.assertThat(josephus.getLastManStanding(100, 2)).isEqualTo(72);
-	}
+    @Test
+    public void testWith100PeopleAndStep2() {
+        Assertions.assertThat(josephus.getLastManStanding(100, 2)).isEqualTo(72);
+    }
 
 }

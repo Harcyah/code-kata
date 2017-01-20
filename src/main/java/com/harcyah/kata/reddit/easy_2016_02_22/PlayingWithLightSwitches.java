@@ -9,24 +9,24 @@ import java.util.Scanner;
 
 public class PlayingWithLightSwitches {
 
-	public int apply(int lights, Iterable<Range> ranges) {
-		BitSet bitSet = new BitSet(lights);
-		for (Range range : ranges) {
-			bitSet.flip(range.start, range.end + 1);
-		}
-		return bitSet.cardinality();
-	}
+    public int apply(int lights, Iterable<Range> ranges) {
+        BitSet bitSet = new BitSet(lights);
+        for (Range range : ranges) {
+            bitSet.flip(range.start, range.end + 1);
+        }
+        return bitSet.cardinality();
+    }
 
-	public int applyFrom(InputStream stream) throws IOException {
-		Scanner scanner = new Scanner(stream);
-		int lights = scanner.nextInt();
-		List<Range> ranges = new ArrayList<>();
-		while (scanner.hasNextLine()) {
-			ranges.add(new Range(scanner.nextInt(), scanner.nextInt()));
-		}
-		scanner.close();
-		stream.close();
-		return apply(lights, ranges);
-	}
+    public int applyFrom(InputStream stream) throws IOException {
+        Scanner scanner = new Scanner(stream);
+        int lights = scanner.nextInt();
+        List<Range> ranges = new ArrayList<>();
+        while (scanner.hasNextLine()) {
+            ranges.add(new Range(scanner.nextInt(), scanner.nextInt()));
+        }
+        scanner.close();
+        stream.close();
+        return apply(lights, ranges);
+    }
 
 }

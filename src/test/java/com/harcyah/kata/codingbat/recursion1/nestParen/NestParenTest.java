@@ -5,24 +5,24 @@ import org.junit.Test;
 
 public class NestParenTest {
 
-	@Test
-	public void testNestParen() {
-		NestParen nestParen = new NestParen();
-		Assertions.assertThat(nestParen.nestParen("(())")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("((()))")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("(((x))")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("((())")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("((()()")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("()")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("(yy)")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("(())")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("(((y))")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("((y)))")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("((()))")).isEqualTo(true);
-		Assertions.assertThat(nestParen.nestParen("(())))")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("((yy())))")).isEqualTo(false);
-		Assertions.assertThat(nestParen.nestParen("(((())))")).isEqualTo(true);
-	}
+    @Test
+    public void testNestParen() {
+        NestParen nestParen = new NestParen();
+        Assertions.assertThat(nestParen.nestParen("(())")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("((()))")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("(((x))")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("((())")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("((()()")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("()")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("(yy)")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("(())")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("(((y))")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("((y)))")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("((()))")).isEqualTo(true);
+        Assertions.assertThat(nestParen.nestParen("(())))")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("((yy())))")).isEqualTo(false);
+        Assertions.assertThat(nestParen.nestParen("(((())))")).isEqualTo(true);
+    }
 
 }

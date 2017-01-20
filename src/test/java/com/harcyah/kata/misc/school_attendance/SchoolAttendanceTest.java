@@ -17,15 +17,15 @@ public class SchoolAttendanceTest {
         assertThat(students).hasSize(9);
         assertThat(students).extracting(Student::getLastName)
                 .containsExactly(
-                    "Hingis",
-                    "Kelly",
-                    "Kournikova",
-                    "Seles",
-                    "Abercrombie",
-                    "Bishop",
-                    "Bonk",
-                    "Bouillon",
-                    "Smith"
+                        "Hingis",
+                        "Kelly",
+                        "Kournikova",
+                        "Seles",
+                        "Abercrombie",
+                        "Bishop",
+                        "Bonk",
+                        "Bouillon",
+                        "Smith"
                 );
     }
 

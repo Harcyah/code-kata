@@ -77,7 +77,7 @@ final class WordProblemSolver {
 
         StringBuilder digits = new StringBuilder();
         int index;
-        for (index = 0; index<sb.length(); index++) {
+        for (index = 0; index < sb.length(); index++) {
             char c = sb.charAt(index);
             if (Character.isDigit(c) || c == '-') {
                 digits.append(c);

@@ -5,14 +5,14 @@ import org.junit.Test;
 
 public class LastTwoTest {
 
-	@Test
-	public void testLastTwo() {
-		LastTwo lastTwo = new LastTwo();
-		Assert.assertEquals("codign", lastTwo.lastTwo("coding"));
-		Assert.assertEquals("cta", lastTwo.lastTwo("cat"));
-		Assert.assertEquals("ba", lastTwo.lastTwo("ab"));
-		Assert.assertEquals("a", lastTwo.lastTwo("a"));
-		Assert.assertEquals("", lastTwo.lastTwo(""));
-	}
+    @Test
+    public void testLastTwo() {
+        LastTwo lastTwo = new LastTwo();
+        Assert.assertEquals("codign", lastTwo.lastTwo("coding"));
+        Assert.assertEquals("cta", lastTwo.lastTwo("cat"));
+        Assert.assertEquals("ba", lastTwo.lastTwo("ab"));
+        Assert.assertEquals("a", lastTwo.lastTwo("a"));
+        Assert.assertEquals("", lastTwo.lastTwo(""));
+    }
 
 }

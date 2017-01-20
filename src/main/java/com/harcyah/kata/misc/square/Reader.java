@@ -11,16 +11,16 @@ import java.util.TreeSet;
 
 public class Reader {
 
-	public TreeSet<Point> read() throws IOException {
-		InputStream stream = getClass().getResourceAsStream("squares.txt");
-		List<String> lines = IOUtils.readLines(stream, StandardCharsets.UTF_8);
-		TreeSet<Point> points = new TreeSet<>();
-		for (String line : lines) {
-			Point point = new Point(
-				Integer.parseInt(StringUtils.substringBefore(line, " ")),
-				Integer.parseInt(StringUtils.substringAfter(line, " ")));
-			points.add(point);
-		}
-		return points;
-	}
+    public TreeSet<Point> read() throws IOException {
+        InputStream stream = getClass().getResourceAsStream("squares.txt");
+        List<String> lines = IOUtils.readLines(stream, StandardCharsets.UTF_8);
+        TreeSet<Point> points = new TreeSet<>();
+        for (String line : lines) {
+            Point point = new Point(
+                    Integer.parseInt(StringUtils.substringBefore(line, " ")),
+                    Integer.parseInt(StringUtils.substringAfter(line, " ")));
+            points.add(point);
+        }
+        return points;
+    }
 }

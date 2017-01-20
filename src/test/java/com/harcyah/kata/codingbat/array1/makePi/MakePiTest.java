@@ -5,10 +5,10 @@ import org.junit.Test;
 
 public class MakePiTest {
 
-	@Test
-	public void testMakePi() {
-		MakePi makePi = new MakePi();
-		Assertions.assertThat(makePi.makePi()).isEqualTo(new int[] { 3, 1, 4 });
-	}
+    @Test
+    public void testMakePi() {
+        MakePi makePi = new MakePi();
+        Assertions.assertThat(makePi.makePi()).isEqualTo(new int[]{3, 1, 4});
+    }
 
 }

@@ -14,11 +14,11 @@ public class StudentsSpaceParser implements Parser {
     public Student parse(String line) throws IOException, ParseException {
         String[] tokens = StringUtils.split(line, " ");
         return new Student(
-            tokens[1],
-            tokens[2],
-            tokens[0],
-            Gender.from(tokens[3]),
-            null,
-            dateFormat.parse(tokens[4]));
+                tokens[1],
+                tokens[2],
+                tokens[0],
+                Gender.from(tokens[3]),
+                null,
+                dateFormat.parse(tokens[4]));
     }
 }

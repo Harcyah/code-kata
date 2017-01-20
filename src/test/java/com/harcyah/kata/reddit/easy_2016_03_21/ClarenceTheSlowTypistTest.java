@@ -5,11 +5,11 @@ import org.junit.Test;
 
 public class ClarenceTheSlowTypistTest {
 
-	protected ClarenceTheSlowTypist typist = new ClarenceTheSlowTypist();
+    protected ClarenceTheSlowTypist typist = new ClarenceTheSlowTypist();
 
-	@Test
-	public void testSolve() {
-		Assert.assertEquals(27.38, typist.solve("219.45.143.143"), 0.01);
-	}
+    @Test
+    public void testSolve() {
+        Assert.assertEquals(27.38, typist.solve("219.45.143.143"), 0.01);
+    }
 
 }

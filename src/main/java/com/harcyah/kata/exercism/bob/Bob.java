@@ -6,116 +6,116 @@ import java.util.TreeSet;
 
 public class Bob {
 
-	private interface Matcher extends Comparable<Matcher> {
+    private interface Matcher extends Comparable<Matcher> {
 
-		public boolean matches(String what);
+        public boolean matches(String what);
 
-		public String getContents();
+        public String getContents();
 
-		public Float getWeight();
+        public Float getWeight();
 
-		@Override
-		default int compareTo(Matcher o) {
-			return this.getWeight().compareTo(o.getWeight());
-		}
+        @Override
+        default int compareTo(Matcher o) {
+            return this.getWeight().compareTo(o.getWeight());
+        }
 
-	}
+    }
 
-	public static class SureMatcher implements Matcher {
+    public static class SureMatcher implements Matcher {
 
-		@Override
-		public boolean matches(String what) {
-			return what.endsWith("?");
-		}
+        @Override
+        public boolean matches(String what) {
+            return what.endsWith("?");
+        }
 
-		@Override
-		public String getContents() {
-			return "Sure.";
-		}
+        @Override
+        public String getContents() {
+            return "Sure.";
+        }
 
-		@Override
-		public Float getWeight() {
-			return 1.0f;
-		}
+        @Override
+        public Float getWeight() {
+            return 1.0f;
+        }
 
-	}
+    }
 
-	public static class YellMatcher implements Matcher {
+    public static class YellMatcher implements Matcher {
 
-		@Override
-		public boolean matches(String what) {
-			long characters = what.chars().filter(x -> Character.isLetter(x)).count();
-			long upperCase = what.chars().filter(x -> Character.isLetter(x) && Character.isUpperCase(x)).count();
-			return characters > 0 && characters == upperCase;
-		}
+        @Override
+        public boolean matches(String what) {
+            long characters = what.chars().filter(x -> Character.isLetter(x)).count();
+            long upperCase = what.chars().filter(x -> Character.isLetter(x) && Character.isUpperCase(x)).count();
+            return characters > 0 && characters == upperCase;
+        }
 
-		@Override
-		public String getContents() {
-			return "Whoa, chill out!";
-		}
+        @Override
+        public String getContents() {
+            return "Whoa, chill out!";
+        }
 
-		@Override
-		public Float getWeight() {
-			return 2.0f;
-		}
+        @Override
+        public Float getWeight() {
+            return 2.0f;
+        }
 
-	}
+    }
 
-	public static class FineMatcher implements Matcher {
+    public static class FineMatcher implements Matcher {
 
-		@Override
-		public boolean matches(String what) {
-			return what.trim().isEmpty();
-		}
+        @Override
+        public boolean matches(String what) {
+            return what.trim().isEmpty();
+        }
 
-		@Override
-		public String getContents() {
-			return "Fine. Be that way!";
-		}
+        @Override
+        public String getContents() {
+            return "Fine. Be that way!";
+        }
 
-		@Override
-		public Float getWeight() {
-			return 4.0f;
-		}
+        @Override
+        public Float getWeight() {
+            return 4.0f;
+        }
 
-	}
+    }
 
-	public static class WhatMatcher implements Matcher {
+    public static class WhatMatcher implements Matcher {
 
-		@Override
-		public boolean matches(String what) {
-			return true;
-		}
+        @Override
+        public boolean matches(String what) {
+            return true;
+        }
 
-		@Override
-		public String getContents() {
-			return "Whatever.";
-		}
+        @Override
+        public String getContents() {
+            return "Whatever.";
+        }
 
-		@Override
-		public Float getWeight() {
-			return 0.5f;
-		}
+        @Override
+        public Float getWeight() {
+            return 0.5f;
+        }
 
-	}
+    }
 
-	protected List<Matcher> matchers = new ArrayList<>();
+    protected List<Matcher> matchers = new ArrayList<>();
 
-	public Bob() {
-		matchers.add(new SureMatcher());
-		matchers.add(new FineMatcher());
-		matchers.add(new WhatMatcher());
-		matchers.add(new YellMatcher());
-	}
+    public Bob() {
+        matchers.add(new SureMatcher());
+        matchers.add(new FineMatcher());
+        matchers.add(new WhatMatcher());
+        matchers.add(new YellMatcher());
+    }
 
-	public String hey(String what) {
-		TreeSet<Matcher> matching = new TreeSet<>();
-		for (Matcher matcher : matchers) {
-			if (matcher.matches(what)) {
-				matching.add(matcher);
-			}
-		}
-		return matching.last().getContents();
-	}
+    public String hey(String what) {
+        TreeSet<Matcher> matching = new TreeSet<>();
+        for (Matcher matcher : matchers) {
+            if (matcher.matches(what)) {
+                matching.add(matcher);
+            }
+        }
+        return matching.last().getContents();
+    }
 
 }

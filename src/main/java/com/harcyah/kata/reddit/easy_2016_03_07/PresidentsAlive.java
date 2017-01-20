@@ -13,34 +13,34 @@ import java.util.stream.IntStream;
 
 public class PresidentsAlive {
 
-	public int findYearWithMostPresidentsAlive() throws IOException {
-		Map<Integer, Integer> yearsCounter = new HashMap<>();
-		URL resource = getClass().getResource("presidents.csv");
-		List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
-		lines.remove(0);
+    public int findYearWithMostPresidentsAlive() throws IOException {
+        Map<Integer, Integer> yearsCounter = new HashMap<>();
+        URL resource = getClass().getResource("presidents.csv");
+        List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
+        lines.remove(0);
 
-		for (String line : lines) {
-			String[] tokens = line.split(",");
-			int yearOfBirth = Integer.parseInt(StringUtils.right(tokens[1], 4));
-			int yearOfDeath = 0;
-			if (StringUtils.isBlank(tokens[3])) {
-				yearOfDeath = 2016;
-			} else {
-				yearOfDeath = Integer.parseInt(StringUtils.right(tokens[3], 4));
-			}
+        for (String line : lines) {
+            String[] tokens = line.split(",");
+            int yearOfBirth = Integer.parseInt(StringUtils.right(tokens[1], 4));
+            int yearOfDeath = 0;
+            if (StringUtils.isBlank(tokens[3])) {
+                yearOfDeath = 2016;
+            } else {
+                yearOfDeath = Integer.parseInt(StringUtils.right(tokens[3], 4));
+            }
 
-			IntStream.range(yearOfBirth, yearOfDeath).boxed().forEach(x -> {
-				yearsCounter.compute(x, (k, v) -> v == null ? 1 : v + 1);
-			});
-		}
+            IntStream.range(yearOfBirth, yearOfDeath).boxed().forEach(x -> {
+                yearsCounter.compute(x, (k, v) -> v == null ? 1 : v + 1);
+            });
+        }
 
-		return yearsCounter.entrySet()
-			.stream()
-			.sorted(Map.Entry.<Integer, Integer> comparingByValue().reversed())
-			.limit(1)
-			.findFirst()
-			.get()
-			.getKey();
-	}
+        return yearsCounter.entrySet()
+                .stream()
+                .sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
+                .limit(1)
+                .findFirst()
+                .get()
+                .getKey();
+    }
 
 }
