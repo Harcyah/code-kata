@@ -4,14 +4,12 @@ import java.util.List;
 
 public class GarageDoor {
 
-    protected State state = State.CLOSED;
+	protected State state = State.CLOSED;
 
-    public void process(List<Event> events) {
-        for (Event event : events) {
-            System.out.println("Door: " + state.name());
-            System.out.println("> " + event.getName() + ".");
-            event.apply(this);
-        }
-    }
+	public void process(List<Event> events) {
+		for (Event event : events) {
+			event.apply(this);
+		}
+	}
 
 }
