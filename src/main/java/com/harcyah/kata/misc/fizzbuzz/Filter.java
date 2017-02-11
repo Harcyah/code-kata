@@ -2,11 +2,11 @@ package com.harcyah.kata.misc.fizzbuzz;
 
 public interface Filter {
 
-    public boolean matches(int i);
+    boolean matches(int i);
 
-    public String getLabel();
+    String getLabel();
 
-    public enum Filters implements Filter {
+    enum Filters implements Filter {
 
         MULT_3_5 {
             @Override

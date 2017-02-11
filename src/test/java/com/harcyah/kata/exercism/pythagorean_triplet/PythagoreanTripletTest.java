@@ -23,7 +23,7 @@ public class PythagoreanTripletTest {
     @Test
     public void shouldCalculateProduct() {
         PythagoreanTriplet sut = new PythagoreanTriplet(3, 4, 5);
-        final long expected = 60l;
+        final long expected = 60L;
         final long actual = sut.calculateProduct();
         assertEquals(expected, actual);
     }
@@ -51,7 +51,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted()
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(60l, 480l);
+        final List<Long> expected = Arrays.asList(60L, 480L);
         assertEquals(expected, actual);
     }
 
@@ -67,7 +67,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted((p1, p2) -> Double.compare(p1, p2))
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(3840l);
+        final List<Long> expected = Arrays.asList(3840L);
         assertEquals(expected, actual);
     }
 
@@ -83,7 +83,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted((p1, p2) -> Double.compare(p1, p2))
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(118080l, 168480l, 202500l);
+        final List<Long> expected = Arrays.asList(118080L, 168480L, 202500L);
         assertEquals(expected, actual);
     }
 

@@ -2,8 +2,8 @@ package com.harcyah.kata.codingbat.string3.notReplace;
 
 public class NotReplace {
 
-    private final String IN = "is";
-    private final String OUT = " not";
+    private static final String IN = "is";
+    private static final String OUT = " not";
 
     public String notReplace(String source) {
         StringBuffer sb = new StringBuffer(source);

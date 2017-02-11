@@ -23,7 +23,7 @@ public class PalindromesTest {
                         Arrays.asList(3, 3)
                 )
         );
-        final long expectedValue = 9l;
+        final long expectedValue = 9L;
 
         final SortedMap<Long, List<List<Integer>>> palindromes
                 = Palindromes.getPalindromeSortedListBuilder()
@@ -50,7 +50,7 @@ public class PalindromesTest {
                         Arrays.asList(91, 99)
                 )
         );
-        final long expectedValue = 9009l;
+        final long expectedValue = 9009L;
 
         final SortedMap<Long, List<List<Integer>>> palindromes
                 = Palindromes.getPalindromeSortedListBuilder()
@@ -79,7 +79,7 @@ public class PalindromesTest {
                         Arrays.asList(11, 11)
                 )
         );
-        final long expectedValue = 121l;
+        final long expectedValue = 121L;
 
         final SortedMap<Long, List<List<Integer>>> palindromes
                 = Palindromes.getPalindromeSortedListBuilder()
@@ -108,7 +108,7 @@ public class PalindromesTest {
                         Arrays.asList(913, 993)
                 )
         );
-        final long expectedValue = 906609l;
+        final long expectedValue = 906609L;
 
         final SortedMap<Long, List<List<Integer>>> palindromes
                 = Palindromes.getPalindromeSortedListBuilder()
@@ -137,7 +137,7 @@ public class PalindromesTest {
                         Arrays.asList(101, 101)
                 )
         );
-        final long expectedValue = 10201l;
+        final long expectedValue = 10201L;
 
         final SortedMap<Long, List<List<Integer>>> palindromes
                 = Palindromes.getPalindromeSortedListBuilder()

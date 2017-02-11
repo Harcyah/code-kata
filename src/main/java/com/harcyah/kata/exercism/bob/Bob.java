@@ -8,11 +8,11 @@ public class Bob {
 
     private interface Matcher extends Comparable<Matcher> {
 
-        public boolean matches(String what);
+        boolean matches(String what);
 
-        public String getContents();
+        String getContents();
 
-        public Float getWeight();
+        Float getWeight();
 
         @Override
         default int compareTo(Matcher o) {
