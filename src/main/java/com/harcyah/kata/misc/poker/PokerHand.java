@@ -38,7 +38,7 @@ public class PokerHand implements Comparable<PokerHand> {
             return 1;
         }
 
-        return Integer.compare(thisRank.ordinal(), thatRank.ordinal());
+        return -1 * Integer.compare(thisRank.ordinal(), thatRank.ordinal());
     }
 
     public Set<PokerCard> getCards() {
