@@ -4,15 +4,8 @@ import com.google.common.base.Preconditions;
 
 public class PokerCard implements Comparable<PokerCard> {
 
-    private final Suit suit;
     private final Value value;
-
-    public enum Suit {
-        C,
-        D,
-        H,
-        S
-    }
+    private final Suit suit;
 
     public enum Value {
         _2,
@@ -35,15 +28,17 @@ public class PokerCard implements Comparable<PokerCard> {
         }
     }
 
-    public PokerCard(Suit suit, Value value) {
-        this.suit = suit;
-        this.value = value;
+    public enum Suit {
+        C,
+        D,
+        H,
+        S
     }
 
-    public PokerCard(String value) {
+    public PokerCard(String value) throws IllegalValueException, IllegalSuitException {
         Preconditions.checkArgument(value.length() == 2);
-        this.suit = parseSuit(value.substring(0, 1));
-        this.value = parseValue(value.substring(1, 2));
+        this.value = parseValue(value.substring(0, 1));
+        this.suit = parseSuit(value.substring(1, 2));
     }
 
     @Override
@@ -51,19 +46,19 @@ public class PokerCard implements Comparable<PokerCard> {
         return Integer.compare(this.value.ordinal(), that.value.ordinal());
     }
 
-    private Value parseValue(String letter) {
+    private Value parseValue(String letter) throws IllegalValueException {
         try {
             return Value.valueOf("_" + letter);
         } catch (Exception e) {
-            throw new IllegalArgumentException();
+            throw new IllegalValueException();
         }
     }
 
-    private Suit parseSuit(String letter) {
+    private Suit parseSuit(String letter) throws IllegalSuitException {
         try {
             return Suit.valueOf(letter);
         } catch (Exception e) {
-            throw new IllegalArgumentException();
+            throw new IllegalSuitException();
         }
     }
 
