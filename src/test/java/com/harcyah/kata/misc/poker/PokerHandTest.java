@@ -8,41 +8,49 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PokerHandTest {
 
-    private static final String ONE_PAIR_1 = "3D3S5D7D9D";
-    private static final String ONE_PAIR_2 = "3D5D7D9D3S";
+    private static final String ONE_PAIR_1 = "3D 3S 5D 7D 9D";
+    private static final String ONE_PAIR_2 = "3D 5D 7D 9D 3S";
 
-    private static final String TWO_PAIRS_1 = "3D3S5D7D5S";
-    private static final String TWO_PAIRS_2 = "3D5D7D5S3S";
+    private static final String TWO_PAIRS_1 = "3D 3S 5D 7D 5S";
+    private static final String TWO_PAIRS_2 = "3D 5D 7D 5S 3S";
 
-    private static final String THREE_OF_A_KIND_1 = "3C3D3HKSQS";
-    private static final String THREE_OF_A_KIND_2 = "3C3DKSQS3H";
+    private static final String THREE_OF_A_KIND_1 = "3C 3D 3H KS QS";
+    private static final String THREE_OF_A_KIND_2 = "3C 3D KS QS 3H";
 
-    private static final String FOUR_OF_A_KIND_1 = "3C3D3HKS3S";
-    private static final String FOUR_OF_A_KIND_2 = "3C3D3SQS3H";
+    private static final String FOUR_OF_A_KIND_1 = "3C 3D 3H KS 3S";
+    private static final String FOUR_OF_A_KIND_2 = "3C 3D 3S QS 3H";
 
-    private static final String FLUSH_1 = "3C5C7C9CKC";
-    private static final String FLUSH_2 = "2C3C4C5CQC";
+    private static final String FLUSH_1 = "3C 5C 7C 9C KC";
+    private static final String FLUSH_2 = "2C 3C 4C 5C QC";
 
-    private static final String STRAIGHT_1 = "3S4S5S6S7C";
-    private static final String STRAIGHT_2 = "KSQSJSTSAC";
+    private static final String STRAIGHT_1 = "3S 4S 5S 6S 7C";
+    private static final String STRAIGHT_2 = "KS QS JS TS AC";
 
-    private static final String FULL_HOUSE_1 = "3C3D3H5C5H";
-    private static final String FULL_HOUSE_2 = "3C6C3H6S6H";
+    private static final String FULL_HOUSE_1 = "3C 3D 3H 5C 5H";
+    private static final String FULL_HOUSE_2 = "3C 6C 3H 6S 6H";
 
-    private static final String STRAIGHT_FLUSH_1 = "3C4C5C6C7C";
-    private static final String STRAIGHT_FLUSH_2 = "7S8S9STSJS";
+    private static final String STRAIGHT_FLUSH_1 = "3C 4C 5C 6C 7C";
+    private static final String STRAIGHT_FLUSH_2 = "7S 8S 9S TS JS";
 
-    private static final String ROYAL_FLUSH = "ASKSQSJSTS";
+    private static final String ROYAL_FLUSH = "AS KS QS JS TS";
+
+    private static final String HIGH_CARD = "7H 9H TS JS 3H";
 
     @Test
     public void testGetters() throws Exception {
-        PokerHand hand = new PokerHand("3DKS5D7D9D");
+        PokerHand hand = new PokerHand("3D KS 5D 7D 9D");
 
         List<PokerCard> cardsAsc = hand.getCardsSortedByValueAsc();
         assertThat(cardsAsc).extractingResultOf("toString").containsExactly("3D", "5D", "7D", "9D", "KS");
 
         List<PokerCard> cardsDesc = hand.getCardsSortedByValueDesc();
         assertThat(cardsDesc).extractingResultOf("toString").containsExactly("KS", "9D", "7D", "5D", "3D");
+    }
+
+    @Test
+    public void testGetRankFindsNothing() throws Exception {
+        PokerHand hand = new PokerHand(HIGH_CARD);
+        assertThat(hand.getRank()).isNull();
     }
 
     @Test
@@ -185,6 +193,14 @@ public class PokerHandTest {
         PokerHand onePair = new PokerHand(ONE_PAIR_1);
         assertThat(onePair).isLessThan(twoPairs);
         assertThat(twoPairs).isGreaterThan(onePair);
+    }
+
+    @Test
+    public void testOnePairBeatsHighCard() throws Exception {
+        PokerHand onePair = new PokerHand(ONE_PAIR_1);
+        PokerHand highCard = new PokerHand(HIGH_CARD);
+        assertThat(highCard).isLessThan(onePair);
+        assertThat(onePair).isGreaterThan(highCard);
     }
 
 }

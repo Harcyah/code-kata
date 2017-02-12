@@ -1,6 +1,7 @@
 package com.harcyah.kata.misc.poker;
 
 import com.google.common.base.Preconditions;
+import com.google.common.base.Splitter;
 
 import java.util.HashSet;
 import java.util.List;
@@ -15,11 +16,11 @@ public class PokerHand implements Comparable<PokerHand> {
     private final HighCardComparator highCardComparator = new HighCardComparator();
 
     public PokerHand(String definition) throws IllegalSuitException, IllegalValueException {
-        Preconditions.checkArgument(definition.length() == CARDS  * 2);
-        for (int i=0; i<CARDS; i++) {
-            String card = definition.substring(i * 2, i * 2 + 2);
-            cards.add(new PokerCard(card));
-        };
+        Preconditions.checkArgument(definition.length() == 14);
+        List<String> tokens = Splitter.on(' ').splitToList(definition);
+        for (String token : tokens) {
+            cards.add(new PokerCard(token));
+        }
     }
 
     @Override

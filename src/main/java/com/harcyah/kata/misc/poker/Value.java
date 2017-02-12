@@ -25,7 +25,7 @@ public enum Value {
         try {
             return Value.valueOf("_" + letter);
         } catch (Exception e) {
-            throw new IllegalValueException();
+            throw new IllegalValueException("Letter " + letter + " is not valid value");
         }
     }
 

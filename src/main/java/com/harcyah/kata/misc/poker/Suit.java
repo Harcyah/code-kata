@@ -11,7 +11,7 @@ public enum Suit {
         try {
             return Suit.valueOf(letter);
         } catch (Exception e) {
-            throw new IllegalSuitException();
+            throw new IllegalSuitException("Letter " + letter + " is not valid suit");
         }
     }
 
