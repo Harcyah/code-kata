@@ -10,8 +10,8 @@ public class PokerCardTest {
     @Test
     public void testConstructor() throws Exception {
         PokerCard card = new PokerCard("2C");
-        assertEquals(PokerCard.Value._2, card.getValue());
-        assertEquals(PokerCard.Suit.C, card.getSuit());
+        assertEquals(Value._2, card.getValue());
+        assertEquals(Suit.C, card.getSuit());
     }
 
     @Test(expected = IllegalSuitException.class)

@@ -9,7 +9,7 @@ public enum Rank implements RankMatcher {
     ROYAL_FLUSH {
         @Override
         public boolean matches(PokerHand hand) {
-            return STRAIGHT_FLUSH.matches(hand) && hand.getCardsSortedByValueDesc().get(0).getValue().equals(PokerCard.Value._A);
+            return STRAIGHT_FLUSH.matches(hand) && hand.getCardsSortedByValueDesc().get(0).getValue().equals(Value._A);
         }
     },
 
@@ -37,7 +37,8 @@ public enum Rank implements RankMatcher {
     FLUSH {
         @Override
         public boolean matches(PokerHand hand) {
-            return Rank.getGroupsOfCardsBySuit(hand, 5).size() == 1;
+            Suit suit = hand.getCards().iterator().next().getSuit();
+            return hand.getCards().stream().allMatch(x -> x.getSuit().equals(suit));
         }
     },
 
@@ -45,9 +46,9 @@ public enum Rank implements RankMatcher {
         @Override
         public boolean matches(PokerHand hand) {
             List<PokerCard> cards = hand.getCardsSortedByValueAsc();
-            PokerCard.Value value = cards.get(0).getValue();
+            Value value = cards.get(0).getValue();
             for (int i=1; i<cards.size(); i++) {
-                PokerCard.Value next = cards.get(i).getValue();
+                Value next = cards.get(i).getValue();
                 if (value.ordinal() + i != next.ordinal()) {
                     return false;
                 }
@@ -73,16 +74,12 @@ public enum Rank implements RankMatcher {
     ONE_PAIR {
         @Override
         public boolean matches(PokerHand hand) {
-            return Rank.getGroupsOfCardsByValue(hand, 2).size() == 1;        }
+            return Rank.getGroupsOfCardsByValue(hand, 2).size() == 1;
+        }
     };
 
-    private static List<List<PokerCard>> getGroupsOfCardsBySuit(PokerHand hand, int size) {
-        Map<PokerCard.Suit, List<PokerCard>> groups = hand.getCards().stream().collect(Collectors.groupingBy(PokerCard::getSuit));
-        return groups.values().stream().filter(x -> x.size() == size).collect(Collectors.toList());
-    }
-
     private static List<List<PokerCard>> getGroupsOfCardsByValue(PokerHand hand, int size) {
-        Map<PokerCard.Value, List<PokerCard>> groups = hand.getCards().stream().collect(Collectors.groupingBy(PokerCard::getValue));
+        Map<Value, List<PokerCard>> groups = hand.getCards().stream().collect(Collectors.groupingBy(PokerCard::getValue));
         return groups.values().stream().filter(x -> x.size() == size).collect(Collectors.toList());
     }
 

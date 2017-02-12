@@ -124,7 +124,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_royal_flush_beats_straight_flush() throws Exception {
+    public void testRoyalFlushBeatsStraightFlush() throws Exception {
         PokerHand royalFlush = new PokerHand(ROYAL_FLUSH);
         PokerHand straightFlush = new PokerHand(STRAIGHT_FLUSH_1);
         assertThat(straightFlush).isLessThan(royalFlush);
@@ -132,7 +132,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_straight_flush_beats_four_of_a_kind() throws Exception {
+    public void testStraightFlushBeatsFourOfAKind() throws Exception {
         PokerHand straightFlush = new PokerHand(STRAIGHT_FLUSH_1);
         PokerHand fourOfAKind = new PokerHand(FOUR_OF_A_KIND_1);
         assertThat(fourOfAKind).isLessThan(straightFlush);
@@ -140,7 +140,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_four_of_a_kind_beats_full_house() throws Exception {
+    public void testFourOfAKindBeatsFullHouse() throws Exception {
         PokerHand fourOfAKind = new PokerHand(FOUR_OF_A_KIND_1);
         PokerHand fullHouse = new PokerHand(FULL_HOUSE_1);
         assertThat(fullHouse).isLessThan(fourOfAKind);
@@ -148,7 +148,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_full_house_beats_flush() throws Exception {
+    public void testFullHouseBeatsFlush() throws Exception {
         PokerHand fullHouse = new PokerHand(FULL_HOUSE_1);
         PokerHand flush = new PokerHand(FLUSH_1);
         assertThat(flush).isLessThan(fullHouse);
@@ -156,7 +156,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_flush_beats_straight() throws Exception {
+    public void testFlushBeatsStraight() throws Exception {
         PokerHand flush = new PokerHand(FLUSH_1);
         PokerHand straight = new PokerHand(STRAIGHT_1);
         assertThat(straight).isLessThan(flush);
@@ -164,7 +164,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_straight_beats_three_of_a_kind() throws Exception {
+    public void testStraightBeatsThreeOfAKind() throws Exception {
         PokerHand straight = new PokerHand(STRAIGHT_1);
         PokerHand threeOfAKind = new PokerHand(THREE_OF_A_KIND_1);
         assertThat(threeOfAKind).isLessThan(straight);
@@ -172,7 +172,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_three_of_a_kind_beats_two_pairs() throws Exception {
+    public void testThreeOfAKindBeatsTwoPairs() throws Exception {
         PokerHand threeOfAKind = new PokerHand(THREE_OF_A_KIND_1);
         PokerHand twoPairs = new PokerHand(TWO_PAIRS_1);
         assertThat(twoPairs).isLessThan(threeOfAKind);
@@ -180,7 +180,7 @@ public class PokerHandTest {
     }
 
     @Test
-    public void test_two_pairs_beats_one_pair() throws Exception {
+    public void testTwoPairsBeatsOnePair() throws Exception {
         PokerHand twoPairs = new PokerHand(TWO_PAIRS_1);
         PokerHand onePair = new PokerHand(ONE_PAIR_1);
         assertThat(onePair).isLessThan(twoPairs);
