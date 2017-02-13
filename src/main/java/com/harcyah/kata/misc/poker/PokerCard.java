@@ -1,6 +1,11 @@
 package com.harcyah.kata.misc.poker;
 
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
+import com.harcyah.kata.misc.poker.suits.IllegalSuitException;
+import com.harcyah.kata.misc.poker.suits.Suit;
+import com.harcyah.kata.misc.poker.values.IllegalValueException;
+import com.harcyah.kata.misc.poker.values.Value;
 
 public class PokerCard implements Comparable<PokerCard> {
 
@@ -29,5 +34,19 @@ public class PokerCard implements Comparable<PokerCard> {
 
     public Value getValue() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PokerCard pokerCard = (PokerCard) o;
+        return value == pokerCard.value &&
+                suit == pokerCard.suit;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(value, suit);
     }
 }

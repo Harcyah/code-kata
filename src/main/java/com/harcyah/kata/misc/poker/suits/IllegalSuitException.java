@@ -1,4 +1,4 @@
-package com.harcyah.kata.misc.poker;
+package com.harcyah.kata.misc.poker.suits;
 
 public class IllegalSuitException extends Exception {
 

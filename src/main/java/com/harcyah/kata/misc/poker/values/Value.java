@@ -1,4 +1,4 @@
-package com.harcyah.kata.misc.poker;
+package com.harcyah.kata.misc.poker.values;
 
 public enum Value {
 

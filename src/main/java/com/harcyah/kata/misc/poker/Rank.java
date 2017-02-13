@@ -1,5 +1,8 @@
 package com.harcyah.kata.misc.poker;
 
+import com.harcyah.kata.misc.poker.suits.Suit;
+import com.harcyah.kata.misc.poker.values.Value;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -9,7 +12,7 @@ public enum Rank implements RankMatcher {
     ROYAL_FLUSH {
         @Override
         public boolean matches(PokerHand hand) {
-            return STRAIGHT_FLUSH.matches(hand) && hand.getCardsSortedByValueDesc().get(0).getValue().equals(Value._A);
+            return STRAIGHT_FLUSH.matches(hand) && hand.getCards().get(0).getValue().equals(Value._A);
         }
     },
 
@@ -45,11 +48,11 @@ public enum Rank implements RankMatcher {
     STRAIGHT {
         @Override
         public boolean matches(PokerHand hand) {
-            List<PokerCard> cards = hand.getCardsSortedByValueAsc();
+            List<PokerCard> cards = hand.getCards();
             Value value = cards.get(0).getValue();
             for (int i=1; i<cards.size(); i++) {
                 Value next = cards.get(i).getValue();
-                if (value.ordinal() + i != next.ordinal()) {
+                if (value.ordinal() - i != next.ordinal()) {
                     return false;
                 }
             }

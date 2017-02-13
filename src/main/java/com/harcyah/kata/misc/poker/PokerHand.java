@@ -2,6 +2,8 @@ package com.harcyah.kata.misc.poker;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
+import com.harcyah.kata.misc.poker.suits.IllegalSuitException;
+import com.harcyah.kata.misc.poker.values.IllegalValueException;
 
 import java.util.HashSet;
 import java.util.List;
@@ -12,15 +14,23 @@ public class PokerHand implements Comparable<PokerHand> {
 
     private static final int CARDS = 5;
 
-    private final Set<PokerCard> cards = new HashSet<>();
+    private final List<PokerCard> cards;
     private final HighCardComparator highCardComparator = new HighCardComparator();
 
     public PokerHand(String definition) throws IllegalSuitException, IllegalValueException {
         Preconditions.checkArgument(definition.length() == 14);
+
         List<String> tokens = Splitter.on(' ').splitToList(definition);
+        Set<PokerCard> set = new HashSet<>();
         for (String token : tokens) {
-            cards.add(new PokerCard(token));
+            set.add(new PokerCard(token));
         }
+
+        if (set.size() != CARDS) {
+            throw new IllegalArgumentException();
+        }
+
+        cards = set.stream().sorted((a, b) -> -1 * a.compareTo(b)).collect(Collectors.toList());
     }
 
     @Override
@@ -42,16 +52,8 @@ public class PokerHand implements Comparable<PokerHand> {
         return -1 * Integer.compare(thisRank.ordinal(), thatRank.ordinal());
     }
 
-    public Set<PokerCard> getCards() {
+    public List<PokerCard> getCards() {
         return cards;
-    }
-
-    public List<PokerCard> getCardsSortedByValueDesc() {
-        return cards.stream().sorted((a, b) -> -1 * a.compareTo(b)).collect(Collectors.toList());
-    }
-
-    public List<PokerCard> getCardsSortedByValueAsc() {
-        return cards.stream().sorted().collect(Collectors.toList());
     }
 
     public Rank getRank() {

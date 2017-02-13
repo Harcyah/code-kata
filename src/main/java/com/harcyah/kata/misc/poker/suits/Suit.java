@@ -1,4 +1,4 @@
-package com.harcyah.kata.misc.poker;
+package com.harcyah.kata.misc.poker.suits;
 
 public enum Suit {
 
@@ -11,7 +11,7 @@ public enum Suit {
         try {
             return Suit.valueOf(letter);
         } catch (Exception e) {
-            throw new IllegalSuitException("Letter " + letter + " is not valid suit");
+            throw new IllegalSuitException("Letter " + letter + " is not valid suits");
         }
     }
 

@@ -1,5 +1,9 @@
 package com.harcyah.kata.misc.poker;
 
+import com.harcyah.kata.misc.poker.suits.IllegalSuitException;
+import com.harcyah.kata.misc.poker.suits.Suit;
+import com.harcyah.kata.misc.poker.values.IllegalValueException;
+import com.harcyah.kata.misc.poker.values.Value;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

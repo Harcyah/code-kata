@@ -36,15 +36,21 @@ public class PokerHandTest {
 
     private static final String HIGH_CARD = "7H 9H TS JS 3H";
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorThrowsExceptionIfStringArgumentHasIncorrectSize() throws Exception {
+        new PokerHand("lorem ipsum dolor sit amet");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorThrowsExceptionIfSameCardAppearsTwice() throws Exception {
+        new PokerHand("7H 9H TS JS JS");
+    }
+
     @Test
-    public void testGetters() throws Exception {
+    public void testGetCardsAreExposedSortedByValueDesc() throws Exception {
         PokerHand hand = new PokerHand("3D KS 5D 7D 9D");
-
-        List<PokerCard> cardsAsc = hand.getCardsSortedByValueAsc();
-        assertThat(cardsAsc).extractingResultOf("toString").containsExactly("3D", "5D", "7D", "9D", "KS");
-
-        List<PokerCard> cardsDesc = hand.getCardsSortedByValueDesc();
-        assertThat(cardsDesc).extractingResultOf("toString").containsExactly("KS", "9D", "7D", "5D", "3D");
+        List<PokerCard> cards = hand.getCards();
+        assertThat(cards).extractingResultOf("toString").containsExactly("KS", "9D", "7D", "5D", "3D");
     }
 
     @Test
