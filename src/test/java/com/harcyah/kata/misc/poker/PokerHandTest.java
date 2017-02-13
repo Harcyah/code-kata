@@ -51,6 +51,7 @@ public class PokerHandTest {
         PokerHand hand = new PokerHand("3D KS 5D 7D 9D");
         List<PokerCard> cards = hand.getCards();
         assertThat(cards).extractingResultOf("toString").containsExactly("KS", "9D", "7D", "5D", "3D");
+        assertThat(hand.toString()).isEqualTo("KS 9D 7D 5D 3D");
     }
 
     @Test
