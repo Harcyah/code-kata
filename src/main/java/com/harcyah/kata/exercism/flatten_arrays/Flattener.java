@@ -13,6 +13,7 @@ final class Flattener {
         return out;
     }
 
+    @SuppressWarnings("unchecked")
     private void add(List<Object> out, Object input) {
         if (input == null) {
             return;
