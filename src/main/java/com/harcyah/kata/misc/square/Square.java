@@ -1,14 +1,13 @@
 package com.harcyah.kata.misc.square;
 
-import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 
 public class Square {
 
-    protected Point a;
-    protected Point b;
-    protected Point c;
-    protected Point d;
+    private final Point a;
+    private final Point b;
+    private final Point c;
+    private final Point d;
 
     public Square(Point a, Point b, Point c, Point d) {
         Preconditions.checkArgument(!a.equals(b));
@@ -37,16 +36,6 @@ public class Square {
 
     public Point getD() {
         return d;
-    }
-
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("a", a)
-                .add("b", b)
-                .add("c", c)
-                .add("d", d)
-                .toString();
     }
 
 }

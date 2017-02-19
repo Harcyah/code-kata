@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.TreeSet;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class SquareSolverTest {
 
     protected SquareSolver solver = new SquareSolver();
@@ -20,8 +22,10 @@ public class SquareSolverTest {
         Point c = new Point(4, -2);
         Point d = new Point(1, -4);
         List<Point> points = Lists.newArrayList(a, b, c, d);
+
         List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
-        Assert.assertFalse(squares.isEmpty());
+
+        assertThat(squares).isNotEmpty();
     }
 
     @Test
@@ -37,10 +41,10 @@ public class SquareSolverTest {
         Assert.assertFalse(squares.isEmpty());
         Square square = squares.get(0);
         Assert.assertNotNull(square);
-        Assert.assertEquals(a, square.a);
-        Assert.assertEquals(b, square.c);
-        Assert.assertEquals(c, square.b);
-        Assert.assertEquals(d, square.d);
+        Assert.assertEquals(a, square.getA());
+        Assert.assertEquals(b, square.getC());
+        Assert.assertEquals(c, square.getB());
+        Assert.assertEquals(d, square.getD());
     }
 
     @Test
@@ -56,10 +60,10 @@ public class SquareSolverTest {
         Assert.assertFalse(squares.isEmpty());
         Square square = squares.get(0);
         Assert.assertNotNull(square);
-        Assert.assertEquals(a, square.a);
-        Assert.assertEquals(b, square.b);
-        Assert.assertEquals(c, square.d);
-        Assert.assertEquals(d, square.c);
+        Assert.assertEquals(a, square.getA());
+        Assert.assertEquals(b, square.getB());
+        Assert.assertEquals(c, square.getD());
+        Assert.assertEquals(d, square.getC());
     }
 
     @Test
@@ -72,7 +76,7 @@ public class SquareSolverTest {
 
         List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
-        Assert.assertTrue(squares.isEmpty());
+        assertThat(squares).isEmpty();
     }
 
     @Test
@@ -82,7 +86,7 @@ public class SquareSolverTest {
 
         List<Square> squares = solver.findSquares(points);
 
-        Assert.assertFalse(squares.isEmpty());
+        assertThat(squares).hasSize(112);
     }
 
 }

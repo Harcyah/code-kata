@@ -18,7 +18,7 @@ public class TwelveDays {
         }
 
         lyrics.append(getGift(1));
-        lyrics.append(System.lineSeparator());
+        lyrics.append("\n");
 
         return lyrics.toString();
     }
@@ -27,7 +27,7 @@ public class TwelveDays {
         return IntStream
             .range(from, to + 1)
             .mapToObj(TwelveDays::verse)
-            .collect(Collectors.joining(System.lineSeparator()));
+            .collect(Collectors.joining("\n"));
     }
 
     public static String sing() {

@@ -20,12 +20,12 @@ public class SquareSolver {
                     continue;
                 }
 
-                Point ab = new Point(b.x - a.x, b.y - a.y);
+                Point ab = new Point(b.getX() - a.getX(), b.getY() - a.getY());
 
-                Point normalA = new Point(ab.y, -ab.x);
+                Point normalA = new Point(ab.getY(), -ab.getX());
                 testAndAdd(a, b, normalA, points, squares);
 
-                Point normalB = new Point(-ab.y, ab.x);
+                Point normalB = new Point(-ab.getY(), ab.getX());
                 testAndAdd(a, b, normalB, points, squares);
             }
 
