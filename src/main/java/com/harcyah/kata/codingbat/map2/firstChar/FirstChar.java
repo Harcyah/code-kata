@@ -6,7 +6,7 @@ import java.util.Map;
 public class FirstChar {
 
 	public Map<String, String> firstChar(String[] strings) {
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new HashMap<>();
 		for (String s : strings) {
 			String firstChar = s.substring(0, 1);
 			String appended = map.get(firstChar);

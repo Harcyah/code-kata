@@ -6,7 +6,7 @@ import java.util.Set;
 public class FizzBuzz {
 
     public static void main(String[] args) {
-        Set<Filter> filters = new LinkedHashSet<Filter>();
+        Set<Filter> filters = new LinkedHashSet<>();
         filters.add(Filter.Filters.MULT_3_5);
         filters.add(Filter.Filters.MULT_3);
         filters.add(Filter.Filters.MULT_5);
