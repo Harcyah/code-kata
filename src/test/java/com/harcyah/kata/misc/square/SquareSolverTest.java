@@ -3,6 +3,7 @@ package com.harcyah.kata.misc.square;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -80,6 +81,7 @@ public class SquareSolverTest {
     }
 
     @Test
+    @Ignore
     public void testWithLaurentDataset() throws IOException {
         Reader reader = new Reader();
         TreeSet<Point> points = reader.read();
