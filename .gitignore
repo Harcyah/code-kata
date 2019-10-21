@@ -1,7 +1,3 @@
-/.idea/
-/.settings/
-/target/
-.DS_Store
-.project
-.classpath
-code-kata.iml
+.idea/
+target/
+*.iml
