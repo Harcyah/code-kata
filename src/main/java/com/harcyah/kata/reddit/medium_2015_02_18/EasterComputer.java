@@ -1,6 +1,6 @@
 package com.harcyah.kata.reddit.medium_2015_02_18;
 
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 
 // http://www.reddit.com/r/dailyprogrammer/comments/2wbvuu/20150218_challenge_202_intermediate_easter/
 public class EasterComputer {
@@ -17,7 +17,7 @@ public class EasterComputer {
         int r = (((e + L) - (7 * h)) + 114);
         int m = r / 31;
         int j = r % 31;
-        return new LocalDate(year, m, j + 1);
+        return LocalDate.of(year, m, j + 1);
     }
 
 }

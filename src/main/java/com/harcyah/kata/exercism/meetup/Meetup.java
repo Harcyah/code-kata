@@ -1,6 +1,7 @@
 package com.harcyah.kata.exercism.meetup;
 
-import org.joda.time.DateTime;
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
 
 public class Meetup {
 
@@ -12,15 +13,15 @@ public class Meetup {
         this.year = year;
     }
 
-    protected DateTime slideDate(DateTime dt, int untilDOW, int bonusWeeks) {
+    protected LocalDateTime slideDate(LocalDateTime dt, DayOfWeek untilDOW, int bonusWeeks) {
         while (dt.getDayOfWeek() != untilDOW) {
             dt = dt.plusDays(1);
         }
         return dt.plusWeeks(bonusWeeks);
     }
 
-    public DateTime day(int day, MeetupSchedule schedule) {
-        DateTime dt = new DateTime(year, month, 1, 0, 0);
+    public LocalDateTime day(DayOfWeek day, MeetupSchedule schedule) {
+        LocalDateTime dt = LocalDateTime.of(year, month, 1, 0, 0);
         switch (schedule) {
             case FIRST:
                 return slideDate(dt, day, 0);
@@ -37,7 +38,7 @@ public class Meetup {
                 }
                 return dt;
             case TEENTH:
-                dt = new DateTime(year, month, 13, 0, 0);
+                dt = LocalDateTime.of(year, month, 13, 0, 0);
                 while (dt.getDayOfWeek() != day) {
                     dt = dt.plusDays(1);
                 }
