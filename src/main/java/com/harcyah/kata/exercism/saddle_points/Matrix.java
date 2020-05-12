@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.saddle_points;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

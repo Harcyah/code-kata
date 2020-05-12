@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.saddle_points;
+
 class MatrixCoordinate {
 
   private final int row;

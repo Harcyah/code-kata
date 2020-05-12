@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.saddle_points;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
