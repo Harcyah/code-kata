@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.two_fer;
+
 public class Twofer {
 
     public String twofer(String name) {

@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.kindergarten_garden;
+
 import org.junit.Test;
 
 import java.util.Arrays;

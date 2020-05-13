@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.collatz_conjecture;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

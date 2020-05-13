@@ -1,4 +1,7 @@
+package com.harcyah.kata.exercism.kindergarten_garden;
+
 public enum Plant {
+
     VIOLETS,
     RADISHES,
     CLOVER,

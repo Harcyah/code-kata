@@ -1,4 +1,5 @@
-import com.harcyah.kata.exercism.isogram.IsogramChecker;
+package com.harcyah.kata.exercism.isogram;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

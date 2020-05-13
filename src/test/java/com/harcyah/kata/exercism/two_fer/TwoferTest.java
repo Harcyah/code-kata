@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.two_fer;
+
 import org.junit.Before;
 import org.junit.Test;
 

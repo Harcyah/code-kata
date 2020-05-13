@@ -1,3 +1,5 @@
+package com.harcyah.kata.exercism.collatz_conjecture;
+
 class CollatzCalculator {
 
     public int computeStepCount(int start) {
