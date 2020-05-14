@@ -1,6 +1,5 @@
 package com.harcyah.kata.exercism.simple_linked_list;
 
-
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
@@ -10,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SimpleLinkedListTest {
 
     @Test
-    public void aNewListIsEmpty() {
+    public void newListIsEmpty() {
         SimpleLinkedList list = new SimpleLinkedList();
         assertThat(list.size()).isEqualTo(0);
     }

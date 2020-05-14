@@ -11,7 +11,7 @@ public class Diamond {
         int size = 2 * (number - 1) + 1;
 
         String[] lines = new String[size];
-        for (int i=0; i<size / 2 + 1; i++) {
+        for (int i = 0; i < size / 2 + 1; i++) {
             char c = (char) ('A' + i);
 
             int leftPosition = size / 2 + 1 - i - 1;

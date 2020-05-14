@@ -13,7 +13,4 @@ public class Sum28 {
         return sum == 8;
     }
 
-
 }
-
-

@@ -19,7 +19,5 @@ public class Sum13 {
         return sum;
     }
 
-
 }
-
 

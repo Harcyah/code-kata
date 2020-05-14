@@ -1,21 +1,23 @@
 package com.harcyah.kata.codingbat.warmup1.startHi;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class StartHiTest {
 
     @Test
     public void testStartHi() {
         StartHi startHi = new StartHi();
-        Assert.assertEquals(true, startHi.startHi("hi there"));
-        Assert.assertEquals(true, startHi.startHi("hi"));
-        Assert.assertEquals(false, startHi.startHi("hello hi"));
-        Assert.assertEquals(false, startHi.startHi("he"));
-        Assert.assertEquals(false, startHi.startHi("h"));
-        Assert.assertEquals(false, startHi.startHi(""));
-        Assert.assertEquals(false, startHi.startHi("ho hi"));
-        Assert.assertEquals(true, startHi.startHi("hi ho"));
+        assertTrue(startHi.startHi("hi there"));
+        assertTrue(startHi.startHi("hi"));
+        assertFalse(startHi.startHi("hello hi"));
+        assertFalse(startHi.startHi("he"));
+        assertFalse(startHi.startHi("h"));
+        assertFalse(startHi.startHi(""));
+        assertFalse(startHi.startHi("ho hi"));
+        assertTrue(startHi.startHi("hi ho"));
     }
 
 }

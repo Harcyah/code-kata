@@ -1,18 +1,19 @@
 package com.harcyah.kata.codingbat.string1.lastTwo;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class LastTwoTest {
 
     @Test
     public void testLastTwo() {
         LastTwo lastTwo = new LastTwo();
-        Assert.assertEquals("codign", lastTwo.lastTwo("coding"));
-        Assert.assertEquals("cta", lastTwo.lastTwo("cat"));
-        Assert.assertEquals("ba", lastTwo.lastTwo("ab"));
-        Assert.assertEquals("a", lastTwo.lastTwo("a"));
-        Assert.assertEquals("", lastTwo.lastTwo(""));
+        assertEquals("codign", lastTwo.lastTwo("coding"));
+        assertEquals("cta", lastTwo.lastTwo("cat"));
+        assertEquals("ba", lastTwo.lastTwo("ab"));
+        assertEquals("a", lastTwo.lastTwo("a"));
+        assertEquals("", lastTwo.lastTwo(""));
     }
 
 }

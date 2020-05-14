@@ -1,32 +1,33 @@
 package com.harcyah.kata.codingbat.string1.deFront;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class DeFrontTest {
 
     @Test
     public void testDeFront() {
         DeFront deFront = new DeFront();
-        Assert.assertEquals("llo", deFront.deFront("Hello"));
-        Assert.assertEquals("va", deFront.deFront("java"));
-        Assert.assertEquals("aay", deFront.deFront("away"));
-        Assert.assertEquals("ay", deFront.deFront("axy"));
-        Assert.assertEquals("abc", deFront.deFront("abc"));
-        Assert.assertEquals("by", deFront.deFront("xby"));
-        Assert.assertEquals("ab", deFront.deFront("ab"));
-        Assert.assertEquals("a", deFront.deFront("ax"));
-        Assert.assertEquals("ab", deFront.deFront("axb"));
-        Assert.assertEquals("aa", deFront.deFront("aaa"));
-        Assert.assertEquals("bc", deFront.deFront("xbc"));
-        Assert.assertEquals("bb", deFront.deFront("bbb"));
-        Assert.assertEquals("zz", deFront.deFront("bazz"));
-        Assert.assertEquals("", deFront.deFront("ba"));
-        Assert.assertEquals("abxyz", deFront.deFront("abxyz"));
-        Assert.assertEquals("", deFront.deFront("hi"));
-        Assert.assertEquals("s", deFront.deFront("his"));
-        Assert.assertEquals("", deFront.deFront("xz"));
-        Assert.assertEquals("z", deFront.deFront("zzz"));
+        assertEquals("llo", deFront.deFront("Hello"));
+        assertEquals("va", deFront.deFront("java"));
+        assertEquals("aay", deFront.deFront("away"));
+        assertEquals("ay", deFront.deFront("axy"));
+        assertEquals("abc", deFront.deFront("abc"));
+        assertEquals("by", deFront.deFront("xby"));
+        assertEquals("ab", deFront.deFront("ab"));
+        assertEquals("a", deFront.deFront("ax"));
+        assertEquals("ab", deFront.deFront("axb"));
+        assertEquals("aa", deFront.deFront("aaa"));
+        assertEquals("bc", deFront.deFront("xbc"));
+        assertEquals("bb", deFront.deFront("bbb"));
+        assertEquals("zz", deFront.deFront("bazz"));
+        assertEquals("", deFront.deFront("ba"));
+        assertEquals("abxyz", deFront.deFront("abxyz"));
+        assertEquals("", deFront.deFront("hi"));
+        assertEquals("s", deFront.deFront("his"));
+        assertEquals("", deFront.deFront("xz"));
+        assertEquals("z", deFront.deFront("zzz"));
     }
 
 }

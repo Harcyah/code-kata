@@ -1,10 +1,9 @@
 package com.harcyah.kata.exercism.acronym;
 
-
 public class Acronym {
 
     public static String generate(String original) {
-        StringBuffer out = new StringBuffer();
+        StringBuilder out = new StringBuilder();
 
         // Split words by spaces and hyphens
         String[] tokens = original.split(" |-");

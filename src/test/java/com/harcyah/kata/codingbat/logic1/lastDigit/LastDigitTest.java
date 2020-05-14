@@ -1,26 +1,28 @@
 package com.harcyah.kata.codingbat.logic1.lastDigit;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class LastDigitTest {
 
     @Test
     public void testLastDigit() {
         LastDigit lastDigit = new LastDigit();
-        Assert.assertEquals(true, lastDigit.lastDigit(23, 19, 13));
-        Assert.assertEquals(false, lastDigit.lastDigit(23, 19, 12));
-        Assert.assertEquals(true, lastDigit.lastDigit(23, 19, 3));
-        Assert.assertEquals(true, lastDigit.lastDigit(23, 19, 39));
-        Assert.assertEquals(false, lastDigit.lastDigit(1, 2, 3));
-        Assert.assertEquals(true, lastDigit.lastDigit(1, 1, 2));
-        Assert.assertEquals(true, lastDigit.lastDigit(1, 2, 2));
-        Assert.assertEquals(false, lastDigit.lastDigit(14, 25, 43));
-        Assert.assertEquals(true, lastDigit.lastDigit(14, 25, 45));
-        Assert.assertEquals(false, lastDigit.lastDigit(248, 106, 1002));
-        Assert.assertEquals(true, lastDigit.lastDigit(248, 106, 1008));
-        Assert.assertEquals(true, lastDigit.lastDigit(10, 11, 20));
-        Assert.assertEquals(true, lastDigit.lastDigit(0, 11, 0));
+        assertTrue(lastDigit.lastDigit(23, 19, 13));
+        assertFalse(lastDigit.lastDigit(23, 19, 12));
+        assertTrue(lastDigit.lastDigit(23, 19, 3));
+        assertTrue(lastDigit.lastDigit(23, 19, 39));
+        assertFalse(lastDigit.lastDigit(1, 2, 3));
+        assertTrue(lastDigit.lastDigit(1, 1, 2));
+        assertTrue(lastDigit.lastDigit(1, 2, 2));
+        assertFalse(lastDigit.lastDigit(14, 25, 43));
+        assertTrue(lastDigit.lastDigit(14, 25, 45));
+        assertFalse(lastDigit.lastDigit(248, 106, 1002));
+        assertTrue(lastDigit.lastDigit(248, 106, 1008));
+        assertTrue(lastDigit.lastDigit(10, 11, 20));
+        assertTrue(lastDigit.lastDigit(0, 11, 0));
     }
 
 }

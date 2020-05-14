@@ -1,28 +1,29 @@
 package com.harcyah.kata.codingbat.string1.startWord;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class StartWordTest {
 
     @Test
     public void testStartWord() {
         StartWord startWord = new StartWord();
-        Assert.assertEquals("hi", startWord.startWord("hippo", "hi"));
-        Assert.assertEquals("hip", startWord.startWord("hippo", "xip"));
-        Assert.assertEquals("h", startWord.startWord("hippo", "i"));
-        Assert.assertEquals("", startWord.startWord("hippo", "ix"));
-        Assert.assertEquals("", startWord.startWord("h", "ix"));
-        Assert.assertEquals("", startWord.startWord("", "i"));
-        Assert.assertEquals("hi", startWord.startWord("hip", "zi"));
-        Assert.assertEquals("hip", startWord.startWord("hip", "zip"));
-        Assert.assertEquals("", startWord.startWord("hip", "zig"));
-        Assert.assertEquals("h", startWord.startWord("h", "z"));
-        Assert.assertEquals("hippo", startWord.startWord("hippo", "xippo"));
-        Assert.assertEquals("", startWord.startWord("hippo", "xyz"));
-        Assert.assertEquals("hip", startWord.startWord("hippo", "hip"));
-        Assert.assertEquals("kit", startWord.startWord("kitten", "cit"));
-        Assert.assertEquals("kit", startWord.startWord("kit", "cit"));
+        assertEquals("hi", startWord.startWord("hippo", "hi"));
+        assertEquals("hip", startWord.startWord("hippo", "xip"));
+        assertEquals("h", startWord.startWord("hippo", "i"));
+        assertEquals("", startWord.startWord("hippo", "ix"));
+        assertEquals("", startWord.startWord("h", "ix"));
+        assertEquals("", startWord.startWord("", "i"));
+        assertEquals("hi", startWord.startWord("hip", "zi"));
+        assertEquals("hip", startWord.startWord("hip", "zip"));
+        assertEquals("", startWord.startWord("hip", "zig"));
+        assertEquals("h", startWord.startWord("h", "z"));
+        assertEquals("hippo", startWord.startWord("hippo", "xippo"));
+        assertEquals("", startWord.startWord("hippo", "xyz"));
+        assertEquals("hip", startWord.startWord("hippo", "hip"));
+        assertEquals("kit", startWord.startWord("kitten", "cit"));
+        assertEquals("kit", startWord.startWord("kit", "cit"));
     }
 
 }

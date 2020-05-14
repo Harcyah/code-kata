@@ -1,17 +1,19 @@
 package com.harcyah.kata.codingbat.warmup1.sleepin;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class SleepInTest {
 
     @Test
     public void testSleepIn() {
         SleepIn sleepIn = new SleepIn();
-        Assert.assertTrue(sleepIn.sleepIn(false, false));
-        Assert.assertFalse(sleepIn.sleepIn(true, false));
-        Assert.assertTrue(sleepIn.sleepIn(false, true));
-        Assert.assertTrue(sleepIn.sleepIn(true, true));
+        assertTrue(sleepIn.sleepIn(false, false));
+        assertFalse(sleepIn.sleepIn(true, false));
+        assertTrue(sleepIn.sleepIn(false, true));
+        assertTrue(sleepIn.sleepIn(true, true));
     }
 
 }

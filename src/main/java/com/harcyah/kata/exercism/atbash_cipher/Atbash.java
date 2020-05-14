@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Atbash {
 
     protected static final char[] ALPHABET = new char[]{
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     };
 
     public static String encode(String input) {
@@ -14,7 +14,7 @@ public class Atbash {
     }
 
     private static String format(String bash) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < bash.length(); i++) {
             if (i > 0 && i % 5 == 0) {
                 sb.append(" ");
@@ -25,7 +25,7 @@ public class Atbash {
     }
 
     public static String decode(String input) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char s = Character.toLowerCase(input.charAt(i));
             if (Character.isDigit(s)) {

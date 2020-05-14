@@ -11,7 +11,5 @@ public class Only14 {
         return true;
     }
 
-
 }
-
 

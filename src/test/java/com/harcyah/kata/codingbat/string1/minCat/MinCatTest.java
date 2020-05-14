@@ -1,19 +1,20 @@
 package com.harcyah.kata.codingbat.string1.minCat;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MinCatTest {
 
     @Test
     public void testMinCat() {
         MinCat minCat = new MinCat();
-        Assert.assertEquals("loHi", minCat.minCat("Hello", "Hi"));
-        Assert.assertEquals("ellojava", minCat.minCat("Hello", "java"));
-        Assert.assertEquals("javaello", minCat.minCat("java", "Hello"));
-        Assert.assertEquals("cx", minCat.minCat("abc", "x"));
-        Assert.assertEquals("xc", minCat.minCat("x", "abc"));
-        Assert.assertEquals("", minCat.minCat("abc", ""));
+        assertEquals("loHi", minCat.minCat("Hello", "Hi"));
+        assertEquals("ellojava", minCat.minCat("Hello", "java"));
+        assertEquals("javaello", minCat.minCat("java", "Hello"));
+        assertEquals("cx", minCat.minCat("abc", "x"));
+        assertEquals("xc", minCat.minCat("x", "abc"));
+        assertEquals("", minCat.minCat("abc", ""));
     }
 
 }

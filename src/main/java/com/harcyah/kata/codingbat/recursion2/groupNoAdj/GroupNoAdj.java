@@ -10,4 +10,5 @@ public class GroupNoAdj {
         int curr = nums[start];
         return groupNoAdj(start + 2, nums, target - curr) || groupNoAdj(start + 1, nums, target);
     }
+
 }

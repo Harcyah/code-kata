@@ -1,25 +1,26 @@
 package com.harcyah.kata.codingbat.string3.countTriple;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CountTripleTest {
 
     @Test
     public void testCountTriple() {
-        CountTriple countTriple = new CountTriple();
-        Assertions.assertThat(countTriple.countTriple("abcXXXabc")).isEqualTo(1);
-        Assertions.assertThat(countTriple.countTriple("xxxabyyyycd")).isEqualTo(3);
-        Assertions.assertThat(countTriple.countTriple("a")).isEqualTo(0);
-        Assertions.assertThat(countTriple.countTriple("")).isEqualTo(0);
-        Assertions.assertThat(countTriple.countTriple("XXXabc")).isEqualTo(1);
-        Assertions.assertThat(countTriple.countTriple("XXXXabc")).isEqualTo(2);
-        Assertions.assertThat(countTriple.countTriple("XXXXXabc")).isEqualTo(3);
-        Assertions.assertThat(countTriple.countTriple("222abyyycdXXX")).isEqualTo(3);
-        Assertions.assertThat(countTriple.countTriple("abYYYabXXXXXab")).isEqualTo(4);
-        Assertions.assertThat(countTriple.countTriple("abYYXabXXYXXab")).isEqualTo(0);
-        Assertions.assertThat(countTriple.countTriple("abYYXabXXYXXab")).isEqualTo(0);
-        Assertions.assertThat(countTriple.countTriple("122abhhh2")).isEqualTo(1);
+        CountTriple sut = new CountTriple();
+        assertThat(sut.countTriple("abcXXXabc")).isEqualTo(1);
+        assertThat(sut.countTriple("xxxabyyyycd")).isEqualTo(3);
+        assertThat(sut.countTriple("a")).isEqualTo(0);
+        assertThat(sut.countTriple("")).isEqualTo(0);
+        assertThat(sut.countTriple("XXXabc")).isEqualTo(1);
+        assertThat(sut.countTriple("XXXXabc")).isEqualTo(2);
+        assertThat(sut.countTriple("XXXXXabc")).isEqualTo(3);
+        assertThat(sut.countTriple("222abyyycdXXX")).isEqualTo(3);
+        assertThat(sut.countTriple("abYYYabXXXXXab")).isEqualTo(4);
+        assertThat(sut.countTriple("abYYXabXXYXXab")).isEqualTo(0);
+        assertThat(sut.countTriple("abYYXabXXYXXab")).isEqualTo(0);
+        assertThat(sut.countTriple("122abhhh2")).isEqualTo(1);
     }
 
 }

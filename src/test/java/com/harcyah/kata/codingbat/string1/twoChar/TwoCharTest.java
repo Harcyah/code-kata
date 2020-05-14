@@ -1,28 +1,29 @@
 package com.harcyah.kata.codingbat.string1.twoChar;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TwoCharTest {
 
     @Test
     public void testTwoChar() {
         TwoChar twoChar = new TwoChar();
-        Assert.assertEquals("ja", twoChar.twoChar("java", 0));
-        Assert.assertEquals("va", twoChar.twoChar("java", 2));
-        Assert.assertEquals("ja", twoChar.twoChar("java", 3));
-        Assert.assertEquals("ja", twoChar.twoChar("java", 4));
-        Assert.assertEquals("ja", twoChar.twoChar("java", -1));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", 0));
-        Assert.assertEquals("el", twoChar.twoChar("Hello", 1));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", 99));
-        Assert.assertEquals("lo", twoChar.twoChar("Hello", 3));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", 4));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", 5));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", -7));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", 6));
-        Assert.assertEquals("He", twoChar.twoChar("Hello", -1));
-        Assert.assertEquals("ya", twoChar.twoChar("yay", 0));
+        assertEquals("ja", twoChar.twoChar("java", 0));
+        assertEquals("va", twoChar.twoChar("java", 2));
+        assertEquals("ja", twoChar.twoChar("java", 3));
+        assertEquals("ja", twoChar.twoChar("java", 4));
+        assertEquals("ja", twoChar.twoChar("java", -1));
+        assertEquals("He", twoChar.twoChar("Hello", 0));
+        assertEquals("el", twoChar.twoChar("Hello", 1));
+        assertEquals("He", twoChar.twoChar("Hello", 99));
+        assertEquals("lo", twoChar.twoChar("Hello", 3));
+        assertEquals("He", twoChar.twoChar("Hello", 4));
+        assertEquals("He", twoChar.twoChar("Hello", 5));
+        assertEquals("He", twoChar.twoChar("Hello", -7));
+        assertEquals("He", twoChar.twoChar("Hello", 6));
+        assertEquals("He", twoChar.twoChar("Hello", -1));
+        assertEquals("ya", twoChar.twoChar("yay", 0));
     }
 
 }

@@ -1,19 +1,20 @@
 package com.harcyah.kata.codingbat.ap1.wordsCount;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class WordsCountTest {
 
     @Test
     public void testWordsCount() {
         WordsCount wordsCount = new WordsCount();
-        Assert.assertEquals(2, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 1));
-        Assert.assertEquals(1, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 3));
-        Assert.assertEquals(0, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 4));
-        Assert.assertEquals(2, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 1));
-        Assert.assertEquals(2, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 2));
-        Assert.assertEquals(1, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 3));
+        assertEquals(2, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 1));
+        assertEquals(1, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 3));
+        assertEquals(0, wordsCount.wordsCount(new String[]{"a", "bb", "b", "ccc"}, 4));
+        assertEquals(2, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 1));
+        assertEquals(2, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 2));
+        assertEquals(1, wordsCount.wordsCount(new String[]{"xx", "yyy", "x", "yy", "z"}, 3));
     }
 
 }

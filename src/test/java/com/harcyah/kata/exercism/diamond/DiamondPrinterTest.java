@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -20,7 +19,7 @@ public final class DiamondPrinterTest {
     @Test
     public void testTwoByTwoDiamond() {
         List<String> output = new DiamondPrinter().printToList('B');
-        assertThat(output, is(asList(" A ",
+        assertThat(output, is(List.of(" A ",
                                      "B B",
                                      " A ")));
     }
@@ -28,7 +27,7 @@ public final class DiamondPrinterTest {
     @Test
     public void testThreeByThreeDiamond() {
         List<String> output = new DiamondPrinter().printToList('C');
-        assertThat(output, is(asList("  A  ",
+        assertThat(output, is(List.of("  A  ",
                                      " B B ",
                                      "C   C",
                                      " B B ",
@@ -38,7 +37,7 @@ public final class DiamondPrinterTest {
     @Test
     public void testFiveByFiveDiamond() {
         List<String> output = new DiamondPrinter().printToList('E');
-        assertThat(output, is(asList("    A    ",
+        assertThat(output, is(List.of("    A    ",
                                      "   B B   ",
                                      "  C   C  ",
                                      " D     D ",
@@ -52,7 +51,7 @@ public final class DiamondPrinterTest {
     @Test
     public void testFullDiamond() {
         List<String> output = new DiamondPrinter().printToList('Z');
-        assertThat(output, is(asList("                         A                         ",
+        assertThat(output, is(List.of("                         A                         ",
                                      "                        B B                        ",
                                      "                       C   C                       ",
                                      "                      D     D                      ",

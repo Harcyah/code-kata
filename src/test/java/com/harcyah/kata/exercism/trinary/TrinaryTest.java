@@ -24,4 +24,5 @@ public class TrinaryTest {
     public void testTrinary() {
         assertEquals(302, Trinary.toDecimal("102012"));
     }
+
 }

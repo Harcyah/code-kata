@@ -100,4 +100,5 @@ public class TriangleTest {
     public void trianglesViolatingTriangleInequalityAreIllegal3() throws Exception {
         new Triangle(7, 3, 2);
     }
+
 }

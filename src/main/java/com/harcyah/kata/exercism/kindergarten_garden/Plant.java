@@ -17,8 +17,9 @@ public enum Plant {
                 return RADISHES;
             case 'V':
                 return VIOLETS;
+            default:
+                throw new IllegalArgumentException();
         }
-
-        return null;
     }
+
 }

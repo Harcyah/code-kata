@@ -1,23 +1,26 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
-import org.assertj.core.api.Assertions;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.Set;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+@Slf4j
 public class ReversiTest {
 
     @Test
     public void testGetPossibleMovesSample1() throws Exception {
         Reversi reversi = new Reversi("sample1");
         Set<Square> moves = reversi.getPossibleMoves();
-        Assertions.assertThat(moves)
-                .hasSize(4)
-                .contains(
-                        new Square(3, 2),
-                        new Square(2, 3),
-                        new Square(5, 4),
-                        new Square(4, 5));
+        assertThat(moves)
+            .hasSize(4)
+            .contains(
+                new Square(3, 2),
+                new Square(2, 3),
+                new Square(5, 4),
+                new Square(4, 5));
         render(reversi, moves);
     }
 
@@ -26,7 +29,7 @@ public class ReversiTest {
         Reversi reversi = new Reversi("sample2");
         Set<Square> moves = reversi.getPossibleMoves();
         render(reversi, moves);
-        Assertions.assertThat(moves).hasSize(11);
+        assertThat(moves).hasSize(11);
     }
 
     @Test
@@ -34,29 +37,31 @@ public class ReversiTest {
         Reversi reversi = new Reversi("sample3");
         Set<Square> moves = reversi.getPossibleMoves();
         render(reversi, moves);
-        Assertions.assertThat(moves).hasSize(12);
+        assertThat(moves).hasSize(12);
     }
 
-    private void render(Reversi reversi, Set<Square> moves) {
-        System.out.println();
-        System.out.print(" ");
+    private String render(Reversi reversi, Set<Square> moves) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(System.lineSeparator());
+        builder.append(" ");
         for (int i = 0; i < Board.SIZE; i++) {
-            System.out.print(i);
+            builder.append(i);
         }
-        System.out.println();
+        builder.append(System.lineSeparator());
         for (int i = 0; i < Board.SIZE; i++) {
-            System.out.print(i);
+            builder.append(i);
             for (int j = 0; j < Board.SIZE; j++) {
                 if (moves.contains(new Square(i, j))) {
-                    System.out.print("*");
+                    builder.append("*");
                 } else {
                     Chip chip = reversi.board.cells[i][j];
-                    System.out.print(chip == null ? "-" : chip.name());
+                    builder.append(chip == null ? "-" : chip.name());
                 }
             }
-            System.out.println();
+            builder.append(System.lineSeparator());
         }
-        System.out.println();
+        builder.append(System.lineSeparator());
+        return builder.toString();
     }
 
 }

@@ -3,17 +3,18 @@ package com.harcyah.kata.exercism.pascals_triangle;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class PascalsTriangleTest {
 
     @Test
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
-                {1},
-                {1, 1},
-                {1, 2, 1},
-                {1, 3, 3, 1},
+            {1},
+            {1, 1},
+            {1, 2, 1},
+            {1, 3, 3, 1},
         };
 
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(4));
@@ -22,12 +23,12 @@ public class PascalsTriangleTest {
     @Test
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
-                {1},
-                {1, 1},
-                {1, 2, 1},
-                {1, 3, 3, 1},
-                {1, 4, 6, 4, 1},
-                {1, 5, 10, 10, 5, 1}
+            {1},
+            {1, 1},
+            {1, 2, 1},
+            {1, 3, 3, 1},
+            {1, 4, 6, 4, 1},
+            {1, 5, 10, 10, 5, 1}
         };
 
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(6));
@@ -36,7 +37,6 @@ public class PascalsTriangleTest {
     @Test
     public void testExpectEmptyTriangle() {
         int[][] expectedOutput = new int[][]{
-
         };
 
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(0));
@@ -45,30 +45,31 @@ public class PascalsTriangleTest {
     @Test
     public void testValidInput() {
         int[][] input = new int[][]{
-                {1},
-                {1, 1},
-                {1, 2, 1},
-                {1, 3, 3, 1},
-                {1, 4, 6, 4, 1},
+            {1},
+            {1, 1},
+            {1, 2, 1},
+            {1, 3, 3, 1},
+            {1, 4, 6, 4, 1},
         };
 
-        assertEquals(true, PascalsTriangle.isTriangle(input));
+        assertTrue(PascalsTriangle.isTriangle(input));
     }
 
     @Test
     public void testInvalidInput() {
         int[][] input = new int[][]{
-                {1},
-                {1, 1},
-                {1, 2, 1},
-                {1, 4, 4, 1},
+            {1},
+            {1, 1},
+            {1, 2, 1},
+            {1, 4, 4, 1},
         };
 
-        assertEquals(false, PascalsTriangle.isTriangle(input));
+        assertFalse(PascalsTriangle.isTriangle(input));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testValidatesNotNegativeRows() {
         PascalsTriangle.computeTriangle(-1);
     }
+
 }

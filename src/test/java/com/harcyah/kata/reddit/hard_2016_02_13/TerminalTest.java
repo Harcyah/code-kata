@@ -1,10 +1,11 @@
 package com.harcyah.kata.reddit.hard_2016_02_13;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class TerminalTest {
 
@@ -17,88 +18,88 @@ public class TerminalTest {
 
     @Test
     public void testConstructor() {
-        Assert.assertEquals(0, terminal.col);
-        Assert.assertEquals(0, terminal.row);
-        Assert.assertEquals(Modes.INSERT, terminal.mode);
+        assertEquals(0, terminal.col);
+        assertEquals(0, terminal.row);
+        assertEquals(Modes.INSERT, terminal.mode);
     }
 
     @Test
     public void testMoveTo() {
         terminal.moveTo(5, 8);
-        Assert.assertEquals(5, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(5, terminal.col);
+        assertEquals(8, terminal.row);
     }
 
     @Test
     public void testMoveToBeginningOfLine() {
         terminal.moveTo(5, 8);
         terminal.moveToBeginningOfLine();
-        Assert.assertEquals(0, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(0, terminal.col);
+        assertEquals(8, terminal.row);
     }
 
     @Test
     public void testMoveOneColRight() {
         terminal.moveTo(5, 8);
         terminal.moveOneColRight();
-        Assert.assertEquals(6, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(6, terminal.col);
+        assertEquals(8, terminal.row);
 
         terminal.moveOneColRight();
         terminal.moveOneColRight();
         terminal.moveOneColRight();
         terminal.moveOneColRight();
         terminal.moveOneColRight();
-        Assert.assertEquals(9, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(9, terminal.col);
+        assertEquals(8, terminal.row);
     }
 
     @Test
     public void testMoveOneColLeft() {
         terminal.moveTo(5, 8);
         terminal.moveOneColLeft();
-        Assert.assertEquals(4, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(4, terminal.col);
+        assertEquals(8, terminal.row);
 
         terminal.moveOneColLeft();
         terminal.moveOneColLeft();
         terminal.moveOneColLeft();
         terminal.moveOneColLeft();
         terminal.moveOneColLeft();
-        Assert.assertEquals(0, terminal.col);
-        Assert.assertEquals(8, terminal.row);
+        assertEquals(0, terminal.col);
+        assertEquals(8, terminal.row);
     }
 
     @Test
     public void testMoveOneRowDown() {
         terminal.moveTo(8, 5);
         terminal.moveOneRowDown();
-        Assert.assertEquals(8, terminal.col);
-        Assert.assertEquals(6, terminal.row);
+        assertEquals(8, terminal.col);
+        assertEquals(6, terminal.row);
 
         terminal.moveOneRowDown();
         terminal.moveOneRowDown();
         terminal.moveOneRowDown();
         terminal.moveOneRowDown();
         terminal.moveOneRowDown();
-        Assert.assertEquals(8, terminal.col);
-        Assert.assertEquals(9, terminal.row);
+        assertEquals(8, terminal.col);
+        assertEquals(9, terminal.row);
     }
 
     @Test
     public void testMoveOneRowUp() {
         terminal.moveTo(8, 5);
         terminal.moveOneRowUp();
-        Assert.assertEquals(8, terminal.col);
-        Assert.assertEquals(4, terminal.row);
+        assertEquals(8, terminal.col);
+        assertEquals(4, terminal.row);
 
         terminal.moveOneRowUp();
         terminal.moveOneRowUp();
         terminal.moveOneRowUp();
         terminal.moveOneRowUp();
         terminal.moveOneRowUp();
-        Assert.assertEquals(8, terminal.col);
-        Assert.assertEquals(0, terminal.row);
+        assertEquals(8, terminal.col);
+        assertEquals(0, terminal.row);
     }
 
     @Test
@@ -106,19 +107,19 @@ public class TerminalTest {
         terminal.buffer[0] = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
         terminal.col = 5;
         terminal.eraseRight();
-        Assertions.assertThat(terminal.buffer[0]).isEqualTo(new char[]{'a', 'b', 'c', 'd', 'e', ' ', ' ', ' ', ' ', ' '});
+        assertThat(terminal.buffer[0]).isEqualTo(new char[]{'a', 'b', 'c', 'd', 'e', ' ', ' ', ' ', ' ', ' '});
     }
 
     @Test
     public void testSetModeInsert() throws Exception {
         terminal.setModeInsert();
-        Assert.assertEquals(Modes.INSERT, terminal.mode);
+        assertEquals(Modes.INSERT, terminal.mode);
     }
 
     @Test
     public void testSetModeOverwrite() throws Exception {
         terminal.setModeOverwrite();
-        Assert.assertEquals(Modes.OVERWRITE, terminal.mode);
+        assertEquals(Modes.OVERWRITE, terminal.mode);
     }
 
     @Test
@@ -137,18 +138,18 @@ public class TerminalTest {
         terminal.putChar('a');
         terminal.putChar('b');
         terminal.putChar('c');
-        Assert.assertEquals(0, terminal.row);
-        Assert.assertEquals(3, terminal.col);
-        Assert.assertEquals("abc       ", new String(terminal.buffer[0]));
+        assertEquals(0, terminal.row);
+        assertEquals(3, terminal.col);
+        assertEquals("abc       ", new String(terminal.buffer[0]));
 
         // PutChar on non-empty line
         terminal.moveToBeginningOfLine();
         terminal.putChar('x');
         terminal.putChar('y');
         terminal.putChar('z');
-        Assert.assertEquals(0, terminal.row);
-        Assert.assertEquals(3, terminal.col);
-        Assert.assertEquals("xyzabc    ", new String(terminal.buffer[0]));
+        assertEquals(0, terminal.row);
+        assertEquals(3, terminal.col);
+        assertEquals("xyzabc    ", new String(terminal.buffer[0]));
     }
 
     @Test
@@ -159,25 +160,25 @@ public class TerminalTest {
         terminal.putChar('a');
         terminal.putChar('b');
         terminal.putChar('c');
-        Assert.assertEquals(0, terminal.row);
-        Assert.assertEquals(3, terminal.col);
-        Assert.assertEquals("abc       ", new String(terminal.buffer[0]));
+        assertEquals(0, terminal.row);
+        assertEquals(3, terminal.col);
+        assertEquals("abc       ", new String(terminal.buffer[0]));
 
         // PutChar on non-empty line
         terminal.moveToBeginningOfLine();
         terminal.putChar('x');
         terminal.putChar('y');
         terminal.putChar('z');
-        Assert.assertEquals(0, terminal.row);
-        Assert.assertEquals(3, terminal.col);
-        Assert.assertEquals("xyz       ", new String(terminal.buffer[0]));
+        assertEquals(0, terminal.row);
+        assertEquals(3, terminal.col);
+        assertEquals("xyz       ", new String(terminal.buffer[0]));
     }
 
     @Test
     public void testPutCharAtCurrentPosition() throws Exception {
         terminal.moveTo(1, 2);
         terminal.putCharAtCurrentPosition('z');
-        Assert.assertEquals('z', terminal.buffer[2][1]);
+        assertEquals('z', terminal.buffer[2][1]);
     }
 
     @Test
@@ -187,7 +188,7 @@ public class TerminalTest {
         terminal.col = 5;
         terminal.buffer[terminal.row] = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
         terminal.shiftRight();
-        Assertions.assertThat(terminal.buffer[0]).isEqualTo(new char[]{'a', 'b', 'c', 'd', 'e', 'e', 'f', 'g', 'h', 'i'});
+        assertThat(terminal.buffer[0]).isEqualTo(new char[]{'a', 'b', 'c', 'd', 'e', 'e', 'f', 'g', 'h', 'i'});
     }
 
 }

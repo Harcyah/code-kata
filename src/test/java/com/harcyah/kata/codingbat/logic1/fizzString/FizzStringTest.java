@@ -1,29 +1,30 @@
 package com.harcyah.kata.codingbat.logic1.fizzString;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class FizzStringTest {
 
     @Test
     public void testFizzString() {
         FizzString fizzString = new FizzString();
-        Assert.assertEquals("Fizz", fizzString.fizzString("fig"));
-        Assert.assertEquals("Buzz", fizzString.fizzString("dib"));
-        Assert.assertEquals("FizzBuzz", fizzString.fizzString("fib"));
-        Assert.assertEquals("abc", fizzString.fizzString("abc"));
-        Assert.assertEquals("Fizz", fizzString.fizzString("fooo"));
-        Assert.assertEquals("booo", fizzString.fizzString("booo"));
-        Assert.assertEquals("Buzz", fizzString.fizzString("ooob"));
-        Assert.assertEquals("FizzBuzz", fizzString.fizzString("fooob"));
-        Assert.assertEquals("Fizz", fizzString.fizzString("f"));
-        Assert.assertEquals("Buzz", fizzString.fizzString("b"));
-        Assert.assertEquals("Buzz", fizzString.fizzString("abcb"));
-        Assert.assertEquals("Hello", fizzString.fizzString("Hello"));
-        Assert.assertEquals("Buzz", fizzString.fizzString("Hellob"));
-        Assert.assertEquals("af", fizzString.fizzString("af"));
-        Assert.assertEquals("bf", fizzString.fizzString("bf"));
-        Assert.assertEquals("FizzBuzz", fizzString.fizzString("fb"));
+        assertEquals("Fizz", fizzString.fizzString("fig"));
+        assertEquals("Buzz", fizzString.fizzString("dib"));
+        assertEquals("FizzBuzz", fizzString.fizzString("fib"));
+        assertEquals("abc", fizzString.fizzString("abc"));
+        assertEquals("Fizz", fizzString.fizzString("fooo"));
+        assertEquals("booo", fizzString.fizzString("booo"));
+        assertEquals("Buzz", fizzString.fizzString("ooob"));
+        assertEquals("FizzBuzz", fizzString.fizzString("fooob"));
+        assertEquals("Fizz", fizzString.fizzString("f"));
+        assertEquals("Buzz", fizzString.fizzString("b"));
+        assertEquals("Buzz", fizzString.fizzString("abcb"));
+        assertEquals("Hello", fizzString.fizzString("Hello"));
+        assertEquals("Buzz", fizzString.fizzString("Hellob"));
+        assertEquals("af", fizzString.fizzString("af"));
+        assertEquals("bf", fizzString.fizzString("bf"));
+        assertEquals("FizzBuzz", fizzString.fizzString("fb"));
     }
 
 }

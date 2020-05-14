@@ -31,5 +31,4 @@ public class Prime {
         return true;
     }
 
-
 }

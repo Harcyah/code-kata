@@ -1,6 +1,12 @@
 package com.harcyah.kata.exercism.allergies;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum Allergen {
+
     EGGS(1),
     PEANUTS(2),
     SHELLFISH(4),
@@ -12,11 +18,4 @@ public enum Allergen {
 
     private final int score;
 
-    Allergen(int score) {
-        this.score = score;
-    }
-
-    public int getScore() {
-        return score;
-    }
 }

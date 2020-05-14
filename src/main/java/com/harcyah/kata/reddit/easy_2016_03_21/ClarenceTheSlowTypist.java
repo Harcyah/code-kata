@@ -2,7 +2,7 @@ package com.harcyah.kata.reddit.easy_2016_03_21;
 
 import com.google.common.collect.Maps;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.Map;
 
 public class ClarenceTheSlowTypist {

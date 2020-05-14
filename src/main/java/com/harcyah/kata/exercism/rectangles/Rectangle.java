@@ -35,4 +35,5 @@ class Rectangle {
         result = 31 * result + d.hashCode();
         return result;
     }
+
 }

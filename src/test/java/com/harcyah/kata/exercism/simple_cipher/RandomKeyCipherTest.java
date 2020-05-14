@@ -54,4 +54,5 @@ public class RandomKeyCipherTest {
 
         assertEquals(plainText, cipher.decode(cipher.encode(plainText)));
     }
+
 }

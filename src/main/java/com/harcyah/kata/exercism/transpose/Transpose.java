@@ -18,8 +18,8 @@ public class Transpose {
 
     private char[][] toCharArray(String[] lines, int width, int height) {
         char[][] array = new char[width][height];
-        for (int x=0; x<width; x++) {
-            for (int y=0; y<height; y++) {
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
                 char c = tryGet(lines, x, y);
                 array[x][y] = c;
             }

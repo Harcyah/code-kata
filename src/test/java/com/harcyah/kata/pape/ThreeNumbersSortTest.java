@@ -1,7 +1,8 @@
 package com.harcyah.kata.pape;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ThreeNumbersSortTest {
 
@@ -12,7 +13,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {10, 20, 30};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
     @Test
@@ -20,7 +21,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {10, 30, 20};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
     @Test
@@ -28,7 +29,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {20, 10, 30};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
     @Test
@@ -36,7 +37,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {20, 30, 10};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
     @Test
@@ -44,7 +45,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {30, 10, 20};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
     @Test
@@ -52,7 +53,7 @@ public class ThreeNumbersSortTest {
         ThreeNumbersSort tns = new ThreeNumbersSort();
         int[] abc = {30, 20, 10};
         tns.sort(abc);
-        Assertions.assertThat(abc).isEqualTo(EXPECTED);
+        assertThat(abc).isEqualTo(EXPECTED);
     }
 
 }

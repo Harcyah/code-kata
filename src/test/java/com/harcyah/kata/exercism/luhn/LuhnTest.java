@@ -83,4 +83,5 @@ public class LuhnTest {
 
         assertEquals(expectedOutput, Luhn.create(837263756));
     }
+
 }

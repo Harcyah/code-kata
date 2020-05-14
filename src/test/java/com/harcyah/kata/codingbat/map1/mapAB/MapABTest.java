@@ -1,23 +1,29 @@
-package com.harcyah.kata.codingbat.map1.mapAB;
+package com.harcyah.kata.codingbat.map1.mapAb;
 
-import org.assertj.core.api.Assertions;
+import com.harcyah.kata.codingbat.MapBuilder;
 import org.junit.Test;
 
-import com.google.common.collect.ImmutableMap;
-import com.harcyah.kata.codingbat.MapBuilder;
+import java.util.Map;
 
-public class MapABTest {
+import static org.assertj.core.api.Assertions.assertThat;
 
-	@Test
-	public void testMapAB() {
-		MapAB mapAB = new MapAB();
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("b", "There", "a", "Hi"))).isEqualTo(ImmutableMap.of("b", "There", "a", "Hi", "ab", "HiThere"));
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("a", "Hi"))).isEqualTo(ImmutableMap.of("a", "Hi"));
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("b", "There"))).isEqualTo(ImmutableMap.of("b", "There"));
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("c", "meh"))).isEqualTo(ImmutableMap.of("c", "meh"));
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("b", "bbb", "c", "ccc", "a", "aaa", "ab", "nope")))
-			.isEqualTo(ImmutableMap.of("b", "bbb", "c", "ccc", "a", "aaa", "ab", "aaabbb"));
-		Assertions.assertThat(mapAB.mapAB(MapBuilder.build("b", "bbb", "c", "ccc", "ab", "nope"))).isEqualTo(ImmutableMap.of("b", "bbb", "c", "ccc", "ab", "nope"));
-	}
+public class MapAbTest {
+
+    @Test
+    public void testMapAB() {
+        MapAb sut = new MapAb();
+        assertThat(sut.mapAb(MapBuilder.build("b", "There", "a", "Hi")))
+            .isEqualTo(Map.of("b", "There", "a", "Hi", "ab", "HiThere"));
+        assertThat(sut.mapAb(MapBuilder.build("a", "Hi")))
+            .isEqualTo(Map.of("a", "Hi"));
+        assertThat(sut.mapAb(MapBuilder.build("b", "There")))
+            .isEqualTo(Map.of("b", "There"));
+        assertThat(sut.mapAb(MapBuilder.build("c", "meh")))
+            .isEqualTo(Map.of("c", "meh"));
+        assertThat(sut.mapAb(MapBuilder.build("b", "bbb", "c", "ccc", "a", "aaa", "ab", "nope")))
+            .isEqualTo(Map.of("b", "bbb", "c", "ccc", "a", "aaa", "ab", "aaabbb"));
+        assertThat(sut.mapAb(MapBuilder.build("b", "bbb", "c", "ccc", "ab", "nope")))
+            .isEqualTo(Map.of("b", "bbb", "c", "ccc", "ab", "nope"));
+    }
 
 }

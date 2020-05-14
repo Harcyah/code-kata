@@ -3,16 +3,19 @@ package com.harcyah.kata.misc.version;
 import com.google.common.base.Strings;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Getter
+@EqualsAndHashCode
 public class VersionPart implements Comparable<VersionPart> {
 
     public static final VersionPart UNKNOWN = new VersionPart();
 
-    private final static Table<VersionType, VersionType, VersionPartComparator> COMPARATORS = HashBasedTable.create();
+    private static final Table<VersionType, VersionType, VersionPartComparator> COMPARATORS = HashBasedTable.create();
 
     private static final Pattern NUMBER_PATTERN = Pattern.compile("(\\d+)");
     private static final Pattern ALPHANUMERICAL_PATTERN = Pattern.compile("(?<num>\\d+)(?<txt>\\w*)");
@@ -88,38 +91,9 @@ public class VersionPart implements Comparable<VersionPart> {
             return 1;
         }
 
-        VersionType thisType = this.type;
-        VersionType thatType = that.type;
-
-        VersionPartComparator comparator = COMPARATORS.get(thisType, thatType);
+        VersionPartComparator comparator = COMPARATORS.get(this.type, that.type);
 
         return comparator.compare(this, that);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        VersionPart that = (VersionPart) o;
-        return Objects.equals(number, that.number) &&
-            Objects.equals(string, that.string) &&
-            Objects.equals(raw, that.raw);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(number, string, raw);
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public String getString() {
-        return string;
-    }
-
-    public String getRaw() {
-        return raw;
-    }
 }

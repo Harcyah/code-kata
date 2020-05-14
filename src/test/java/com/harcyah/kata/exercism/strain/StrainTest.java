@@ -1,11 +1,12 @@
 package com.harcyah.kata.exercism.strain;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class StrainTest {
 
@@ -13,111 +14,111 @@ public class StrainTest {
     public void emptyKeep() {
         List<Integer> input = new LinkedList<>();
         List<Integer> expectedOutput = new LinkedList<>();
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
+        assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
     }
 
     @Test
     public void keepEverything() {
-        List<Integer> input = Arrays.asList(1, 2, 3);
-        List<Integer> expectedOutput = Arrays.asList(1, 2, 3);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
+        List<Integer> input = List.of(1, 2, 3);
+        List<Integer> expectedOutput = List.of(1, 2, 3);
+        assertEquals(expectedOutput, Strain.keep(input, x -> x < 10));
     }
 
     @Test
     public void keepFirstAndLast() {
-        List<Integer> input = Arrays.asList(1, 2, 3);
-        List<Integer> expectedOutput = Arrays.asList(1, 3);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 != 0));
+        List<Integer> input = List.of(1, 2, 3);
+        List<Integer> expectedOutput = List.of(1, 3);
+        assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 != 0));
     }
 
     @Test
     public void keepNeitherFirstNorLast() {
-        List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> expectedOutput = Arrays.asList(2, 4);
-        Assert.assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 == 0));
+        List<Integer> input = List.of(1, 2, 3, 4, 5);
+        List<Integer> expectedOutput = List.of(2, 4);
+        assertEquals(expectedOutput, Strain.keep(input, x -> x % 2 == 0));
     }
 
     @Test
-    public void KeepStrings() {
-        List<String> words = Arrays
-                .asList("apple zebra banana zombies cherimoya zelot".split(" "));
-        List<String> expectedOutput = Arrays.asList("zebra", "zombies", "zelot");
-        Assert.assertEquals(expectedOutput,
-                Strain.keep(words, x -> x.startsWith("z")));
+    public void keepStrings() {
+        List<String> words = List.of("apple zebra banana zombies cherimoya zelot".split(" "));
+        List<String> expectedOutput = List.of("zebra", "zombies", "zelot");
+        assertEquals(expectedOutput,
+            Strain.keep(words, x -> x.startsWith("z")));
     }
 
     @Test
-    public void KeepArrays() {
-        List<List<Integer>> actual = Arrays.asList(
-                Arrays.asList(1, 2, 3),
-                Arrays.asList(5, 5, 5),
-                Arrays.asList(5, 1, 2),
-                Arrays.asList(2, 1, 2),
-                Arrays.asList(1, 5, 2),
-                Arrays.asList(2, 2, 1),
-                Arrays.asList(1, 2, 5));
-        List<List<Integer>> expectedOutput = Arrays.asList(
-                Arrays.asList(5, 5, 5),
-                Arrays.asList(5, 1, 2),
-                Arrays.asList(1, 5, 2),
-                Arrays.asList(1, 2, 5));
-        Assert.assertEquals(expectedOutput,
-                Strain.keep(actual, col -> col.contains(5)));
+    public void keepArrays() {
+        List<List<Integer>> actual = List.of(
+            List.of(1, 2, 3),
+            List.of(5, 5, 5),
+            List.of(5, 1, 2),
+            List.of(2, 1, 2),
+            List.of(1, 5, 2),
+            List.of(2, 2, 1),
+            List.of(1, 2, 5));
+        List<List<Integer>> expectedOutput = List.of(
+            List.of(5, 5, 5),
+            List.of(5, 1, 2),
+            List.of(1, 5, 2),
+            List.of(1, 2, 5));
+        assertEquals(expectedOutput,
+            Strain.keep(actual, col -> col.contains(5)));
     }
 
     @Test
     public void emptyDiscard() {
         List<Integer> input = new LinkedList<>();
         List<Integer> expectedOutput = new LinkedList<>();
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x < 10));
+        assertEquals(expectedOutput, Strain.discard(input, x -> x < 10));
     }
 
     @Test
     public void discardNothing() {
-        List<Integer> input = Arrays.asList(1, 2, 3);
-        List<Integer> expectedOutput = Arrays.asList(1, 2, 3);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x > 10));
+        List<Integer> input = List.of(1, 2, 3);
+        List<Integer> expectedOutput = List.of(1, 2, 3);
+        assertEquals(expectedOutput, Strain.discard(input, x -> x > 10));
     }
 
     @Test
     public void discardFirstAndLast() {
-        List<Integer> input = Arrays.asList(1, 2, 3);
-        List<Integer> expectedOutput = Arrays.asList(2);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 != 0));
+        List<Integer> input = List.of(1, 2, 3);
+        List<Integer> expectedOutput = List.of(2);
+        assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 != 0));
 
     }
 
     @Test
     public void discardNeitherFirstNorLast() {
-        List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> expectedOutput = Arrays.asList(1, 3, 5);
-        Assert.assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 == 0));
+        List<Integer> input = List.of(1, 2, 3, 4, 5);
+        List<Integer> expectedOutput = List.of(1, 3, 5);
+        assertEquals(expectedOutput, Strain.discard(input, x -> x % 2 == 0));
     }
 
     @Test
     public void discardStrings() {
         List<String> words = Arrays
-                .asList("apple zebra banana zombies cherimoya zelot".split(" "));
-        List<String> expectedOutput = Arrays.asList("apple", "banana", "cherimoya");
-        Assert.assertEquals(expectedOutput,
-                Strain.discard(words, x -> x.startsWith("z")));
+            .asList("apple zebra banana zombies cherimoya zelot".split(" "));
+        List<String> expectedOutput = List.of("apple", "banana", "cherimoya");
+        assertEquals(expectedOutput,
+            Strain.discard(words, x -> x.startsWith("z")));
     }
 
     @Test
     public void discardArrays() {
-        List<List<Integer>> actual = Arrays.asList(
-                Arrays.asList(1, 2, 3),
-                Arrays.asList(5, 5, 5),
-                Arrays.asList(5, 1, 2),
-                Arrays.asList(2, 1, 2),
-                Arrays.asList(1, 5, 2),
-                Arrays.asList(2, 2, 1),
-                Arrays.asList(1, 2, 5));
-        List<List<Integer>> expectedOutput = Arrays.asList(
-                Arrays.asList(1, 2, 3),
-                Arrays.asList(2, 1, 2),
-                Arrays.asList(2, 2, 1));
-        Assert.assertEquals(expectedOutput,
-                Strain.discard(actual, col -> col.contains(5)));
+        List<List<Integer>> actual = List.of(
+            List.of(1, 2, 3),
+            List.of(5, 5, 5),
+            List.of(5, 1, 2),
+            List.of(2, 1, 2),
+            List.of(1, 5, 2),
+            List.of(2, 2, 1),
+            List.of(1, 2, 5));
+        List<List<Integer>> expectedOutput = List.of(
+            List.of(1, 2, 3),
+            List.of(2, 1, 2),
+            List.of(2, 2, 1));
+        assertEquals(expectedOutput,
+            Strain.discard(actual, col -> col.contains(5)));
     }
+
 }

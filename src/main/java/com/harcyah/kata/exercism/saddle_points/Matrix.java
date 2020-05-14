@@ -26,8 +26,8 @@ public class Matrix {
 
     public Set<MatrixCoordinate> getSaddlePoints() {
         Set<MatrixCoordinate> coords = new HashSet<>();
-        for (int x=0; x<points.length; x++) {
-            for (int y=0; y<points[x].length; y++) {
+        for (int x = 0; x < points.length; x++) {
+            for (int y = 0; y < points[x].length; y++) {
                 int v = points[x][y];
                 if (isGreaterInRow(v, y) && isLesserInCol(v, x)) {
                     coords.add(new MatrixCoordinate(x, y));
@@ -38,7 +38,7 @@ public class Matrix {
     }
 
     private boolean isLesserInCol(int v, int x) {
-        for (int i=0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (points[x][i] > v) {
                 return false;
             }
@@ -47,7 +47,7 @@ public class Matrix {
     }
 
     private boolean isGreaterInRow(int v, int y) {
-        for (int i=0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (points[i][y] < v) {
                 return false;
             }

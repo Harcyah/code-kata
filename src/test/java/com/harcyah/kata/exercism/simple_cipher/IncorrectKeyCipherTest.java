@@ -28,4 +28,5 @@ public class IncorrectKeyCipherTest {
     public void cipherThrowsWithEmptyKey() {
         new Cipher("");
     }
+
 }

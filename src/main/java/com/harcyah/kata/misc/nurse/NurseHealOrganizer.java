@@ -1,11 +1,13 @@
 package com.harcyah.kata.misc.nurse;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class NurseHealOrganizer {
 
     private static final int GOAL_COST = 25000;
@@ -15,30 +17,28 @@ public class NurseHealOrganizer {
     public static void main(String[] args) {
 
         // Find all heals for whom cost sum equals GOAL
-        List<Schedule> schedules = new ArrayList<Schedule>();
+        List<Schedule> schedules = new ArrayList<>();
         findAllCombinationsRecursive(new Schedule(), 0, GOAL_COST, schedules);
 
         // Keep only those matching time span
-        List<Schedule> valid = new ArrayList<Schedule>();
+        List<Schedule> valid = new ArrayList<>();
         for (Schedule schedule : schedules) {
             long duration = schedule.getTotalDuration(AVERAGE_TIME_BETWEEN_SICK_BOYS);
             if (duration <= GOAL_DURATION) {
                 valid.add(schedule);
             }
         }
-        System.out.println("Found " + valid.size() + " schedules");
-        System.out.println();
+        log.info("Found {} schedules", valid.size());
 
         // Print
         for (Schedule schedule : valid) {
-            System.out.println(schedule);
+            log.info("Schedule: {}", schedule);
             long durationMinutes = schedule.getTotalDuration(AVERAGE_TIME_BETWEEN_SICK_BOYS);
             long durationMilliseconds = TimeUnit.MINUTES.toMillis(durationMinutes);
             String duration = DurationFormatUtils.formatDuration(durationMilliseconds, "HHhmm");
-            System.out.println("Duration : " + duration);
-            int cost = Math.round(schedule.getTotalCost() / 100);
-            System.out.println("Cost     : " + cost + "euros");
-            System.out.println();
+            log.info("Duration : {}", duration);
+            int cost = Math.round(schedule.getTotalCost() / 100.f);
+            log.info("Cost     : {} euros", cost);
         }
     }
 

@@ -8,10 +8,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LetterByLetterTest {
 
-    private LetterByLetter changer = new LetterByLetter();
+    private final LetterByLetter changer = new LetterByLetter();
 
     @Test
-    public void testChange_Floor_To_Brake() throws Exception {
+    public void testChangeFloorToBrake() {
         List<String> changes = changer.change("floor", "brake");
 
         assertThat(changes).containsExactly(
@@ -25,7 +25,7 @@ public class LetterByLetterTest {
     }
 
     @Test
-    public void testChange_Wood_to_Book() throws Exception {
+    public void testChangeWoodToBook() {
         List<String> changes = changer.change("wood", "book");
 
         assertThat(changes).containsExactly(
@@ -36,7 +36,7 @@ public class LetterByLetterTest {
     }
 
     @Test
-    public void testChange_AFalltoTheFloor_to_BrakingTheDoorIn() throws Exception {
+    public void testChangeAFallToTheFloorToBrakingTheDoorIn() {
         List<String> changes = changer.change("a fall to the floor", "braking the door in");
 
         assertThat(changes).containsExactly(

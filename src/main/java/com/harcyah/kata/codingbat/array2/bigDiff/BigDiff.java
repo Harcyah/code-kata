@@ -12,7 +12,5 @@ public class BigDiff {
         return max - min;
     }
 
-
 }
-
 

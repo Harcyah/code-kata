@@ -1,14 +1,13 @@
 package com.harcyah.kata.exercism.prime_factors;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PrimeFactors {
 
     public static List<Long> getForNumber(long input) {
         if (input == 1) {
-            return Arrays.asList();
+            return List.of();
         }
 
         List<Long> factors = new ArrayList<>();

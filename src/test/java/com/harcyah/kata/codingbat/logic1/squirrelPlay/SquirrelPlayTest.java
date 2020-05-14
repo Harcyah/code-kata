@@ -1,26 +1,28 @@
 package com.harcyah.kata.codingbat.logic1.squirrelPlay;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class SquirrelPlayTest {
 
     @Test
     public void testSquirrelPlay() {
         SquirrelPlay squirrelPlay = new SquirrelPlay();
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(70, false));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(95, false));
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(95, true));
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(90, false));
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(90, true));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(50, false));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(50, true));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(100, false));
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(100, true));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(105, true));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(59, false));
-        Assert.assertEquals(false, squirrelPlay.squirrelPlay(59, true));
-        Assert.assertEquals(true, squirrelPlay.squirrelPlay(60, false));
+        assertTrue(squirrelPlay.squirrelPlay(70, false));
+        assertFalse(squirrelPlay.squirrelPlay(95, false));
+        assertTrue(squirrelPlay.squirrelPlay(95, true));
+        assertTrue(squirrelPlay.squirrelPlay(90, false));
+        assertTrue(squirrelPlay.squirrelPlay(90, true));
+        assertFalse(squirrelPlay.squirrelPlay(50, false));
+        assertFalse(squirrelPlay.squirrelPlay(50, true));
+        assertFalse(squirrelPlay.squirrelPlay(100, false));
+        assertTrue(squirrelPlay.squirrelPlay(100, true));
+        assertFalse(squirrelPlay.squirrelPlay(105, true));
+        assertFalse(squirrelPlay.squirrelPlay(59, false));
+        assertFalse(squirrelPlay.squirrelPlay(59, true));
+        assertTrue(squirrelPlay.squirrelPlay(60, false));
     }
 
 }

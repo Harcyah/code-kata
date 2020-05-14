@@ -1,18 +1,17 @@
 package com.harcyah.kata.exercism.nucleotide_count;
 
+import lombok.AllArgsConstructor;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DNA {
+@AllArgsConstructor
+public class Dna {
 
     private static final char[] VALID_NUCLEOTIDES = new char[]{'A', 'C', 'G', 'T'};
 
     protected String string;
-
-    public DNA(String string) {
-        this.string = string;
-    }
 
     public int count(char c) {
         if (Arrays.binarySearch(VALID_NUCLEOTIDES, c) < 0) {
@@ -28,6 +27,5 @@ public class DNA {
         }
         return counts;
     }
-
 
 }

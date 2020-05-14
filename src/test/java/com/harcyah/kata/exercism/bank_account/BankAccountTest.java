@@ -186,4 +186,5 @@ public class BankAccountTest {
 
         assertEquals(1000, bankAccount.getBalance());
     }
+
 }

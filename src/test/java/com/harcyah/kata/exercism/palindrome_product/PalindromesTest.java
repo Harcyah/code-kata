@@ -3,7 +3,6 @@ package com.harcyah.kata.exercism.palindrome_product;
 import com.harcyah.kata.exercism.palindrome_products.Palindromes;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.SortedMap;
@@ -18,9 +17,9 @@ public class PalindromesTest {
     @Test
     public void largestPalindromeFromSingleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
-                Arrays.asList(
-                        Arrays.asList(1, 9),
-                        Arrays.asList(3, 3)
+                List.of(
+                        List.of(1, 9),
+                        List.of(3, 3)
                 )
         );
         final long expectedValue = 9L;
@@ -46,8 +45,8 @@ public class PalindromesTest {
     @Test
     public void largestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
-                Arrays.asList(
-                        Arrays.asList(91, 99)
+                List.of(
+                        List.of(91, 99)
                 )
         );
         final long expectedValue = 9009L;
@@ -75,8 +74,8 @@ public class PalindromesTest {
     @Test
     public void smallestPalindromeFromDoubleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
-                Arrays.asList(
-                        Arrays.asList(11, 11)
+                List.of(
+                        List.of(11, 11)
                 )
         );
         final long expectedValue = 121L;
@@ -104,8 +103,8 @@ public class PalindromesTest {
     @Test
     public void largestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
-                Arrays.asList(
-                        Arrays.asList(913, 993)
+                List.of(
+                        List.of(913, 993)
                 )
         );
         final long expectedValue = 906609L;
@@ -133,8 +132,8 @@ public class PalindromesTest {
     @Test
     public void smallestPalindromeFromTripleDigitFactors() {
         final List<List<Integer>> expected = Collections.unmodifiableList(
-                Arrays.asList(
-                        Arrays.asList(101, 101)
+                List.of(
+                        List.of(101, 101)
                 )
         );
         final long expectedValue = 10201L;

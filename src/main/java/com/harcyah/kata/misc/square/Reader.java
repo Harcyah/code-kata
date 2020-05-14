@@ -23,4 +23,5 @@ public class Reader {
         }
         return points;
     }
+
 }

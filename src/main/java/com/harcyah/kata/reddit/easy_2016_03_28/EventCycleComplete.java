@@ -4,7 +4,7 @@ public class EventCycleComplete implements Event {
 
     @Override
     public void apply(GarageDoor door) {
-        door.state.onCycleComplete(door);
+        door.getState().onCycleComplete(door);
     }
 
     @Override

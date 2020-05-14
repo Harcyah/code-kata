@@ -1,25 +1,26 @@
 package com.harcyah.kata.codingbat.warmup1.startOz;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class StartOzTest {
 
     @Test
     public void testStartOz() {
         StartOz startOz = new StartOz();
-        Assert.assertEquals("oz", startOz.startOz("ozymandias"));
-        Assert.assertEquals("z", startOz.startOz("bzoo"));
-        Assert.assertEquals("o", startOz.startOz("oxx"));
-        Assert.assertEquals("oz", startOz.startOz("oz"));
-        Assert.assertEquals("o", startOz.startOz("ounce"));
-        Assert.assertEquals("o", startOz.startOz("o"));
-        Assert.assertEquals("", startOz.startOz("abc"));
-        Assert.assertEquals("", startOz.startOz(""));
-        Assert.assertEquals("", startOz.startOz("zoo"));
-        Assert.assertEquals("z", startOz.startOz("aztec"));
-        Assert.assertEquals("z", startOz.startOz("zzzz"));
-        Assert.assertEquals("oz", startOz.startOz("oznic"));
+        assertEquals("oz", startOz.startOz("ozymandias"));
+        assertEquals("z", startOz.startOz("bzoo"));
+        assertEquals("o", startOz.startOz("oxx"));
+        assertEquals("oz", startOz.startOz("oz"));
+        assertEquals("o", startOz.startOz("ounce"));
+        assertEquals("o", startOz.startOz("o"));
+        assertEquals("", startOz.startOz("abc"));
+        assertEquals("", startOz.startOz(""));
+        assertEquals("", startOz.startOz("zoo"));
+        assertEquals("z", startOz.startOz("aztec"));
+        assertEquals("z", startOz.startOz("zzzz"));
+        assertEquals("oz", startOz.startOz("oznic"));
     }
 
 }

@@ -1,7 +1,8 @@
 package com.harcyah.kata.reddit.easy_2016_02_16;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AtbashCipherTest {
 
@@ -9,10 +10,10 @@ public class AtbashCipherTest {
 
     @Test
     public void testCipher() {
-        Assert.assertEquals("ullyzi", cipher.encode("foobar"));
-        Assert.assertEquals("draziw", cipher.encode("wizard"));
-        Assert.assertEquals("/i/wzrobkiltiznnvi", cipher.encode("/r/dailyprogrammer"));
-        Assert.assertEquals("this is an example of the atbash cipher", cipher.encode("gsrh rh zm vcznkov lu gsv zgyzhs xrksvi"));
+        assertEquals("ullyzi", cipher.encode("foobar"));
+        assertEquals("draziw", cipher.encode("wizard"));
+        assertEquals("/i/wzrobkiltiznnvi", cipher.encode("/r/dailyprogrammer"));
+        assertEquals("this is an example of the atbash cipher", cipher.encode("gsrh rh zm vcznkov lu gsv zgyzhs xrksvi"));
     }
 
 }

@@ -29,4 +29,5 @@ public class PrimeTest {
     public void testUndefinedPrime() {
         Prime.nth(0);
     }
+
 }

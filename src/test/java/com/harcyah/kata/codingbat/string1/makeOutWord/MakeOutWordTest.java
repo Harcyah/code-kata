@@ -1,18 +1,19 @@
 package com.harcyah.kata.codingbat.string1.makeOutWord;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MakeOutWordTest {
 
     @Test
     public void testMakeOutWord() {
         MakeOutWord makeOutWord = new MakeOutWord();
-        Assert.assertEquals("<<Yay>>", makeOutWord.makeOutWord("<<>>", "Yay"));
-        Assert.assertEquals("<<WooHoo>>", makeOutWord.makeOutWord("<<>>", "WooHoo"));
-        Assert.assertEquals("[[word]]", makeOutWord.makeOutWord("[[]]", "word"));
-        Assert.assertEquals("HHHellooo", makeOutWord.makeOutWord("HHoo", "Hello"));
-        Assert.assertEquals("abYAYyz", makeOutWord.makeOutWord("abyz", "YAY"));
+        assertEquals("<<Yay>>", makeOutWord.makeOutWord("<<>>", "Yay"));
+        assertEquals("<<WooHoo>>", makeOutWord.makeOutWord("<<>>", "WooHoo"));
+        assertEquals("[[word]]", makeOutWord.makeOutWord("[[]]", "word"));
+        assertEquals("HHHellooo", makeOutWord.makeOutWord("HHoo", "Hello"));
+        assertEquals("abYAYyz", makeOutWord.makeOutWord("abyz", "YAY"));
     }
 
 }

@@ -12,7 +12,7 @@ public class PlayingWithLightSwitches {
     public int apply(int lights, Iterable<Range> ranges) {
         BitSet bitSet = new BitSet(lights);
         for (Range range : ranges) {
-            bitSet.flip(range.start, range.end + 1);
+            bitSet.flip(range.getStart(), range.getEnd() + 1);
         }
         return bitSet.cardinality();
     }

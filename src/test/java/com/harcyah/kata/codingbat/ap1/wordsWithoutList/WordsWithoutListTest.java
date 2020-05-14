@@ -1,29 +1,21 @@
 package com.harcyah.kata.codingbat.ap1.wordsWithoutList;
 
-import com.google.common.collect.ImmutableList;
-import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class WordsWithoutListTest {
 
     @Test
     public void testWordsWithoutList() {
         WordsWithoutList wordsWithoutList = new WordsWithoutList();
-        Assert.assertTrue(
-                ImmutableList.of("bb", "ccc").equals(
-                        wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 1)));
-        Assert.assertTrue(
-                ImmutableList.of("a", "bb", "b").equals(
-                        wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 3)));
-        Assert.assertTrue(
-                ImmutableList.of("a", "bb", "b", "ccc").equals(
-                        wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 4)));
-        Assert.assertTrue(
-                ImmutableList.of("xx", "yyy", "yy").equals(
-                        wordsWithoutList.wordsWithoutList(new String[]{"xx", "yyy", "x", "yy", "z"}, 1)));
-        Assert.assertTrue(
-                ImmutableList.of("yyy", "x", "z").equals(
-                        wordsWithoutList.wordsWithoutList(new String[]{"xx", "yyy", "x", "yy", "z"}, 2)));
+        assertEquals(List.of("bb", "ccc"), wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 1));
+        assertEquals(List.of("a", "bb", "b"), wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 3));
+        assertEquals(List.of("a", "bb", "b", "ccc"), wordsWithoutList.wordsWithoutList(new String[]{"a", "bb", "b", "ccc"}, 4));
+        assertEquals(List.of("xx", "yyy", "yy"), wordsWithoutList.wordsWithoutList(new String[]{"xx", "yyy", "x", "yy", "z"}, 1));
+        assertEquals(List.of("yyy", "x", "z"), wordsWithoutList.wordsWithoutList(new String[]{"xx", "yyy", "x", "yy", "z"}, 2));
     }
 
 }

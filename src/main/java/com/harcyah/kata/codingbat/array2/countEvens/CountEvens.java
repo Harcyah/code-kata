@@ -12,7 +12,5 @@ public class CountEvens {
         return c;
     }
 
-
 }
-
 

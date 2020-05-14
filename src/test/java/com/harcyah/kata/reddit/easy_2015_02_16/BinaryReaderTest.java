@@ -1,7 +1,8 @@
 package com.harcyah.kata.reddit.easy_2015_02_16;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class BinaryReaderTest {
 
@@ -24,19 +25,19 @@ public class BinaryReaderTest {
     @Test
     public void testHelloWorld() {
         BinaryReader br = new BinaryReader();
-        Assert.assertEquals("Hello World", br.read(HELLO_WORLD));
+        assertEquals("Hello World", br.read(HELLO_WORLD));
     }
 
     @Test
     public void testUnknownValue1() {
         BinaryReader br = new BinaryReader();
-        Assert.assertEquals("please talk to me", br.read(TEST_1));
+        assertEquals("please talk to me", br.read(TEST_1));
     }
 
     @Test
     public void testUnknownValue2() {
         BinaryReader br = new BinaryReader();
-        Assert.assertEquals("life right now is lonely", br.read(TEST_2));
+        assertEquals("life right now is lonely", br.read(TEST_2));
     }
 
 }

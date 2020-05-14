@@ -1,10 +1,11 @@
 package com.harcyah.kata.reddit.easy_2016_03_28;
 
 import com.google.common.collect.ImmutableList;
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GarageDoorTest {
 
@@ -22,7 +23,7 @@ public class GarageDoorTest {
 
         GarageDoor door = new GarageDoor();
         door.process(events);
-        Assertions.assertThat(door.state).isEqualTo(State.CLOSED);
+        assertThat(door.getState()).isEqualTo(State.CLOSED);
     }
 
 }

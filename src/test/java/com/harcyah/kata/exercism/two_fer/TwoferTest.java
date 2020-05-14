@@ -23,7 +23,7 @@ public class TwoferTest {
     }
 
     @Test
-    public void aNameGiven() {
+    public void withNameGiven() {
         String input = "Alice";
         String expected = "One for Alice, one for me.";
 
@@ -37,4 +37,5 @@ public class TwoferTest {
 
         assertEquals(expected, twofer.twofer(input));
     }
+
 }

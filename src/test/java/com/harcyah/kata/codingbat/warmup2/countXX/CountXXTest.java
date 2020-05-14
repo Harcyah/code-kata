@@ -1,22 +1,23 @@
 package com.harcyah.kata.codingbat.warmup2.countXX;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class CountXXTest {
+import static org.junit.Assert.assertEquals;
+
+public class CountXxTest {
 
     @Test
-    public void testCountXX() {
-        CountXX countXX = new CountXX();
-        Assert.assertEquals(1, countXX.countXX("abcxx"));
-        Assert.assertEquals(2, countXX.countXX("xxx"));
-        Assert.assertEquals(3, countXX.countXX("xxxx"));
-        Assert.assertEquals(0, countXX.countXX("abc"));
-        Assert.assertEquals(0, countXX.countXX("Hello there"));
-        Assert.assertEquals(2, countXX.countXX("Hexxo thxxe"));
-        Assert.assertEquals(0, countXX.countXX(""));
-        Assert.assertEquals(0, countXX.countXX("Kittens"));
-        Assert.assertEquals(2, countXX.countXX("Kittensxxx"));
+    public void testCount() {
+        CountXx sut = new CountXx();
+        assertEquals(1, sut.count("abcxx"));
+        assertEquals(2, sut.count("xxx"));
+        assertEquals(3, sut.count("xxxx"));
+        assertEquals(0, sut.count("abc"));
+        assertEquals(0, sut.count("Hello there"));
+        assertEquals(2, sut.count("Hexxo thxxe"));
+        assertEquals(0, sut.count(""));
+        assertEquals(0, sut.count("Kittens"));
+        assertEquals(2, sut.count("Kittensxxx"));
     }
 
 }

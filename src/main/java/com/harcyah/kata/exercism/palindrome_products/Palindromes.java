@@ -9,8 +9,8 @@ public class Palindromes {
 
     public static class PalindromeListBuilder {
 
-        int minFactor = 1;
-        int maxFactor = Integer.MAX_VALUE;
+        private int minFactor = 1;
+        private int maxFactor = Integer.MAX_VALUE;
 
         public PalindromeListBuilder withFactorsLessThanOrEqualTo(int maxFactor) {
             this.maxFactor = maxFactor;
@@ -24,8 +24,8 @@ public class Palindromes {
 
         public SortedMap<Long, List<List<Integer>>> build() {
             SortedMap<Long, List<List<Integer>>> map = new TreeMap<>();
-            for (int x=minFactor; x<=maxFactor; x++) {
-                for (int y=x; y<=maxFactor; y++) {
+            for (int x = minFactor; x <= maxFactor; x++) {
+                for (int y = x; y <= maxFactor; y++) {
                     long product = x * y;
                     if (isPalindromic(product)) {
                         List<List<Integer>> values = map.get(product);
@@ -48,7 +48,7 @@ public class Palindromes {
 
         private boolean isPalindromic(long product) {
             String ltr = String.valueOf(product);
-            for (int i=0; i<ltr.length() / 2; i++) {
+            for (int i = 0; i < ltr.length() / 2; i++) {
                 char c = ltr.charAt(i);
                 char b = ltr.charAt(ltr.length() - 1 - i);
                 if (c != b) {

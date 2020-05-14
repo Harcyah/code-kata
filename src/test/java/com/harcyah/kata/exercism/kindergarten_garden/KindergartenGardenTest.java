@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.kindergarten_garden;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -13,7 +12,7 @@ public class KindergartenGardenTest {
     public void singleStudent() {
         String student = "Alice";
         String plants = "RC\nGG";
-        List<Plant> expected = Arrays.asList(Plant.RADISHES, Plant.CLOVER, Plant.GRASS, Plant.GRASS);
+        List<Plant> expected = List.of(Plant.RADISHES, Plant.CLOVER, Plant.GRASS, Plant.GRASS);
 
         assertEquals(
             expected,
@@ -25,7 +24,7 @@ public class KindergartenGardenTest {
     public void singleStudent2() {
         String student = "Alice";
         String plants = "VC\nRC";
-        List<Plant> expected = Arrays.asList(Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.CLOVER);
+        List<Plant> expected = List.of(Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.CLOVER);
 
         assertEquals(
             expected,
@@ -37,7 +36,7 @@ public class KindergartenGardenTest {
     public void twoStudents() {
         String student = "Bob";
         String plants = "VVCG\nVVRC";
-        List<Plant> expected = Arrays.asList(Plant.CLOVER, Plant.GRASS, Plant.RADISHES, Plant.CLOVER);
+        List<Plant> expected = List.of(Plant.CLOVER, Plant.GRASS, Plant.RADISHES, Plant.CLOVER);
 
         assertEquals(
             expected,
@@ -49,7 +48,7 @@ public class KindergartenGardenTest {
     public void oneGardenSecondStudent() {
         String student = "Bob";
         String plants = "VVCCGG\nVVCCGG";
-        List<Plant> expected = Arrays.asList(Plant.CLOVER, Plant.CLOVER, Plant.CLOVER, Plant.CLOVER);
+        List<Plant> expected = List.of(Plant.CLOVER, Plant.CLOVER, Plant.CLOVER, Plant.CLOVER);
 
         assertEquals(
             expected,
@@ -61,7 +60,7 @@ public class KindergartenGardenTest {
     public void oneGardenThirdStudent() {
         String student = "Charlie";
         String plants = "VVCCGG\nVVCCGG";
-        List<Plant> expected = Arrays.asList(Plant.GRASS, Plant.GRASS, Plant.GRASS, Plant.GRASS);
+        List<Plant> expected = List.of(Plant.GRASS, Plant.GRASS, Plant.GRASS, Plant.GRASS);
 
         assertEquals(
             expected,
@@ -73,7 +72,7 @@ public class KindergartenGardenTest {
     public void fullGardenFirstStudent() {
         String student = "Alice";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        List<Plant> expected = Arrays.asList(Plant.VIOLETS, Plant.RADISHES, Plant.VIOLETS, Plant.RADISHES);
+        List<Plant> expected = List.of(Plant.VIOLETS, Plant.RADISHES, Plant.VIOLETS, Plant.RADISHES);
 
         assertEquals(
             expected,
@@ -85,7 +84,7 @@ public class KindergartenGardenTest {
     public void fullGardenSecondStudent() {
         String student = "Bob";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        List<Plant> expected = Arrays.asList(Plant.CLOVER, Plant.GRASS, Plant.CLOVER, Plant.CLOVER);
+        List<Plant> expected = List.of(Plant.CLOVER, Plant.GRASS, Plant.CLOVER, Plant.CLOVER);
 
         assertEquals(
             expected,
@@ -97,7 +96,7 @@ public class KindergartenGardenTest {
     public void fullGardenSecondToLastStudent() {
         String student = "Kincaid";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        List<Plant> expected = Arrays.asList(Plant.GRASS, Plant.CLOVER, Plant.CLOVER, Plant.GRASS);
+        List<Plant> expected = List.of(Plant.GRASS, Plant.CLOVER, Plant.CLOVER, Plant.GRASS);
 
         assertEquals(
             expected,
@@ -109,7 +108,7 @@ public class KindergartenGardenTest {
     public void fullGardenLastStudent() {
         String student = "Larry";
         String plants = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        List<Plant> expected = Arrays.asList(Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.VIOLETS);
+        List<Plant> expected = List.of(Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.VIOLETS);
 
         assertEquals(
             expected,
@@ -122,7 +121,7 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Patricia";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        List<Plant> expected = Arrays.asList(Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.VIOLETS);
+        List<Plant> expected = List.of(Plant.VIOLETS, Plant.CLOVER, Plant.RADISHES, Plant.VIOLETS);
 
         assertEquals(
             expected,
@@ -135,7 +134,7 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Roger";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        List<Plant> expected = Arrays.asList(Plant.RADISHES, Plant.RADISHES, Plant.GRASS, Plant.CLOVER);
+        List<Plant> expected = List.of(Plant.RADISHES, Plant.RADISHES, Plant.GRASS, Plant.CLOVER);
 
         assertEquals(
             expected,
@@ -148,7 +147,7 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Samantha";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        List<Plant> expected = Arrays.asList(Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.GRASS);
+        List<Plant> expected = List.of(Plant.GRASS, Plant.VIOLETS, Plant.CLOVER, Plant.GRASS);
 
         assertEquals(
             expected,
@@ -161,11 +160,12 @@ public class KindergartenGardenTest {
         String[] studentArray = {"Samantha", "Patricia", "Xander", "Roger"};
         String student = "Xander";
         String plants = "VCRRGVRG\nRVGCCGCV";
-        List<Plant> expected = Arrays.asList(Plant.RADISHES, Plant.GRASS, Plant.CLOVER, Plant.VIOLETS);
+        List<Plant> expected = List.of(Plant.RADISHES, Plant.GRASS, Plant.CLOVER, Plant.VIOLETS);
 
         assertEquals(
             expected,
             new KindergartenGarden(plants, studentArray).getPlantsOfStudent(student)
         );
     }
+
 }

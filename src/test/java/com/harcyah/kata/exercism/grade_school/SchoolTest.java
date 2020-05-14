@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.grade_school;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,10 +62,11 @@ public class SchoolTest {
         school.add("Christopher", 4);
         school.add("Kyle", 3);
         Map<Integer, List<String>> sortedStudents = new HashMap<>();
-        sortedStudents.put(6, Arrays.asList("Kareem"));
-        sortedStudents.put(4, Arrays.asList("Christopher", "Jennifer"));
-        sortedStudents.put(3, Arrays.asList("Kyle"));
+        sortedStudents.put(6, List.of("Kareem"));
+        sortedStudents.put(4, List.of("Christopher", "Jennifer"));
+        sortedStudents.put(3, List.of("Kyle"));
 
         assertThat(school.sort()).isEqualTo(sortedStudents);
     }
+
 }

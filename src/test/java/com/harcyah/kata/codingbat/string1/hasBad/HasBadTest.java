@@ -1,23 +1,25 @@
 package com.harcyah.kata.codingbat.string1.hasBad;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class HasBadTest {
 
     @Test
     public void testHasBad() {
         HasBad hasBad = new HasBad();
-        Assert.assertEquals(true, hasBad.hasBad("badxx"));
-        Assert.assertEquals(true, hasBad.hasBad("xbadxx"));
-        Assert.assertEquals(false, hasBad.hasBad("xxbadxx"));
-        Assert.assertEquals(false, hasBad.hasBad("code"));
-        Assert.assertEquals(true, hasBad.hasBad("bad"));
-        Assert.assertEquals(false, hasBad.hasBad("ba"));
-        Assert.assertEquals(false, hasBad.hasBad("xba"));
-        Assert.assertEquals(true, hasBad.hasBad("xbad"));
-        Assert.assertEquals(false, hasBad.hasBad(""));
-        Assert.assertEquals(true, hasBad.hasBad("badyy"));
+        assertTrue(hasBad.hasBad("badxx"));
+        assertTrue(hasBad.hasBad("xbadxx"));
+        assertFalse(hasBad.hasBad("xxbadxx"));
+        assertFalse(hasBad.hasBad("code"));
+        assertTrue(hasBad.hasBad("bad"));
+        assertFalse(hasBad.hasBad("ba"));
+        assertFalse(hasBad.hasBad("xba"));
+        assertTrue(hasBad.hasBad("xbad"));
+        assertFalse(hasBad.hasBad(""));
+        assertTrue(hasBad.hasBad("badyy"));
     }
 
 }

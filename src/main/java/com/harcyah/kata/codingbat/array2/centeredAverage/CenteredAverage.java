@@ -14,7 +14,4 @@ public class CenteredAverage {
         return (sum - min - max) / (nums.length - 2);
     }
 
-
 }
-
-

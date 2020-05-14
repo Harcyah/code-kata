@@ -1,23 +1,25 @@
 package com.harcyah.kata.exercism.octal;
 
+import lombok.AllArgsConstructor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@AllArgsConstructor
 @RunWith(Parameterized.class)
 public class OctalTest {
 
-    private String input;
-    private int expectedOutput;
+    private final String input;
+    private final int expectedOutput;
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{
+        return List.of(new Object[][]{
                 {"1", 1},
                 {"10", 8},
                 {"17", 15},
@@ -35,15 +37,11 @@ public class OctalTest {
         });
     }
 
-    public OctalTest(String input, int expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
-    }
-
     @Test
     public void test() {
         Octal octal = new Octal(input);
 
         assertEquals(expectedOutput, octal.getDecimal());
     }
+
 }

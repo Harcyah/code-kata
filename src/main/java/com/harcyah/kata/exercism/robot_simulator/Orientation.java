@@ -15,7 +15,7 @@ enum Orientation implements MovementHandler {
 
         @Override
         public GridPosition advance(GridPosition original) {
-            return new GridPosition(original.x, original.y + 1);
+            return new GridPosition(original.getX(), original.getY() + 1);
         }
     },
     EAST {
@@ -31,7 +31,7 @@ enum Orientation implements MovementHandler {
 
         @Override
         public GridPosition advance(GridPosition original) {
-            return new GridPosition(original.x + 1, original.y);
+            return new GridPosition(original.getX() + 1, original.getY());
         }
     },
     SOUTH {
@@ -47,7 +47,7 @@ enum Orientation implements MovementHandler {
 
         @Override
         public GridPosition advance(GridPosition original) {
-            return new GridPosition(original.x, original.y - 1);
+            return new GridPosition(original.getX(), original.getY() - 1);
         }
     },
     WEST {
@@ -63,10 +63,9 @@ enum Orientation implements MovementHandler {
 
         @Override
         public GridPosition advance(GridPosition original) {
-            return new GridPosition(original.x - 1, original.y);
+            return new GridPosition(original.getX() - 1, original.getY());
         }
-    };
-
+    }
 
 }
 

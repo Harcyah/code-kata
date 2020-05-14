@@ -69,4 +69,5 @@ public class PokerHand implements Comparable<PokerHand> {
     public String toString() {
         return cards.stream().map(PokerCard::toString).collect(Collectors.joining(" "));
     }
+
 }

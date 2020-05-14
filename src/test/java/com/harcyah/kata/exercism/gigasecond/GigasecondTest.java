@@ -44,4 +44,5 @@ public class GigasecondTest {
 
         assertEquals(LocalDateTime.of(2046, Month.OCTOBER, 3, 1, 46, 39), gigaSecond.getDate());
     }
+
 }

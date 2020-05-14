@@ -15,18 +15,19 @@ public class SchoolAttendanceTest {
         List<Student> students = sa.getStudentsSortedByGenderAndLastNameAscending();
 
         assertThat(students).hasSize(9);
-        assertThat(students).extracting(Student::getLastName)
-                .containsExactly(
-                        "Hingis",
-                        "Kelly",
-                        "Kournikova",
-                        "Seles",
-                        "Abercrombie",
-                        "Bishop",
-                        "Bonk",
-                        "Bouillon",
-                        "Smith"
-                );
+        assertThat(students)
+            .extracting(Student::getLastName)
+            .containsExactly(
+                "Hingis",
+                "Kelly",
+                "Kournikova",
+                "Seles",
+                "Abercrombie",
+                "Bishop",
+                "Bonk",
+                "Bouillon",
+                "Smith"
+            );
     }
 
     @Test
@@ -36,18 +37,19 @@ public class SchoolAttendanceTest {
         List<Student> students = sa.getStudentsSortedByBirthDateAscending();
 
         assertThat(students).hasSize(9);
-        assertThat(students).extracting(Student::getLastName)
-                .containsExactly(
-                        "Abercrombie",
-                        "Kelly",
-                        "Bishop",
-                        "Seles",
-                        "Bonk",
-                        "Bouillon",
-                        "Kournikova",
-                        "Hingis",
-                        "Smith"
-                );
+        assertThat(students)
+            .extracting(Student::getLastName)
+            .containsExactly(
+                "Abercrombie",
+                "Kelly",
+                "Bishop",
+                "Seles",
+                "Bonk",
+                "Bouillon",
+                "Kournikova",
+                "Hingis",
+                "Smith"
+            );
     }
 
     @Test
@@ -57,18 +59,19 @@ public class SchoolAttendanceTest {
         List<Student> students = sa.getStudentsSortedByLastNameAscending();
 
         assertThat(students).hasSize(9);
-        assertThat(students).extracting(Student::getLastName)
-                .containsExactly(
-                        "Abercrombie",
-                        "Bishop",
-                        "Bonk",
-                        "Bouillon",
-                        "Hingis",
-                        "Kelly",
-                        "Kournikova",
-                        "Seles",
-                        "Smith"
-                );
+        assertThat(students)
+            .extracting(Student::getLastName)
+            .containsExactly(
+                "Abercrombie",
+                "Bishop",
+                "Bonk",
+                "Bouillon",
+                "Hingis",
+                "Kelly",
+                "Kournikova",
+                "Seles",
+                "Smith"
+            );
     }
 
 }

@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.pythagorean_triplet;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,7 +50,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted()
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(60L, 480L);
+        final List<Long> expected = List.of(60L, 480L);
         assertEquals(expected, actual);
     }
 
@@ -67,7 +66,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted((p1, p2) -> Double.compare(p1, p2))
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(3840L);
+        final List<Long> expected = List.of(3840L);
         assertEquals(expected, actual);
     }
 
@@ -83,7 +82,7 @@ public class PythagoreanTripletTest {
                 .map(t -> t.calculateProduct())
                 .sorted((p1, p2) -> Double.compare(p1, p2))
                 .collect(Collectors.toList());
-        final List<Long> expected = Arrays.asList(118080L, 168480L, 202500L);
+        final List<Long> expected = List.of(118080L, 168480L, 202500L);
         assertEquals(expected, actual);
     }
 

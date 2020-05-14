@@ -1,21 +1,22 @@
 package com.harcyah.kata.codingbat.warmup2.altPairs;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AltPairsTest {
 
     @Test
     public void testAltPairs() {
         AltPairs altPairs = new AltPairs();
-        Assert.assertEquals("kien", altPairs.altPairs("kitten"));
-        Assert.assertEquals("Chole", altPairs.altPairs("Chocolate"));
-        Assert.assertEquals("Congrr", altPairs.altPairs("CodingHorror"));
-        Assert.assertEquals("ya", altPairs.altPairs("yak"));
-        Assert.assertEquals("ya", altPairs.altPairs("ya"));
-        Assert.assertEquals("y", altPairs.altPairs("y"));
-        Assert.assertEquals("", altPairs.altPairs(""));
-        Assert.assertEquals("ThThThth", altPairs.altPairs("ThisThatTheOther"));
+        assertEquals("kien", altPairs.altPairs("kitten"));
+        assertEquals("Chole", altPairs.altPairs("Chocolate"));
+        assertEquals("Congrr", altPairs.altPairs("CodingHorror"));
+        assertEquals("ya", altPairs.altPairs("yak"));
+        assertEquals("ya", altPairs.altPairs("ya"));
+        assertEquals("y", altPairs.altPairs("y"));
+        assertEquals("", altPairs.altPairs(""));
+        assertEquals("ThThThth", altPairs.altPairs("ThisThatTheOther"));
     }
 
 }

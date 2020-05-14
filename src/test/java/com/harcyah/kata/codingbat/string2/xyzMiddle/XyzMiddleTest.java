@@ -1,34 +1,36 @@
 package com.harcyah.kata.codingbat.string2.xyzMiddle;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class XyzMiddleTest {
 
     @Test
     public void testXyzMiddle() {
         XyzMiddle xyzMiddle = new XyzMiddle();
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("AAxyzBB"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("AxyzBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AxyzBBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AxyzBBBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AAAxyzB"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("AAAxyzBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AAAAxyzBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AAAAAxyzBBB"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("1x345xyz12x4"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzAxyzBBB"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzAxyzBxyz"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzxyzAxyzBxyzxyz"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzxyzxyzBxyzxyz"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzxyzAxyzxyzxyz"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("xyzxyzAxyzxyzxy"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("AxyzxyzBB"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle(""));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("x"));
-        Assert.assertEquals(false, xyzMiddle.xyzMiddle("xy"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyz"));
-        Assert.assertEquals(true, xyzMiddle.xyzMiddle("xyzz"));
+        assertTrue(xyzMiddle.xyzMiddle("AAxyzBB"));
+        assertTrue(xyzMiddle.xyzMiddle("AxyzBB"));
+        assertFalse(xyzMiddle.xyzMiddle("AxyzBBB"));
+        assertFalse(xyzMiddle.xyzMiddle("AxyzBBBB"));
+        assertFalse(xyzMiddle.xyzMiddle("AAAxyzB"));
+        assertTrue(xyzMiddle.xyzMiddle("AAAxyzBB"));
+        assertFalse(xyzMiddle.xyzMiddle("AAAAxyzBB"));
+        assertFalse(xyzMiddle.xyzMiddle("AAAAAxyzBBB"));
+        assertTrue(xyzMiddle.xyzMiddle("1x345xyz12x4"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzAxyzBBB"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzAxyzBxyz"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzxyzAxyzBxyzxyz"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzxyzxyzBxyzxyz"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzxyzAxyzxyzxyz"));
+        assertFalse(xyzMiddle.xyzMiddle("xyzxyzAxyzxyzxy"));
+        assertFalse(xyzMiddle.xyzMiddle("AxyzxyzBB"));
+        assertFalse(xyzMiddle.xyzMiddle(""));
+        assertFalse(xyzMiddle.xyzMiddle("x"));
+        assertFalse(xyzMiddle.xyzMiddle("xy"));
+        assertTrue(xyzMiddle.xyzMiddle("xyz"));
+        assertTrue(xyzMiddle.xyzMiddle("xyzz"));
     }
 
 }

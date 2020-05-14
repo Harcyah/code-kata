@@ -1,33 +1,34 @@
 package com.harcyah.kata.codingbat.logic1.love6;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class Love6Test {
 
     @Test
     public void testLove6() {
         Love6 love6 = new Love6();
-        Assertions.assertThat(love6.love6(6, 4)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(4, 5)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(1, 5)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(1, 6)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(1, 8)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(1, 7)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(7, 5)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(8, 2)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(6, 6)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(-6, 2)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(-4, -10)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(-7, 1)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(7, -1)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(-6, 12)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(-2, -4)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(7, 1)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(0, 9)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(8, 3)).isEqualTo(false);
-        Assertions.assertThat(love6.love6(3, 3)).isEqualTo(true);
-        Assertions.assertThat(love6.love6(3, 4)).isEqualTo(false);
+        assertThat(love6.love6(6, 4)).isTrue();
+        assertThat(love6.love6(4, 5)).isFalse();
+        assertThat(love6.love6(1, 5)).isTrue();
+        assertThat(love6.love6(1, 6)).isTrue();
+        assertThat(love6.love6(1, 8)).isFalse();
+        assertThat(love6.love6(1, 7)).isTrue();
+        assertThat(love6.love6(7, 5)).isFalse();
+        assertThat(love6.love6(8, 2)).isTrue();
+        assertThat(love6.love6(6, 6)).isTrue();
+        assertThat(love6.love6(-6, 2)).isFalse();
+        assertThat(love6.love6(-4, -10)).isTrue();
+        assertThat(love6.love6(-7, 1)).isFalse();
+        assertThat(love6.love6(7, -1)).isTrue();
+        assertThat(love6.love6(-6, 12)).isTrue();
+        assertThat(love6.love6(-2, -4)).isFalse();
+        assertThat(love6.love6(7, 1)).isTrue();
+        assertThat(love6.love6(0, 9)).isFalse();
+        assertThat(love6.love6(8, 3)).isFalse();
+        assertThat(love6.love6(3, 3)).isTrue();
+        assertThat(love6.love6(3, 4)).isFalse();
     }
 
 }

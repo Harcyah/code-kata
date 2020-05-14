@@ -4,7 +4,7 @@ public class EventButton implements Event {
 
     @Override
     public void apply(GarageDoor door) {
-        door.state.onButton(door);
+        door.getState().onButton(door);
     }
 
     @Override

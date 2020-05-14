@@ -1,24 +1,26 @@
 package com.harcyah.kata.codingbat.logic1.cigarParty;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CigarPartyTest {
 
     @Test
     public void testCigarParty() {
         CigarParty cigarParty = new CigarParty();
-        Assert.assertEquals(false, cigarParty.cigarParty(30, false));
-        Assert.assertEquals(true, cigarParty.cigarParty(50, false));
-        Assert.assertEquals(true, cigarParty.cigarParty(70, true));
-        Assert.assertEquals(false, cigarParty.cigarParty(30, true));
-        Assert.assertEquals(true, cigarParty.cigarParty(50, true));
-        Assert.assertEquals(true, cigarParty.cigarParty(60, false));
-        Assert.assertEquals(false, cigarParty.cigarParty(61, false));
-        Assert.assertEquals(true, cigarParty.cigarParty(40, false));
-        Assert.assertEquals(false, cigarParty.cigarParty(39, false));
-        Assert.assertEquals(true, cigarParty.cigarParty(40, true));
-        Assert.assertEquals(false, cigarParty.cigarParty(39, true));
+        assertFalse(cigarParty.cigarParty(30, false));
+        assertTrue(cigarParty.cigarParty(50, false));
+        assertTrue(cigarParty.cigarParty(70, true));
+        assertFalse(cigarParty.cigarParty(30, true));
+        assertTrue(cigarParty.cigarParty(50, true));
+        assertTrue(cigarParty.cigarParty(60, false));
+        assertFalse(cigarParty.cigarParty(61, false));
+        assertTrue(cigarParty.cigarParty(40, false));
+        assertFalse(cigarParty.cigarParty(39, false));
+        assertTrue(cigarParty.cigarParty(40, true));
+        assertFalse(cigarParty.cigarParty(39, true));
     }
 
 }

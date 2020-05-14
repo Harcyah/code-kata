@@ -16,7 +16,4 @@ public class No14 {
         return no1 || no4;
     }
 
-
 }
-
-

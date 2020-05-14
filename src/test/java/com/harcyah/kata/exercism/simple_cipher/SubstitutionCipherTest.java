@@ -69,4 +69,5 @@ public class SubstitutionCipherTest {
 
         assertEquals(expectedOutput, cipher.decode("abcde"));
     }
+
 }

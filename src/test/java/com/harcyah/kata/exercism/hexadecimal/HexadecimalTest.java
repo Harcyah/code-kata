@@ -65,4 +65,5 @@ public class HexadecimalTest {
         int expected = 16776960;
         assertEquals(expected, Hexadecimal.toDecimal("ffff00"));
     }
+
 }

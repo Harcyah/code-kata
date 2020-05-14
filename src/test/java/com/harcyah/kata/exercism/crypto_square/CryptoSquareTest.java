@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.crypto_square;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -68,7 +67,7 @@ public class CryptoSquareTest {
     @Test
     public void segmentsAreSplitBySquareSize() {
         Crypto crypto = new Crypto("Never vex thine heart with idle woes");
-        List<String> expectedOutput = Arrays.asList(new String[]{"neverv", "exthin", "eheart", "withid", "lewoes"});
+        List<String> expectedOutput = List.of(new String[]{"neverv", "exthin", "eheart", "withid", "lewoes"});
 
         assertEquals(expectedOutput, crypto.getPlaintextSegments());
     }
@@ -76,7 +75,7 @@ public class CryptoSquareTest {
     @Test
     public void segmentsAreSplitBySquareSizeUntilTextRunsOut() {
         Crypto crypto = new Crypto("ZOMG! ZOMBIES!!!");
-        List<String> expectedOutput = Arrays.asList(new String[]{"zomg", "zomb", "ies"});
+        List<String> expectedOutput = List.of(new String[]{"zomg", "zomb", "ies"});
 
         assertEquals(expectedOutput, crypto.getPlaintextSegments());
     }
@@ -128,4 +127,5 @@ public class CryptoSquareTest {
 
         assertEquals(expectedOutput, crypto.getNormalizedCipherText());
     }
+
 }

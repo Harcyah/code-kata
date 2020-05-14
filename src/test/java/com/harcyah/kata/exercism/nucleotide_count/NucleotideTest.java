@@ -8,13 +8,13 @@ import static org.assertj.core.api.Assertions.entry;
 public class NucleotideTest {
     @Test
     public void testEmptyDnaStringHasNoAdenosine() {
-        DNA dna = new DNA("");
+        Dna dna = new Dna("");
         assertThat(dna.count('A')).isEqualTo(0);
     }
 
     @Test
     public void testEmptyDnaStringHasNoNucleotides() {
-        DNA dna = new DNA("");
+        Dna dna = new Dna("");
         assertThat(dna.nucleotideCounts()).hasSize(4).contains(
                 entry('A', 0),
                 entry('C', 0),
@@ -25,13 +25,13 @@ public class NucleotideTest {
 
     @Test
     public void testRepetitiveCytidineGetsCounted() {
-        DNA dna = new DNA("CCCCC");
+        Dna dna = new Dna("CCCCC");
         assertThat(dna.count('C')).isEqualTo(5);
     }
 
     @Test
     public void testRepetitiveSequenceWithOnlyGuanosine() {
-        DNA dna = new DNA("GGGGGGGG");
+        Dna dna = new Dna("GGGGGGGG");
         assertThat(dna.nucleotideCounts()).hasSize(4).contains(
                 entry('A', 0),
                 entry('C', 0),
@@ -42,20 +42,20 @@ public class NucleotideTest {
 
     @Test
     public void testCountsOnlyThymidine() {
-        DNA dna = new DNA("GGGGGTAACCCGG");
+        Dna dna = new Dna("GGGGGTAACCCGG");
         assertThat(dna.count('T')).isEqualTo(1);
     }
 
     @Test
     public void testCountsANucleotideOnlyOnce() {
-        DNA dna = new DNA("CGATTGGG");
+        Dna dna = new Dna("CGATTGGG");
         dna.count('T');
         assertThat(dna.count('T')).isEqualTo(2);
     }
 
     @Test
     public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
-        DNA dna = new DNA("GATTACA");
+        Dna dna = new Dna("GATTACA");
         dna.count('A');
         assertThat(dna.nucleotideCounts()).hasSize(4).contains(
                 entry('A', 3),
@@ -67,14 +67,14 @@ public class NucleotideTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testValidatesNucleotides() {
-        DNA dna = new DNA("GACT");
+        Dna dna = new Dna("GACT");
         dna.count('X');
     }
 
     @Test
     public void testCountsAllNucleotides() {
         String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-        DNA dna = new DNA(s);
+        Dna dna = new Dna(s);
         assertThat(dna.nucleotideCounts()).hasSize(4).contains(
                 entry('A', 20),
                 entry('C', 12),
@@ -82,4 +82,5 @@ public class NucleotideTest {
                 entry('T', 21)
         );
     }
+
 }

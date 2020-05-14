@@ -1,23 +1,24 @@
 package com.harcyah.kata.codingbat.warmup1.missingChar;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MissingCharTest {
 
     @Test
     public void testMissingChar() {
         MissingChar missingChar = new MissingChar();
-        Assert.assertEquals("ktten", missingChar.missingChar("kitten", 1));
-        Assert.assertEquals("itten", missingChar.missingChar("kitten", 0));
-        Assert.assertEquals("kittn", missingChar.missingChar("kitten", 4));
-        Assert.assertEquals("i", missingChar.missingChar("Hi", 0));
-        Assert.assertEquals("H", missingChar.missingChar("Hi", 1));
-        Assert.assertEquals("ode", missingChar.missingChar("code", 0));
-        Assert.assertEquals("cde", missingChar.missingChar("code", 1));
-        Assert.assertEquals("coe", missingChar.missingChar("code", 2));
-        Assert.assertEquals("cod", missingChar.missingChar("code", 3));
-        Assert.assertEquals("chocolat", missingChar.missingChar("chocolate", 8));
+        assertEquals("ktten", missingChar.missingChar("kitten", 1));
+        assertEquals("itten", missingChar.missingChar("kitten", 0));
+        assertEquals("kittn", missingChar.missingChar("kitten", 4));
+        assertEquals("i", missingChar.missingChar("Hi", 0));
+        assertEquals("H", missingChar.missingChar("Hi", 1));
+        assertEquals("ode", missingChar.missingChar("code", 0));
+        assertEquals("cde", missingChar.missingChar("code", 1));
+        assertEquals("coe", missingChar.missingChar("code", 2));
+        assertEquals("cod", missingChar.missingChar("code", 3));
+        assertEquals("chocolat", missingChar.missingChar("chocolate", 8));
     }
 
 }

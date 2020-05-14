@@ -77,4 +77,5 @@ public class SpaceAgeTest {
         assertEquals(260.16, age.onEarth(), MAXIMUM_DELTA);
         assertEquals(1.58, age.onNeptune(), MAXIMUM_DELTA);
     }
+
 }

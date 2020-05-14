@@ -50,7 +50,7 @@ public enum Rank implements RankMatcher {
         public boolean matches(PokerHand hand) {
             List<PokerCard> cards = hand.getCards();
             Value value = cards.get(0).getValue();
-            for (int i=1; i<cards.size(); i++) {
+            for (int i = 1; i < cards.size(); i++) {
                 Value next = cards.get(i).getValue();
                 if (value.ordinal() - i != next.ordinal()) {
                     return false;

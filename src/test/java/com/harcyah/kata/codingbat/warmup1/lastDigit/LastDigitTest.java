@@ -1,20 +1,22 @@
 package com.harcyah.kata.codingbat.warmup1.lastDigit;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class LastDigitTest {
 
     @Test
     public void testLastDigit() {
         LastDigit lastDigit = new LastDigit();
-        Assert.assertTrue(lastDigit.lastDigit(7, 17));
-        Assert.assertFalse(lastDigit.lastDigit(6, 17));
-        Assert.assertTrue(lastDigit.lastDigit(3, 113));
-        Assert.assertFalse(lastDigit.lastDigit(114, 113));
-        Assert.assertTrue(lastDigit.lastDigit(114, 4));
-        Assert.assertTrue(lastDigit.lastDigit(10, 0));
-        Assert.assertFalse(lastDigit.lastDigit(11, 0));
+        assertTrue(lastDigit.lastDigit(7, 17));
+        assertFalse(lastDigit.lastDigit(6, 17));
+        assertTrue(lastDigit.lastDigit(3, 113));
+        assertFalse(lastDigit.lastDigit(114, 113));
+        assertTrue(lastDigit.lastDigit(114, 4));
+        assertTrue(lastDigit.lastDigit(10, 0));
+        assertFalse(lastDigit.lastDigit(11, 0));
     }
 
 }

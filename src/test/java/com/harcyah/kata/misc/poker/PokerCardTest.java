@@ -19,29 +19,29 @@ public class PokerCardTest {
     }
 
     @Test(expected = IllegalSuitException.class)
-    public void testConstructor_UnexpectedSuit() throws Exception {
+    public void testConstructorUnexpectedSuit() throws Exception {
         new PokerCard("2X");
     }
 
     @Test(expected = IllegalValueException.class)
-    public void testConstructor_UnexpectedValue() throws Exception {
+    public void testConstructorUnexpectedValue() throws Exception {
         new PokerCard("ZS");
     }
 
     @Test
-    public void testCompareTo_EqualCards() throws Exception {
-        PokerCard C2 = new PokerCard("2C");
-        PokerCard S2 = new PokerCard("2S");
-        assertThat(C2).isEqualByComparingTo(S2);
-        assertThat(S2).isEqualByComparingTo(C2);
+    public void testCompareToEqualCards() throws Exception {
+        PokerCard cardC2 = new PokerCard("2C");
+        PokerCard cardS2 = new PokerCard("2S");
+        assertThat(cardC2).isEqualByComparingTo(cardS2);
+        assertThat(cardS2).isEqualByComparingTo(cardC2);
     }
 
     @Test
-    public void testCompareTo_DistinctCards() throws Exception {
-        PokerCard C2 = new PokerCard("2C");
-        PokerCard SA = new PokerCard("AS");
-        assertThat(C2).isLessThan(SA);
-        assertThat(SA).isGreaterThan(C2);
+    public void testCompareToDistinctCards() throws Exception {
+        PokerCard cardC2 = new PokerCard("2C");
+        PokerCard cardSA = new PokerCard("AS");
+        assertThat(cardC2).isLessThan(cardSA);
+        assertThat(cardSA).isGreaterThan(cardC2);
     }
 
 }

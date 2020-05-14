@@ -1,31 +1,33 @@
 package com.harcyah.kata.codingbat.string2.xyBalance;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class XyBalanceTest {
 
     @Test
     public void testXyBalance() {
         XyBalance xyBalance = new XyBalance();
-        Assert.assertEquals(true, xyBalance.xyBalance("aaxbby"));
-        Assert.assertEquals(false, xyBalance.xyBalance("aaxbb"));
-        Assert.assertEquals(false, xyBalance.xyBalance("yaaxbb"));
-        Assert.assertEquals(true, xyBalance.xyBalance("yaaxbby"));
-        Assert.assertEquals(true, xyBalance.xyBalance("xaxxbby"));
-        Assert.assertEquals(false, xyBalance.xyBalance("xaxxbbyx"));
-        Assert.assertEquals(true, xyBalance.xyBalance("xxbxy"));
-        Assert.assertEquals(false, xyBalance.xyBalance("xxbx"));
-        Assert.assertEquals(true, xyBalance.xyBalance("bbb"));
-        Assert.assertEquals(false, xyBalance.xyBalance("bxbb"));
-        Assert.assertEquals(true, xyBalance.xyBalance("bxyb"));
-        Assert.assertEquals(true, xyBalance.xyBalance("xy"));
-        Assert.assertEquals(true, xyBalance.xyBalance("y"));
-        Assert.assertEquals(false, xyBalance.xyBalance("x"));
-        Assert.assertEquals(true, xyBalance.xyBalance(""));
-        Assert.assertEquals(false, xyBalance.xyBalance("yxyxyxyx"));
-        Assert.assertEquals(true, xyBalance.xyBalance("yxyxyxyxy"));
-        Assert.assertEquals(true, xyBalance.xyBalance("12xabxxydxyxyzz"));
+        assertTrue(xyBalance.xyBalance("aaxbby"));
+        assertFalse(xyBalance.xyBalance("aaxbb"));
+        assertFalse(xyBalance.xyBalance("yaaxbb"));
+        assertTrue(xyBalance.xyBalance("yaaxbby"));
+        assertTrue(xyBalance.xyBalance("xaxxbby"));
+        assertFalse(xyBalance.xyBalance("xaxxbbyx"));
+        assertTrue(xyBalance.xyBalance("xxbxy"));
+        assertFalse(xyBalance.xyBalance("xxbx"));
+        assertTrue(xyBalance.xyBalance("bbb"));
+        assertFalse(xyBalance.xyBalance("bxbb"));
+        assertTrue(xyBalance.xyBalance("bxyb"));
+        assertTrue(xyBalance.xyBalance("xy"));
+        assertTrue(xyBalance.xyBalance("y"));
+        assertFalse(xyBalance.xyBalance("x"));
+        assertTrue(xyBalance.xyBalance(""));
+        assertFalse(xyBalance.xyBalance("yxyxyxyx"));
+        assertTrue(xyBalance.xyBalance("yxyxyxyxy"));
+        assertTrue(xyBalance.xyBalance("12xabxxydxyxyzz"));
     }
 
 }

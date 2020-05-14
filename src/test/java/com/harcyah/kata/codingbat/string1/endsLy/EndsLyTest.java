@@ -1,22 +1,24 @@
 package com.harcyah.kata.codingbat.string1.endsLy;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class EndsLyTest {
 
     @Test
     public void testEndsLy() {
         EndsLy endsLy = new EndsLy();
-        Assert.assertEquals(true, endsLy.endsLy("oddly"));
-        Assert.assertEquals(false, endsLy.endsLy("y"));
-        Assert.assertEquals(false, endsLy.endsLy("oddy"));
-        Assert.assertEquals(false, endsLy.endsLy("oddl"));
-        Assert.assertEquals(false, endsLy.endsLy("olydd"));
-        Assert.assertEquals(true, endsLy.endsLy("ly"));
-        Assert.assertEquals(false, endsLy.endsLy(""));
-        Assert.assertEquals(false, endsLy.endsLy("falsey"));
-        Assert.assertEquals(true, endsLy.endsLy("evenly"));
+        assertTrue(endsLy.endsLy("oddly"));
+        assertFalse(endsLy.endsLy("y"));
+        assertFalse(endsLy.endsLy("oddy"));
+        assertFalse(endsLy.endsLy("oddl"));
+        assertFalse(endsLy.endsLy("olydd"));
+        assertTrue(endsLy.endsLy("ly"));
+        assertFalse(endsLy.endsLy(""));
+        assertFalse(endsLy.endsLy("falsey"));
+        assertTrue(endsLy.endsLy("evenly"));
     }
 
 }

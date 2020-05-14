@@ -20,7 +20,5 @@ public class Either24 {
         return has22 ^ has44;
     }
 
-
 }
-
 

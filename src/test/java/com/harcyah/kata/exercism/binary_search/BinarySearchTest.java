@@ -3,7 +3,6 @@ package com.harcyah.kata.exercism.binary_search;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,23 +15,23 @@ public class BinarySearchTest {
 
     public static final List<Integer> LIST_OF_UNIT_LENGTH
             = Collections.unmodifiableList(
-            Arrays.asList(6)
+            List.of(6)
     );
 
     private static final List<Integer> SORTED_LIST
             = Collections.unmodifiableList(
-            Arrays.asList(1, 3, 4, 6, 8, 9, 11)
+            List.of(1, 3, 4, 6, 8, 9, 11)
     );
 
     public static final List<Integer> SORTED_LIST_OF_ODD_LENGTH
             = Collections.unmodifiableList(
-            Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+            List.of(1, 3, 5, 8, 13, 21, 34, 55,
                     89, 144, 233, 377, 634)
     );
 
     public static final List<Integer> SORTED_LIST_OF_EVEN_LENGTH
             = Collections.unmodifiableList(
-            Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55,
+            List.of(1, 3, 5, 8, 13, 21, 34, 55,
                     89, 144, 233, 377)
     );
 
@@ -101,7 +100,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void aValueSmallerThanTheArraysSmallestValueIsNotIncluded() {
+    public void valueSmallerThanTheArraysSmallestValueIsNotIncluded() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
         final int value = 0;
         final int actual = sut.indexOf(value);
@@ -110,7 +109,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void aValueLargerThanTheArraysSmallestValueIsNotIncluded() {
+    public void valueLargerThanTheArraysSmallestValueIsNotIncluded() {
         BinarySearch<Integer> sut = new BinarySearch<>(SORTED_LIST);
         final int value = 13;
         final int actual = sut.indexOf(value);
@@ -126,4 +125,5 @@ public class BinarySearchTest {
         final int expected = -1;
         assertEquals(expected, actual);
     }
+
 }

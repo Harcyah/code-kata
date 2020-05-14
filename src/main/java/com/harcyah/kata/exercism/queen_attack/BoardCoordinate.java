@@ -61,4 +61,5 @@ public final class BoardCoordinate {
     private boolean isOnSameBottomRightToTopLeftDiagonal(BoardCoordinate other) {
         return (file - other.file) == (rank - other.file);
     }
+
 }

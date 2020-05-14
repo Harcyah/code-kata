@@ -4,7 +4,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,12 +38,12 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithNoMines() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "   ",
                 "   ",
                 "   ");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "   ",
                 "   ",
                 "   ");
@@ -56,12 +55,12 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithOnlyMines() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "***",
                 "***",
                 "***");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "***",
                 "***",
                 "***");
@@ -73,12 +72,12 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithSingleMineAtCenter() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "   ",
                 " * ",
                 "   ");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "111",
                 "1*1",
                 "111");
@@ -90,12 +89,12 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithMinesAroundPerimeter() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "***",
                 "* *",
                 "***");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "***",
                 "*8*",
                 "***");
@@ -133,14 +132,14 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithSingleColumnAndTwoMines() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 " ",
                 "*",
                 " ",
                 "*",
                 " ");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "1",
                 "*",
                 "2",
@@ -154,14 +153,14 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithSingleColumnAndTwoMinesAtEdges() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "*",
                 " ",
                 " ",
                 " ",
                 "*");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "*",
                 "1",
                 " ",
@@ -175,14 +174,14 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithMinesInCross() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 "  *  ",
                 "  *  ",
                 "*****",
                 "  *  ",
                 "  *  ");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 " 2*2 ",
                 "25*52",
                 "*****",
@@ -196,7 +195,7 @@ public final class MinesweeperBoardTest {
 
     @Test
     public void testLargeInputBoard() {
-        final List<String> inputBoard = Arrays.asList(
+        final List<String> inputBoard = List.of(
                 " *  * ",
                 "  *   ",
                 "    * ",
@@ -204,7 +203,7 @@ public final class MinesweeperBoardTest {
                 " *  * ",
                 "      ");
 
-        final List<String> expectedAnnotatedRepresentation = Arrays.asList(
+        final List<String> expectedAnnotatedRepresentation = List.of(
                 "1*22*1",
                 "12*322",
                 " 123*2",
@@ -238,7 +237,7 @@ public final class MinesweeperBoardTest {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Input board rows must all have the same number of columns.");
 
-        new MinesweeperBoard(Arrays.asList(
+        new MinesweeperBoard(List.of(
                 "*",
                 "**",
                 "* *",

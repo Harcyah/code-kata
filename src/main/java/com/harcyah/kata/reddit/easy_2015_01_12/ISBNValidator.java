@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.regex.Pattern;
 
 // http://www.reddit.com/r/dailyprogrammer/comments/2s7ezp/20150112_challenge_197_easy_isbn_validator/
-public class ISBNValidator {
+public class IsbnValidator {
 
     public boolean isValid(String isbn) {
         String clean = StringUtils.remove(isbn, '-');

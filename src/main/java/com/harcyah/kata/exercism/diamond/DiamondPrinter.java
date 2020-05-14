@@ -10,7 +10,7 @@ public class DiamondPrinter {
         int size = 2 * (number - 1) + 1;
 
         String[] lines = new String[size];
-        for (int i=0; i<size / 2 + 1; i++) {
+        for (int i = 0; i < size / 2 + 1; i++) {
             char c = (char) ('A' + i);
 
             int leftPosition = size / 2 + 1 - i - 1;
@@ -25,7 +25,7 @@ public class DiamondPrinter {
             lines[size - 1 - i] = line;
         }
 
-        return Arrays.asList(lines);
+        return List.of(lines);
     }
 
 }

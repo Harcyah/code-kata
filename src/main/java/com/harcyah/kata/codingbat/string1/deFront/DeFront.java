@@ -7,4 +7,5 @@ public class DeFront {
         String b = str.charAt(1) == 'b' ? "b" : "";
         return a + b + str.substring(2);
     }
+
 }

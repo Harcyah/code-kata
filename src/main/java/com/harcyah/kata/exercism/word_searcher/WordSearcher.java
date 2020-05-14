@@ -78,7 +78,7 @@ public class WordSearcher {
     private Needle getWord(char[][] chars, int length, Point start, Point direction) {
         StringBuilder sb = new StringBuilder();
         Point here = new Point(start.getX(), start.getY());
-        for (int i=0; i<length; i++) {
+        for (int i = 0; i < length; i++) {
             try {
                 char c = chars[here.getY()][here.getX()];
                 sb.append(c);

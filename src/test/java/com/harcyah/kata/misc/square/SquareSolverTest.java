@@ -2,7 +2,6 @@ package com.harcyah.kata.misc.square;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,6 +10,9 @@ import java.util.List;
 import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 public class SquareSolverTest {
 
@@ -39,13 +41,13 @@ public class SquareSolverTest {
 
         List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
-        Assert.assertFalse(squares.isEmpty());
+        assertFalse(squares.isEmpty());
         Square square = squares.get(0);
-        Assert.assertNotNull(square);
-        Assert.assertEquals(a, square.getA());
-        Assert.assertEquals(b, square.getC());
-        Assert.assertEquals(c, square.getB());
-        Assert.assertEquals(d, square.getD());
+        assertNotNull(square);
+        assertEquals(a, square.getA());
+        assertEquals(b, square.getC());
+        assertEquals(c, square.getB());
+        assertEquals(d, square.getD());
     }
 
     @Test
@@ -58,13 +60,13 @@ public class SquareSolverTest {
 
         List<Square> squares = solver.findSquares(Sets.newTreeSet(points));
 
-        Assert.assertFalse(squares.isEmpty());
+        assertFalse(squares.isEmpty());
         Square square = squares.get(0);
-        Assert.assertNotNull(square);
-        Assert.assertEquals(a, square.getA());
-        Assert.assertEquals(b, square.getB());
-        Assert.assertEquals(c, square.getD());
-        Assert.assertEquals(d, square.getC());
+        assertNotNull(square);
+        assertEquals(a, square.getA());
+        assertEquals(b, square.getB());
+        assertEquals(c, square.getD());
+        assertEquals(d, square.getC());
     }
 
     @Test

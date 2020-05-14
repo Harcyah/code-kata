@@ -26,7 +26,7 @@ final class RelationshipComputer<T extends Comparable> {
         }
 
         int diff = right.size() - left.size();
-        for (int i=0; i<=diff; i++) {
+        for (int i = 0; i <= diff; i++) {
             if (right.subList(i, i + left.size()).equals(left)) {
                 return true;
             }

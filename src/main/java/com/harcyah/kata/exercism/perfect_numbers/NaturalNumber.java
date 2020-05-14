@@ -23,7 +23,7 @@ final class NaturalNumber {
     private Set<Long> getFactors(int input) {
         Set<Long> factors = new HashSet<>();
         long max = input;
-        for (long i = 2; i<max + 1; i++) {
+        for (long i = 2; i < max + 1; i++) {
             if (input % i == 0) {
                 long mirror = input / i;
                 factors.add(i);

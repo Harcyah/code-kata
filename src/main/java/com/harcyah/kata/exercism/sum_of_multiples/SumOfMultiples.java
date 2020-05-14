@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.sum_of_multiples;
 
 public class SumOfMultiples {
 
-    public int Sum(int max, int[] values) {
+    public int sum(int max, int[] values) {
         int sum = 0;
         for (int i = 1; i < max; i++) {
             sum += process(i, values);

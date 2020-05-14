@@ -2,7 +2,7 @@ package com.harcyah.kata.codingbat.string3.countYZ;
 
 public class CountYZ {
 
-    public int countYZ(String source) {
+    public int count(String source) {
         String testable = source.toLowerCase() + " ";
         int counter = 0;
         for (int i = 0; i < (testable.length() - 1); i++) {

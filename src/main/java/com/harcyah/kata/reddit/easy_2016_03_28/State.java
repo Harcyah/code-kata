@@ -5,7 +5,7 @@ public enum State implements EventHandler {
     CLOSED {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = OPENING;
+            door.setState(OPENING);
         }
 
         @Override
@@ -18,12 +18,12 @@ public enum State implements EventHandler {
     CLOSING {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = STOPPED_WHILE_CLOSING;
+            door.setState(STOPPED_WHILE_CLOSING);
         }
 
         @Override
         public void onCycleComplete(GarageDoor door) {
-            door.state = CLOSED;
+            door.setState(CLOSED);
         }
 
     },
@@ -31,7 +31,7 @@ public enum State implements EventHandler {
     STOPPED_WHILE_CLOSING {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = OPENING;
+            door.setState(OPENING);
         }
 
         @Override
@@ -44,7 +44,7 @@ public enum State implements EventHandler {
     OPEN {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = CLOSING;
+            door.setState(CLOSING);
         }
 
         @Override
@@ -57,12 +57,12 @@ public enum State implements EventHandler {
     OPENING {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = STOPPED_WHILE_OPENING;
+            door.setState(STOPPED_WHILE_OPENING);
         }
 
         @Override
         public void onCycleComplete(GarageDoor door) {
-            door.state = OPEN;
+            door.setState(OPEN);
         }
 
     },
@@ -70,7 +70,7 @@ public enum State implements EventHandler {
     STOPPED_WHILE_OPENING {
         @Override
         public void onButton(GarageDoor door) {
-            door.state = State.CLOSING;
+            door.setState(State.CLOSING);
         }
 
         @Override
@@ -79,4 +79,5 @@ public enum State implements EventHandler {
         }
 
     }
+
 }

@@ -2,25 +2,35 @@ package com.harcyah.kata.codingbat.functional2;
 
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class NoYYTest {
+public class NoYyTest {
 
     @Test
-    public void testNoYY() {
-        NoYY noYY = new NoYY();
-        assertThat(noYY.noYY(Arrays.asList("a", "b", "c"))).containsExactly("ay", "by", "cy");
-        assertThat(noYY.noYY(Arrays.asList("a", "b", "cy"))).containsExactly("ay", "by");
-        assertThat(noYY.noYY(Arrays.asList("xx", "ya", "zz"))).containsExactly("xxy", "yay", "zzy");
-        assertThat(noYY.noYY(Arrays.asList("xx", "yay", "zz"))).containsExactly("xxy", "zzy");
-        assertThat(noYY.noYY(Arrays.asList("yyx", "y", "zzz"))).containsExactly("zzzy");
-        assertThat(noYY.noYY(Arrays.asList("hello", "there"))).containsExactly("helloy", "therey");
-        assertThat(noYY.noYY(Arrays.asList("ya"))).containsExactly("yay");
-        assertThat(noYY.noYY(Arrays.asList())).containsExactly();
-        assertThat(noYY.noYY(Arrays.asList(""))).containsExactly("y");
-        assertThat(noYY.noYY(Arrays.asList("xx", "yy", "zz"))).containsExactly("xxy", "zzy");
+    public void testNoYy() {
+        NoYy sut = new NoYy();
+        assertThat(sut.noYy(List.of("a", "b", "c")))
+            .containsExactly("ay", "by", "cy");
+        assertThat(sut.noYy(List.of("a", "b", "cy")))
+            .containsExactly("ay", "by");
+        assertThat(sut.noYy(List.of("xx", "ya", "zz")))
+            .containsExactly("xxy", "yay", "zzy");
+        assertThat(sut.noYy(List.of("xx", "yay", "zz")))
+            .containsExactly("xxy", "zzy");
+        assertThat(sut.noYy(List.of("yyx", "y", "zzz")))
+            .containsExactly("zzzy");
+        assertThat(sut.noYy(List.of("hello", "there")))
+            .containsExactly("helloy", "therey");
+        assertThat(sut.noYy(List.of("ya")))
+            .containsExactly("yay");
+        assertThat(sut.noYy(List.of()))
+            .containsExactly();
+        assertThat(sut.noYy(List.of("")))
+            .containsExactly("y");
+        assertThat(sut.noYy(List.of("xx", "yy", "zz")))
+            .containsExactly("xxy", "zzy");
     }
 
 }

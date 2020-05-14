@@ -31,9 +31,9 @@ public final class RectangleCounterTest {
     @Test
     public void testInputWithOneRectangle() {
         String[] inputGrid = new String[]{
-                "+-+",
-                "| |",
-                "+-+"
+            "+-+",
+            "| |",
+            "+-+"
         };
 
         assertEquals(1, rectangleCounter.countRectangles(inputGrid));
@@ -42,11 +42,11 @@ public final class RectangleCounterTest {
     @Test
     public void testInputWithTwoRectanglesWithoutSharedEdges() {
         String[] inputGrid = new String[]{
-                "  +-+",
-                "  | |",
-                "+-+-+",
-                "| |  ",
-                "+-+  "
+            "  +-+",
+            "  | |",
+            "+-+-+",
+            "| |  ",
+            "+-+  "
         };
 
         assertEquals(2, rectangleCounter.countRectangles(inputGrid));
@@ -55,11 +55,11 @@ public final class RectangleCounterTest {
     @Test
     public void testInputWithFiveRectanglesWithSharedEdges() {
         String[] inputGrid = new String[]{
-                "  +-+",
-                "  | |",
-                "+-+-+",
-                "| | |",
-                "+-+-+"
+            "  +-+",
+            "  | |",
+            "+-+-+",
+            "| | |",
+            "+-+-+"
         };
 
         assertEquals(5, rectangleCounter.countRectangles(inputGrid));
@@ -68,8 +68,8 @@ public final class RectangleCounterTest {
     @Test
     public void testThatRectangleOfHeightOneIsCounted() {
         String[] inputGrid = new String[]{
-                "+--+",
-                "+--+"
+            "+--+",
+            "+--+"
         };
 
         assertEquals(1, rectangleCounter.countRectangles(inputGrid));
@@ -78,9 +78,9 @@ public final class RectangleCounterTest {
     @Test
     public void testThatRectangleOfWidthOneIsCounted() {
         String[] inputGrid = new String[]{
-                "++",
-                "||",
-                "++"
+            "++",
+            "||",
+            "++"
         };
 
         assertEquals(1, rectangleCounter.countRectangles(inputGrid));
@@ -89,8 +89,8 @@ public final class RectangleCounterTest {
     @Test
     public void testThatOneByOneSquareIsCounted() {
         String[] inputGrid = new String[]{
-                "++",
-                "++"
+            "++",
+            "++"
         };
 
         assertEquals(1, rectangleCounter.countRectangles(inputGrid));
@@ -99,11 +99,11 @@ public final class RectangleCounterTest {
     @Test
     public void testThatIncompleteRectanglesAreNotCounted() {
         String[] inputGrid = new String[]{
-                "  +-+",
-                "    |",
-                "+-+-+",
-                "| | -",
-                "+-+-+"
+            "  +-+",
+            "    |",
+            "+-+-+",
+            "| | -",
+            "+-+-+"
         };
 
         assertEquals(1, rectangleCounter.countRectangles(inputGrid));
@@ -112,11 +112,11 @@ public final class RectangleCounterTest {
     @Test
     public void testThatRectanglesOfDifferentSizesAreAllCounted() {
         String[] inputGrid = new String[]{
-                "+------+----+",
-                "|      |    |",
-                "+---+--+    |",
-                "|   |       |",
-                "+---+-------+"
+            "+------+----+",
+            "|      |    |",
+            "+---+--+    |",
+            "|   |       |",
+            "+---+-------+"
         };
 
         assertEquals(3, rectangleCounter.countRectangles(inputGrid));
@@ -125,11 +125,11 @@ public final class RectangleCounterTest {
     @Test
     public void testThatIntersectionsWithoutCornerCharacterDoNotCountAsRectangleCorners() {
         String[] inputGrid = new String[]{
-                "+------+----+",
-                "|      |    |",
-                "+------+    |",
-                "|   |       |",
-                "+---+-------+"
+            "+------+----+",
+            "|      |    |",
+            "+------+    |",
+            "|   |       |",
+            "+---+-------+"
         };
 
         assertEquals(2, rectangleCounter.countRectangles(inputGrid));
@@ -138,14 +138,14 @@ public final class RectangleCounterTest {
     @Test
     public void testLargeInputWithManyRectangles() {
         String[] inputGrid = new String[]{
-                "+---+--+----+",
-                "|   +--+----+",
-                "+---+--+    |",
-                "|   +--+----+",
-                "+---+--+--+-+",
-                "+---+--+--+-+",
-                "+------+  | |",
-                "          +-+"
+            "+---+--+----+",
+            "|   +--+----+",
+            "+---+--+    |",
+            "|   +--+----+",
+            "+---+--+--+-+",
+            "+---+--+--+-+",
+            "+------+  | |",
+            "          +-+"
         };
 
         assertEquals(60, rectangleCounter.countRectangles(inputGrid));

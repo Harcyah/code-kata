@@ -1,24 +1,25 @@
 package com.harcyah.kata.codingbat.string3.countYZ;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-public class CountYZTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class CountYzTest {
 
     @Test
-    public void testCountYZ() {
-        CountYZ countYZ = new CountYZ();
-        Assertions.assertThat(countYZ.countYZ("fez day")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("day fez")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("day fyyyz")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("day yak")).isEqualTo(1);
-        Assertions.assertThat(countYZ.countYZ("day:yak")).isEqualTo(1);
-        Assertions.assertThat(countYZ.countYZ("!!day--yaz!!")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("yak zak")).isEqualTo(0);
-        Assertions.assertThat(countYZ.countYZ("DAY abc XYZ")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("aaz yyz my")).isEqualTo(3);
-        Assertions.assertThat(countYZ.countYZ("y2bz")).isEqualTo(2);
-        Assertions.assertThat(countYZ.countYZ("zxyx")).isEqualTo(0);
+    public void testCount() {
+        CountYZ sut = new CountYZ();
+        assertThat(sut.count("fez day")).isEqualTo(2);
+        assertThat(sut.count("day fez")).isEqualTo(2);
+        assertThat(sut.count("day fyyyz")).isEqualTo(2);
+        assertThat(sut.count("day yak")).isEqualTo(1);
+        assertThat(sut.count("day:yak")).isEqualTo(1);
+        assertThat(sut.count("!!day--yaz!!")).isEqualTo(2);
+        assertThat(sut.count("yak zak")).isEqualTo(0);
+        assertThat(sut.count("DAY abc XYZ")).isEqualTo(2);
+        assertThat(sut.count("aaz yyz my")).isEqualTo(3);
+        assertThat(sut.count("y2bz")).isEqualTo(2);
+        assertThat(sut.count("zxyx")).isEqualTo(0);
     }
 
 }

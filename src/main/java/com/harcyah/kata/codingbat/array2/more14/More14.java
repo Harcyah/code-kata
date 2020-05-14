@@ -17,7 +17,5 @@ public class More14 {
         return ones > fours;
     }
 
-
 }
-
 

@@ -10,7 +10,5 @@ public class FizzArray {
         return array;
     }
 
-
 }
-
 

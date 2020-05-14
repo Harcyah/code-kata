@@ -1,7 +1,8 @@
 package com.harcyah.kata.reddit.easy_2016_03_21;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ClarenceTheSlowTypistTest {
 
@@ -9,7 +10,7 @@ public class ClarenceTheSlowTypistTest {
 
     @Test
     public void testSolve() {
-        Assert.assertEquals(27.38, typist.solve("219.45.143.143"), 0.01);
+        assertEquals(27.38, typist.solve("219.45.143.143"), 0.01);
     }
 
 }

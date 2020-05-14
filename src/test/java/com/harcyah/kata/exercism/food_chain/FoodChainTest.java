@@ -58,7 +58,6 @@ public class FoodChainTest {
         assertEquals(expected, foodChain.verse(verse));
     }
 
-
     @Test
     public void dog() {
         int verse = 5;
@@ -113,7 +112,6 @@ public class FoodChainTest {
         assertEquals(expected, foodChain.verse(verse));
     }
 
-
     @Test
     public void multipleVerses() {
         int startVerse = 1;
@@ -134,7 +132,6 @@ public class FoodChainTest {
 
         assertEquals(expected, foodChain.verses(startVerse, endVerse));
     }
-
 
     @Test
     public void wholeSong() {
@@ -193,4 +190,5 @@ public class FoodChainTest {
 
         assertEquals(expected, foodChain.verses(startVerse, endVerse));
     }
+
 }

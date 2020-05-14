@@ -13,5 +13,4 @@ public class Pangrams {
         return alphabet.trim().isEmpty();
     }
 
-
 }

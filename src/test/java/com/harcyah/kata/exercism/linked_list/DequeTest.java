@@ -60,4 +60,5 @@ public class DequeTest {
         assertThat(subject.pop()).isEqualTo(50);
         assertThat(subject.shift()).isEqualTo(30);
     }
+
 }

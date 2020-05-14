@@ -1,23 +1,24 @@
 package com.harcyah.kata.codingbat.recursion1.changeXY;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-public class ChangeXYTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ChangeXyTest {
 
     @Test
-    public void testChangeXY() {
-        ChangeXY changeXY = new ChangeXY();
-        Assertions.assertThat(changeXY.changeXY("codex")).isEqualTo("codey");
-        Assertions.assertThat(changeXY.changeXY("xxhixx")).isEqualTo("yyhiyy");
-        Assertions.assertThat(changeXY.changeXY("xhixhix")).isEqualTo("yhiyhiy");
-        Assertions.assertThat(changeXY.changeXY("hiy")).isEqualTo("hiy");
-        Assertions.assertThat(changeXY.changeXY("h")).isEqualTo("h");
-        Assertions.assertThat(changeXY.changeXY("x")).isEqualTo("y");
-        Assertions.assertThat(changeXY.changeXY("")).isEqualTo("");
-        Assertions.assertThat(changeXY.changeXY("xxx")).isEqualTo("yyy");
-        Assertions.assertThat(changeXY.changeXY("yyhxyi")).isEqualTo("yyhyyi");
-        Assertions.assertThat(changeXY.changeXY("hihi")).isEqualTo("hihi");
+    public void testChangeXy() {
+        ChangeXY sut = new ChangeXY();
+        assertThat(sut.changeXY("codex")).isEqualTo("codey");
+        assertThat(sut.changeXY("xxhixx")).isEqualTo("yyhiyy");
+        assertThat(sut.changeXY("xhixhix")).isEqualTo("yhiyhiy");
+        assertThat(sut.changeXY("hiy")).isEqualTo("hiy");
+        assertThat(sut.changeXY("h")).isEqualTo("h");
+        assertThat(sut.changeXY("x")).isEqualTo("y");
+        assertThat(sut.changeXY("")).isEqualTo("");
+        assertThat(sut.changeXY("xxx")).isEqualTo("yyy");
+        assertThat(sut.changeXY("yyhxyi")).isEqualTo("yyhyyi");
+        assertThat(sut.changeXY("hihi")).isEqualTo("hihi");
     }
 
 }

@@ -46,4 +46,5 @@ public class BankAccount {
     public void close() {
         this.closed = true;
     }
+
 }

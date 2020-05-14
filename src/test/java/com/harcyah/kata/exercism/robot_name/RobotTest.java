@@ -34,4 +34,5 @@ public class RobotTest {
     private static void assertIsValidName(String name) {
         assertThat(name.matches(EXPECTED_ROBOT_NAME_PATTERN), is(true));
     }
+
 }
