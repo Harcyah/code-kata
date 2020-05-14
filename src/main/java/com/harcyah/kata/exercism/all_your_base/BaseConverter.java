@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.all_your_base;
 
-final class BaseConverter {
+public class BaseConverter {
 
     private static final int[] ZERO = new int[]{0};
     private final int valueBase10;

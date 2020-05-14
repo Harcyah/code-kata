@@ -7,8 +7,8 @@ public class SimpleLinkedList {
 
     private static class Element {
 
-        private Element prev;
-        private int data;
+        private final Element prev;
+        private final int data;
 
         public Element(int data) {
             this.data = data;

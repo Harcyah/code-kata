@@ -3,7 +3,7 @@ package com.harcyah.kata.exercism.perfect_numbers;
 import java.util.HashSet;
 import java.util.Set;
 
-final class NaturalNumber {
+public class NaturalNumber {
 
     private Classification classification;
 

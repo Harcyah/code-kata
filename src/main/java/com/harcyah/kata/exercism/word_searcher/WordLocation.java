@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @AllArgsConstructor
 @EqualsAndHashCode
-class WordLocation {
+public class WordLocation {
 
     private final Pair startCoord;
     private final Pair endCoord;

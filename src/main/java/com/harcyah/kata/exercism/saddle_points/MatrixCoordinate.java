@@ -3,7 +3,7 @@ package com.harcyah.kata.exercism.saddle_points;
 import lombok.Data;
 
 @Data
-class MatrixCoordinate {
+public class MatrixCoordinate {
 
     private final int row;
     private final int col;

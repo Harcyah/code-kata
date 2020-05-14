@@ -3,7 +3,7 @@ package com.harcyah.kata.exercism.flatten_arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-final class Flattener {
+public class Flattener {
 
     public List<Object> flatten(List<Object> original) {
         List<Object> out = new ArrayList<>();

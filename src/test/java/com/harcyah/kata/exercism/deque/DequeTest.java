@@ -1,4 +1,4 @@
-package com.harcyah.kata.exercism.linked_list;
+package com.harcyah.kata.exercism.deque;
 
 import org.junit.Before;
 import org.junit.Test;

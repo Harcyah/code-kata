@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
-class Pair {
+public class Pair {
 
     private final int x;
     private final int y;

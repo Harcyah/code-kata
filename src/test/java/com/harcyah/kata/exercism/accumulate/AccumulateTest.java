@@ -27,7 +27,7 @@ public class AccumulateTest {
     public void accumulateUpperCases() {
         List<String> input = List.of("hello", "world");
         List<String> expectedOutput = List.of("HELLO", "WORLD");
-        assertEquals(expectedOutput, Accumulate.accumulate(input, x -> x.toUpperCase()));
+        assertEquals(expectedOutput, Accumulate.accumulate(input, String::toUpperCase));
     }
 
     @Test

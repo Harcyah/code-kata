@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.wordy;
 
-final class WordProblemSolver {
+public class WordProblemSolver {
 
     private static final String PREFIX = "What is ";
     private static final String SUFFIX = "?";

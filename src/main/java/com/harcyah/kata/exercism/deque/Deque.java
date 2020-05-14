@@ -1,12 +1,12 @@
-package com.harcyah.kata.exercism.linked_list;
+package com.harcyah.kata.exercism.deque;
 
 public class Deque<T> {
 
-    private class Element<V> {
+    private static class Element<V> {
 
-        protected Element<V> prev;
-        protected Element<V> next;
-        protected V value;
+        private Element<V> prev;
+        private Element<V> next;
+        private final V value;
 
         public Element(V value) {
             this.prev = null;
@@ -16,8 +16,8 @@ public class Deque<T> {
 
     }
 
-    protected Element<T> head;
-    protected Element<T> tail;
+    private Element<T> head;
+    private Element<T> tail;
 
     private boolean empty() {
         return head == null && tail == null;

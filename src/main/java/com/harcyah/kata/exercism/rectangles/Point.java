@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
-class Point {
+public class Point {
 
     private final int x;
     private final int y;

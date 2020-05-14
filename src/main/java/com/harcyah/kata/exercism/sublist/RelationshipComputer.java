@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.sublist;
 
 import java.util.List;
 
-final class RelationshipComputer<T extends Comparable> {
+public class RelationshipComputer<T extends Comparable> {
 
     public Relationship computeRelationship(List<T> left, List<T> right) {
         if (left.equals(right)) {

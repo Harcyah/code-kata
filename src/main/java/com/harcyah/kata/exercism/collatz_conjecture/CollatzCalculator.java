@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.collatz_conjecture;
 
-class CollatzCalculator {
+public class CollatzCalculator {
 
     public int computeStepCount(int start) {
         if (start <= 0) {

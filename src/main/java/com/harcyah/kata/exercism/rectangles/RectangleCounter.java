@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-final class RectangleCounter {
+public class RectangleCounter {
 
     private static final char CORNER = '+';
 

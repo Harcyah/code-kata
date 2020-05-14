@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PrimeTest {
+
     @Test
     public void testFirstPrime() {
         assertThat(Prime.nth(1)).isEqualTo(2);

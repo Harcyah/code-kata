@@ -1,15 +1,14 @@
 package com.harcyah.kata.exercism.sieve;
 
+import lombok.AllArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 public class Sieve {
 
     protected int value;
-
-    public Sieve(int value) {
-        this.value = value;
-    }
 
     public List<Integer> getPrimes() {
         boolean[] numbers = new boolean[value + 1];

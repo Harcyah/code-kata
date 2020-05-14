@@ -1,11 +1,11 @@
 package com.harcyah.kata.exercism.robot_simulator;
 
-final class Robot {
+public class RobotSimulator {
 
     private GridPosition gridPosition;
     private Orientation orientation;
 
-    public Robot(GridPosition gridPosition, Orientation orientation) {
+    public RobotSimulator(GridPosition gridPosition, Orientation orientation) {
         this.gridPosition = gridPosition;
         this.orientation = orientation;
     }

@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.bracket_push;
 
 import java.util.Stack;
 
-final class BracketChecker {
+public class BracketChecker {
 
     private static final char LEFT_BRACE = '{';
     private static final char LEFT_BRACKET = '[';

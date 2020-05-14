@@ -9,10 +9,9 @@ public class Cipher {
 
     private static final Pattern PATTERN = Pattern.compile("[a-z]+");
     private static final Random RANDOM = new Random(System.currentTimeMillis());
-
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
-    protected String key;
+    protected final String key;
 
     public Cipher(String key) {
         Matcher matcher = PATTERN.matcher(key);

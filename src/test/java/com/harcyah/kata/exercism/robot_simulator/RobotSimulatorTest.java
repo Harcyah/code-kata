@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public final class RobotTest {
+public final class RobotSimulatorTest {
 
     @Test
     public void testRobotIsCreatedWithCorrectInitialPosition() {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
-        final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(initialGridPosition, Orientation.NORTH);
 
         assertTrue(robot.getGridPosition().equals(initialGridPosition));
     }
@@ -17,7 +17,7 @@ public final class RobotTest {
     @Test
     public void testRobotIsCreatedWithCorrectInitialOrientation() {
         final Orientation initialOrientation = Orientation.NORTH;
-        final Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), initialOrientation);
 
         assertTrue(robot.getOrientation().equals(initialOrientation));
     }
@@ -25,7 +25,7 @@ public final class RobotTest {
     @Test
     public void testTurningRightDoesNotChangePosition() {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
-        final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(initialGridPosition, Orientation.NORTH);
 
         robot.turnRight();
 
@@ -34,7 +34,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromNorthToEast() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.NORTH);
 
         robot.turnRight();
 
@@ -45,7 +45,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromEastToSouth() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.EAST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.EAST);
 
         robot.turnRight();
 
@@ -56,7 +56,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromSouthToWest() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.SOUTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.SOUTH);
 
         robot.turnRight();
 
@@ -67,7 +67,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningRightCorrectlyChangesOrientationFromWestToNorth() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.WEST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.WEST);
 
         robot.turnRight();
 
@@ -79,7 +79,7 @@ public final class RobotTest {
     @Test
     public void testTurningLeftDoesNotChangePosition() {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
-        final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(initialGridPosition, Orientation.NORTH);
 
         robot.turnLeft();
 
@@ -88,7 +88,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningLeftCorrectlyChangesOrientationFromNorthToWest() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.NORTH);
 
         robot.turnLeft();
 
@@ -99,7 +99,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningLeftCorrectlyChangesOrientationFromWestToSouth() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.WEST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.WEST);
 
         robot.turnLeft();
 
@@ -110,7 +110,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningLeftCorrectlyChangesOrientationFromSouthToEast() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.SOUTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.SOUTH);
 
         robot.turnLeft();
 
@@ -121,7 +121,7 @@ public final class RobotTest {
 
     @Test
     public void testTurningLeftCorrectlyChangesOrientationFromEastToNorth() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.EAST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.EAST);
 
         robot.turnLeft();
 
@@ -133,7 +133,7 @@ public final class RobotTest {
     @Test
     public void testAdvancingDoesNotChangeOrientation() {
         final Orientation initialOrientation = Orientation.NORTH;
-        final Robot robot = new Robot(new GridPosition(0, 0), initialOrientation);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), initialOrientation);
 
         robot.advance();
 
@@ -142,7 +142,7 @@ public final class RobotTest {
 
     @Test
     public void testAdvancingWhenFacingNorthIncreasesYCoordinateByOne() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.NORTH);
 
         robot.advance();
 
@@ -153,7 +153,7 @@ public final class RobotTest {
 
     @Test
     public void testAdvancingWhenFacingSouthDecreasesYCoordinateByOne() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.SOUTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.SOUTH);
 
         robot.advance();
 
@@ -164,7 +164,7 @@ public final class RobotTest {
 
     @Test
     public void testAdvancingWhenFacingEastIncreasesXCoordinateByOne() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.EAST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.EAST);
 
         robot.advance();
 
@@ -175,7 +175,7 @@ public final class RobotTest {
 
     @Test
     public void testAdvancingWhenFacingWestDecreasesXCoordinateByOne() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.WEST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.WEST);
 
         robot.advance();
 
@@ -186,7 +186,7 @@ public final class RobotTest {
 
     @Test
     public void testInstructionsToMoveWestAndNorth() {
-        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(0, 0), Orientation.NORTH);
 
         robot.simulate("LAAARALA");
 
@@ -199,7 +199,7 @@ public final class RobotTest {
 
     @Test
     public void testInstructionsToMoveWestAndSouth() {
-        final Robot robot = new Robot(new GridPosition(2, -7), Orientation.EAST);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(2, -7), Orientation.EAST);
 
         robot.simulate("RRAAAAALA");
 
@@ -212,7 +212,7 @@ public final class RobotTest {
 
     @Test
     public void testInstructionsToMoveEastAndNorth() {
-        final Robot robot = new Robot(new GridPosition(8, 4), Orientation.SOUTH);
+        final RobotSimulator robot = new RobotSimulator(new GridPosition(8, 4), Orientation.SOUTH);
 
         robot.simulate("LAAARRRALLLL");
 
