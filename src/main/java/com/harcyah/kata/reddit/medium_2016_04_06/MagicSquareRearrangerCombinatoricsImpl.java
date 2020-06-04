@@ -2,7 +2,7 @@ package com.harcyah.kata.reddit.medium_2016_04_06;
 
 import com.google.common.collect.Lists;
 import com.harcyah.kata.reddit.easy_2016_04_04.MagicSquareAny;
-import org.paukov.combinatorics.Factory;
+import org.paukov.combinatorics.CombinatoricsFactory;
 import org.paukov.combinatorics.Generator;
 import org.paukov.combinatorics.ICombinatoricsVector;
 
@@ -18,8 +18,8 @@ public class MagicSquareRearrangerCombinatoricsImpl implements MagicSquareRearra
         int target = MagicSquareAny.computeMagicConstant(square.length);
         List<Integer[]> solutions = Lists.newArrayList();
         Set<Integer> elements = IntStream.range(0, square.length).boxed().collect(Collectors.toSet());
-        ICombinatoricsVector<Integer> vector = Factory.createVector(elements);
-        Generator<Integer> generator = Factory.createPermutationGenerator(vector);
+        ICombinatoricsVector<Integer> vector = CombinatoricsFactory.createVector(elements);
+        Generator<Integer> generator = CombinatoricsFactory.createPermutationGenerator(vector);
         generator.forEach(permutation -> {
             if (isMagicSquare(square, permutation, target)) {
                 solutions.add(toIntegerArray(permutation));
