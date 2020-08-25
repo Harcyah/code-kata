@@ -2,7 +2,6 @@ package com.harcyah.kata.reddit.hard_2016_02_13;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -103,7 +102,7 @@ public class TerminalTest {
     }
 
     @Test
-    public void testEraseRight() throws Exception {
+    public void testEraseRight() {
         terminal.buffer[0] = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
         terminal.col = 5;
         terminal.eraseRight();
@@ -111,27 +110,29 @@ public class TerminalTest {
     }
 
     @Test
-    public void testSetModeInsert() throws Exception {
+    public void testSetModeInsert() {
         terminal.setModeInsert();
         assertEquals(Modes.INSERT, terminal.mode);
     }
 
     @Test
-    public void testSetModeOverwrite() throws Exception {
+    public void testSetModeOverwrite() {
         terminal.setModeOverwrite();
         assertEquals(Modes.OVERWRITE, terminal.mode);
     }
 
     @Test
-    public void testPutCharDependsOnCurrentMode() throws Exception {
-        Mode mode = Mockito.mock(Mode.class);
+    public void testPutCharDependsOnCurrentMode() {
+        RememberingMode mode = new RememberingMode();
         terminal.mode = mode;
         terminal.putChar('c');
-        Mockito.verify(mode).putChar(terminal, 'c');
+        terminal.putChar('b');
+        terminal.putChar('z');
+        assertThat(mode.getCharacters()).containsExactly('c', 'b', 'z');
     }
 
     @Test
-    public void testPutCharInsert() throws Exception {
+    public void testPutCharInsert() {
         terminal.mode = Modes.INSERT;
 
         // PutChar on empty line
@@ -153,7 +154,7 @@ public class TerminalTest {
     }
 
     @Test
-    public void testPutCharOverwrite() throws Exception {
+    public void testPutCharOverwrite() {
         terminal.mode = Modes.OVERWRITE;
 
         // PutChar on empty line
@@ -175,14 +176,14 @@ public class TerminalTest {
     }
 
     @Test
-    public void testPutCharAtCurrentPosition() throws Exception {
+    public void testPutCharAtCurrentPosition() {
         terminal.moveTo(1, 2);
         terminal.putCharAtCurrentPosition('z');
         assertEquals('z', terminal.buffer[2][1]);
     }
 
     @Test
-    public void testShiftRight() throws Exception {
+    public void testShiftRight() {
         terminal.fill('*');
         terminal.row = 0;
         terminal.col = 5;

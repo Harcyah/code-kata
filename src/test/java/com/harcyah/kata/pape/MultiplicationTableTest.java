@@ -11,7 +11,7 @@ public class MultiplicationTableTest {
     public void testGet3() {
         MultiplicationTable mt = new MultiplicationTable();
         int[][] table = mt.get(1, 3);
-        assertThat(table).hasSize(3);
+        assertThat(table).hasDimensions(3, 3);
         assertArrayEquals(new int[]{1, 2, 3}, table[0]);
         assertArrayEquals(new int[]{2, 4, 6}, table[1]);
         assertArrayEquals(new int[]{3, 6, 9}, table[2]);
@@ -21,7 +21,7 @@ public class MultiplicationTableTest {
     public void testGet5() {
         MultiplicationTable mt = new MultiplicationTable();
         int[][] table = mt.get(1, 5);
-        assertThat(table).hasSize(5);
+        assertThat(table).hasDimensions(5, 5);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, table[0]);
         assertArrayEquals(new int[]{2, 4, 6, 8, 10}, table[1]);
         assertArrayEquals(new int[]{3, 6, 9, 12, 15}, table[2]);
