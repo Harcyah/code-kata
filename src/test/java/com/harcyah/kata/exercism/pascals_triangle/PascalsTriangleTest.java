@@ -1,10 +1,11 @@
 package com.harcyah.kata.exercism.pascals_triangle;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PascalsTriangleTest {
 
@@ -67,9 +68,10 @@ public class PascalsTriangleTest {
         assertFalse(PascalsTriangle.isTriangle(input));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesNotNegativeRows() {
-        PascalsTriangle.computeTriangle(-1);
+        assertThatThrownBy(() -> PascalsTriangle.computeTriangle(-1))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
 }

@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.difference_of_squares;
 
 import java.util.stream.IntStream;
 
-public final class Difference {
+public class Difference {
 
     public static int computeSquareOfSumTo(int i) {
         int sum = (i * (i + 1)) / 2;

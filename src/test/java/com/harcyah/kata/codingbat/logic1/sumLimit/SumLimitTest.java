@@ -1,6 +1,6 @@
 package com.harcyah.kata.codingbat.logic1.sumLimit;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

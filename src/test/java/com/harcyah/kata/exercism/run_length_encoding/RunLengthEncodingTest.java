@@ -1,14 +1,14 @@
 package com.harcyah.kata.exercism.run_length_encoding;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RunLengthEncodingTest {
     private RunLengthEncoding runLengthEncoding;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         runLengthEncoding = new RunLengthEncoding();
     }

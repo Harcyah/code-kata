@@ -1,7 +1,7 @@
 package com.harcyah.kata.codingbat.map2.wordCount;
 
 import com.harcyah.kata.codingbat.MapBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 

@@ -1,8 +1,9 @@
 package com.harcyah.kata.exercism.nth_prime;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PrimeTest {
 
@@ -26,9 +27,10 @@ public class PrimeTest {
         assertThat(Prime.nth(10001)).isEqualTo(104743);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testUndefinedPrime() {
-        Prime.nth(0);
+        assertThatThrownBy(() -> Prime.nth(0))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
 }

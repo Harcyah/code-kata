@@ -1,8 +1,9 @@
 package com.harcyah.kata.exercism.triangle;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TriangleTest {
 
@@ -76,29 +77,34 @@ public class TriangleTest {
         assertEquals(TriangleKind.SCALENE, triangle.getKind());
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesWithNoSizeAreIllegal() throws Exception {
-        new Triangle(0, 0, 0);
+    @Test
+    public void trianglesWithNoSizeAreIllegal() {
+        assertThatThrownBy(() -> new Triangle(0, 0, 0))
+            .isInstanceOf(TriangleException.class);
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesWithNegativeSidesAreIllegal() throws Exception {
-        new Triangle(3, 4, -5);
+    @Test
+    public void trianglesWithNegativeSidesAreIllegal() {
+        assertThatThrownBy(() -> new Triangle(3, 4, -5))
+            .isInstanceOf(TriangleException.class);
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesViolatingTriangleInequalityAreIllegal() throws Exception {
-        new Triangle(1, 1, 3);
+    @Test
+    public void trianglesViolatingTriangleInequalityAreIllegal() {
+        assertThatThrownBy(() -> new Triangle(1, 1, 3))
+            .isInstanceOf(TriangleException.class);
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesViolatingTriangleInequalityAreIllegal2() throws Exception {
-        new Triangle(2, 4, 2);
+    @Test
+    public void trianglesViolatingTriangleInequalityAreIllegal2() {
+        assertThatThrownBy(() -> new Triangle(2, 4, 2))
+            .isInstanceOf(TriangleException.class);
     }
 
-    @Test(expected = TriangleException.class)
-    public void trianglesViolatingTriangleInequalityAreIllegal3() throws Exception {
-        new Triangle(7, 3, 2);
+    @Test
+    public void trianglesViolatingTriangleInequalityAreIllegal3() {
+        assertThatThrownBy(() -> new Triangle(7, 3, 2))
+            .isInstanceOf(TriangleException.class);
     }
 
 }

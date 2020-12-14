@@ -1,8 +1,8 @@
 package com.harcyah.kata.exercism.sum_of_multiples;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SumOfMultiplesTest {
 

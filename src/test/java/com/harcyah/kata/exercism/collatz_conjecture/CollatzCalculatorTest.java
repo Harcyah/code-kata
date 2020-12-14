@@ -1,23 +1,16 @@
 package com.harcyah.kata.exercism.collatz_conjecture;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*
- * version: 1.1.0
- */
 public class CollatzCalculatorTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     private CollatzCalculator collatzCalculator;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         collatzCalculator = new CollatzCalculator();
     }
@@ -44,18 +37,16 @@ public class CollatzCalculatorTest {
 
     @Test
     public void testZeroIsConsideredInvalidInput() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Only natural numbers are allowed");
-
-        collatzCalculator.computeStepCount(0);
+        assertThatThrownBy(() -> collatzCalculator.computeStepCount(0))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Only natural numbers are allowed");
     }
 
     @Test
     public void testNegativeIntegerIsConsideredInvalidInput() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Only natural numbers are allowed");
-
-        collatzCalculator.computeStepCount(-15);
+        assertThatThrownBy(() -> collatzCalculator.computeStepCount(-15))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Only natural numbers are allowed");
     }
 
 }

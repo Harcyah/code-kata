@@ -4,10 +4,11 @@ import com.harcyah.kata.misc.poker.suits.IllegalSuitException;
 import com.harcyah.kata.misc.poker.suits.Suit;
 import com.harcyah.kata.misc.poker.values.IllegalValueException;
 import com.harcyah.kata.misc.poker.values.Value;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PokerCardTest {
 
@@ -18,14 +19,16 @@ public class PokerCardTest {
         assertEquals(Suit.C, card.getSuit());
     }
 
-    @Test(expected = IllegalSuitException.class)
-    public void testConstructorUnexpectedSuit() throws Exception {
-        new PokerCard("2X");
+    @Test
+    public void testConstructorUnexpectedSuit() {
+        assertThatThrownBy(() -> new PokerCard("2X"))
+            .isInstanceOf(IllegalSuitException.class);
     }
 
-    @Test(expected = IllegalValueException.class)
-    public void testConstructorUnexpectedValue() throws Exception {
-        new PokerCard("ZS");
+    @Test
+    public void testConstructorUnexpectedValue() {
+        assertThatThrownBy(() -> new PokerCard("ZS"))
+            .isInstanceOf(IllegalValueException.class);
     }
 
     @Test

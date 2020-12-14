@@ -3,7 +3,7 @@ package com.harcyah.kata.exercism.minesweeper;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class MinesweeperBoard {
+public class MinesweeperBoard {
 
     private static final int MINE_INT = -999;
     private static final int VOID_INT = 0;

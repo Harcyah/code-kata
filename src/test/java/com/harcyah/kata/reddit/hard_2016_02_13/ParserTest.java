@@ -2,7 +2,7 @@ package com.harcyah.kata.reddit.hard_2016_02_13;
 
 import com.harcyah.kata.reddit.hard_2016_02_13.commands.PutCharCommand;
 import com.harcyah.kata.reddit.hard_2016_02_13.commands.SpecialCommands;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

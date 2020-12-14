@@ -1,10 +1,11 @@
 package com.harcyah.kata.exercism.simple_linked_list;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class SimpleLinkedListTest {
 
@@ -21,10 +22,11 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(3);
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList list = new SimpleLinkedList();
-        list.pop();
+        assertThatThrownBy(list::pop)
+            .isInstanceOf(NoSuchElementException.class);
     }
 
     @Test

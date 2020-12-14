@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.anagram;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

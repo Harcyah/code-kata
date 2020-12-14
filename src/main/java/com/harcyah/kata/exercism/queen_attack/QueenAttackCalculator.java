@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.queen_attack;
 
-public final class QueenAttackCalculator {
+public class QueenAttackCalculator {
 
     private final BoardCoordinate q1;
     private final BoardCoordinate q2;

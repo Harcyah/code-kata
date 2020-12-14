@@ -1,16 +1,16 @@
 package com.harcyah.kata.reddit.hard_2016_02_13;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TerminalTest {
 
     protected Terminal terminal;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         terminal = new Terminal();
     }

@@ -1,201 +1,193 @@
 package com.harcyah.kata.exercism.minesweeper;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public final class MinesweeperBoardTest {
-
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on
-     * JUnit Rules in general and ExpectedExceptions in particular.
-     */
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+public class MinesweeperBoardTest {
 
     @Test
     public void testInputBoardWithNoRowsAndNoColumns() {
-        final List<String> inputBoard = Collections.emptyList();
-        final List<String> expectedAnnotatedRepresentation = Collections.emptyList();
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> inputBoard = Collections.emptyList();
+        List<String> expectedAnnotatedRepresentation = Collections.emptyList();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithOneRowAndNoColumns() {
-        final List<String> inputBoard = Collections.singletonList("");
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList("");
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> inputBoard = Collections.singletonList("");
+        List<String> expectedAnnotatedRepresentation = Collections.singletonList("");
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithNoMines() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "   ",
                 "   ",
                 "   ");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "   ",
                 "   ",
                 "   ");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithOnlyMines() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "***",
                 "***",
                 "***");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "***",
                 "***",
                 "***");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithSingleMineAtCenter() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "   ",
                 " * ",
                 "   ");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "111",
                 "1*1",
                 "111");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithMinesAroundPerimeter() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "***",
                 "* *",
                 "***");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "***",
                 "*8*",
                 "***");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithSingleRowAndTwoMines() {
-        final List<String> inputBoard = Collections.singletonList(
+        List<String> inputBoard = Collections.singletonList(
                 " * * ");
 
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList(
+        List<String> expectedAnnotatedRepresentation = Collections.singletonList(
                 "1*2*1");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithSingleRowAndTwoMinesAtEdges() {
-        final List<String> inputBoard = Collections.singletonList(
+        List<String> inputBoard = Collections.singletonList(
                 "*   *");
 
-        final List<String> expectedAnnotatedRepresentation = Collections.singletonList(
+        List<String> expectedAnnotatedRepresentation = Collections.singletonList(
                 "*1 1*");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithSingleColumnAndTwoMines() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 " ",
                 "*",
                 " ",
                 "*",
                 " ");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "1",
                 "*",
                 "2",
                 "*",
                 "1");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithSingleColumnAndTwoMinesAtEdges() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "*",
                 " ",
                 " ",
                 " ",
                 "*");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "*",
                 "1",
                 " ",
                 "1",
                 "*");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testInputBoardWithMinesInCross() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 "  *  ",
                 "  *  ",
                 "*****",
                 "  *  ",
                 "  *  ");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 " 2*2 ",
                 "25*52",
                 "*****",
                 "25*52",
                 " 2*2 ");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testLargeInputBoard() {
-        final List<String> inputBoard = List.of(
+        List<String> inputBoard = List.of(
                 " *  * ",
                 "  *   ",
                 "    * ",
@@ -203,7 +195,7 @@ public final class MinesweeperBoardTest {
                 " *  * ",
                 "      ");
 
-        final List<String> expectedAnnotatedRepresentation = List.of(
+        List<String> expectedAnnotatedRepresentation = List.of(
                 "1*22*1",
                 "12*322",
                 " 123*2",
@@ -211,38 +203,37 @@ public final class MinesweeperBoardTest {
                 "1*22*2",
                 "111111");
 
-        final List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
+        List<String> actualAnnotatedRepresentation = new MinesweeperBoard(inputBoard).getAnnotatedRepresentation();
 
         assertEquals(expectedAnnotatedRepresentation, actualAnnotatedRepresentation);
     }
 
     @Test
     public void testNullInputBoardIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board may not be null.");
-
-        new MinesweeperBoard(null);
+        assertThatThrownBy(() -> new MinesweeperBoard(null))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Input board may not be null.");
     }
 
     @Test
     public void testInputBoardWithInvalidSymbolsIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board can only contain the characters ' ' and '*'.");
-
-        new MinesweeperBoard(Collections.singletonList(" * & "));
+        assertThatThrownBy(() -> new MinesweeperBoard(Collections.singletonList(" * & ")))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Input board can only contain the characters ' ' and '*'.");
     }
 
     @Test
     public void testInputBoardWithInconsistentRowLengthsIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Input board rows must all have the same number of columns.");
+        List<String> board = List.of(
+            "*",
+            "**",
+            "* *",
+            "*  *",
+            "*   *");
 
-        new MinesweeperBoard(List.of(
-                "*",
-                "**",
-                "* *",
-                "*  *",
-                "*   *"));
+        assertThatThrownBy(() -> new MinesweeperBoard(board))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Input board rows must all have the same number of columns.");
     }
 
 }

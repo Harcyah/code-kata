@@ -1,6 +1,6 @@
 package com.harcyah.kata.misc.school_attendance;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

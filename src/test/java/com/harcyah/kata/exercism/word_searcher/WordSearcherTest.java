@@ -1,14 +1,14 @@
 package com.harcyah.kata.exercism.word_searcher;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
  * version: 1.0.0
@@ -17,7 +17,7 @@ public class WordSearcherTest {
 
     private WordSearcher wordSearcher;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         wordSearcher = new WordSearcher();
     }

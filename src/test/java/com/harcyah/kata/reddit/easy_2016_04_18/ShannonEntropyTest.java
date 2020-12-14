@@ -1,8 +1,8 @@
 package com.harcyah.kata.reddit.easy_2016_04_18;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ShannonEntropyTest {
 

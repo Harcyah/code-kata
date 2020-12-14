@@ -1,10 +1,10 @@
 package com.harcyah.kata.exercism.perfect_numbers;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public final class NaturalNumberTest {
+public class NaturalNumberTest {
 
     @Test
     public void testSmallPerfectNumberIsClassifiedCorrectly() {

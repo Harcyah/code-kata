@@ -1,9 +1,9 @@
 package com.harcyah.kata.pape;
 
 import com.harcyah.kata.pape.BytesRepresentation.Unit;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BytesRepresentationTest {
 

@@ -1,19 +1,11 @@
 package com.harcyah.kata.exercism.largest_series_product;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LargestSeriesProductCalculatorTest {
-
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on
-     * JUnit Rules in general and ExpectedExceptions in particular.
-     */
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testCorrectlyCalculatesLargestProductOfLengthTwoWithNumbersInOrder() {
@@ -144,11 +136,9 @@ public class LargestSeriesProductCalculatorTest {
     public void testSeriesLengthLongerThanLengthOfStringToTestIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("123");
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(
-                "Series length must be less than or equal to the length of the string to search.");
-
-        calculator.calculateLargestProductForSeriesLength(4);
+        assertThatThrownBy(() -> calculator.calculateLargestProductForSeriesLength(4))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
     @Test
@@ -175,37 +165,32 @@ public class LargestSeriesProductCalculatorTest {
     public void testEmptyStringToSearchAndSeriesOfNonZeroLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("");
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage(
-                "Series length must be less than or equal to the length of the string to search.");
-
-        calculator.calculateLargestProductForSeriesLength(1);
+        assertThatThrownBy(() -> calculator.calculateLargestProductForSeriesLength(1))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Series length must be less than or equal to the length of the string to search.");
     }
 
     @Test
     public void testStringToSearchContainingNonDigitCharacterIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("String to search may only contains digits.");
-
-        new LargestSeriesProductCalculator("1234a5");
+        assertThatThrownBy(() -> new LargestSeriesProductCalculator("1234a5"))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("String to search may only contains digits.");
     }
 
     @Test
     public void testNegativeSeriesLengthIsRejected() {
         LargestSeriesProductCalculator calculator = new LargestSeriesProductCalculator("12345");
 
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Series length must be non-negative.");
-
-        calculator.calculateLargestProductForSeriesLength(-1);
+        assertThatThrownBy(() -> calculator.calculateLargestProductForSeriesLength(-1))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Series length must be non-negative.");
     }
 
     @Test
     public void testNullStringToSearchIsRejected() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("String to search must be non-null.");
-
-        new LargestSeriesProductCalculator(null);
+        assertThatThrownBy(() -> new LargestSeriesProductCalculator(null))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("String to search must be non-null.");
     }
 
 }

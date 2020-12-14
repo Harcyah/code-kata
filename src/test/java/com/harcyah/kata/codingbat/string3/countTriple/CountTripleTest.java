@@ -1,6 +1,6 @@
 package com.harcyah.kata.codingbat.string3.countTriple;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

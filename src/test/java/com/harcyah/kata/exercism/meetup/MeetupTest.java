@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.meetup;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 

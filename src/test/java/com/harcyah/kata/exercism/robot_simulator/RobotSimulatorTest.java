@@ -1,10 +1,10 @@
 package com.harcyah.kata.exercism.robot_simulator;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public final class RobotSimulatorTest {
+public class RobotSimulatorTest {
 
     @Test
     public void testRobotIsCreatedWithCorrectInitialPosition() {

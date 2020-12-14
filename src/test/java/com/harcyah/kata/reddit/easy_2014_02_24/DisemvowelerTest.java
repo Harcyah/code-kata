@@ -1,9 +1,9 @@
 package com.harcyah.kata.reddit.easy_2014_02_24;
 
 import org.apache.commons.lang3.tuple.Pair;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DisemvowelerTest {
 

@@ -1,25 +1,16 @@
 package com.harcyah.kata.exercism.raindrops;
 
-import lombok.AllArgsConstructor;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Collection;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@AllArgsConstructor
-@RunWith(Parameterized.class)
 public class RaindropsTest {
 
-    private final int input;
-    private final String expectedOutput;
-
-    @Parameters
-    public static Collection<Object[]> data() {
+    public static Collection<Object[]> getTestData() {
         return List.of(new Object[][]{
             // Non-primes
             {1, "1"},
@@ -49,9 +40,10 @@ public class RaindropsTest {
         });
     }
 
-    @Test
-    public void test() {
-        assertEquals(expectedOutput, Raindrops.convert(input));
+    @ParameterizedTest
+    @MethodSource("getTestData")
+    public void test(int input, String output) {
+        assertEquals(output, Raindrops.convert(input));
     }
 
 }

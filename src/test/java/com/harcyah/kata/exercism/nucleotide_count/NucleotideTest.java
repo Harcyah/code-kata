@@ -1,8 +1,9 @@
 package com.harcyah.kata.exercism.nucleotide_count;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.entry;
 
 public class NucleotideTest {
@@ -65,10 +66,11 @@ public class NucleotideTest {
         );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesNucleotides() {
         Dna dna = new Dna("GACT");
-        dna.count('X');
+        assertThatThrownBy(() -> dna.count('X'))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

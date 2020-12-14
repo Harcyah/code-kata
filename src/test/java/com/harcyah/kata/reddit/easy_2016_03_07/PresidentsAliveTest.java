@@ -1,6 +1,6 @@
 package com.harcyah.kata.reddit.easy_2016_03_07;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 

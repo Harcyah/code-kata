@@ -1,11 +1,8 @@
 package com.harcyah.kata.exercism.robot_name;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNot.not;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RobotTest {
 
@@ -19,7 +16,7 @@ public class RobotTest {
 
     @Test
     public void differentRobotsHaveDifferentNames() {
-        assertThat(robot.getName(), not(equalTo(new Robot().getName())));
+        assertThat(robot.getName()).isNotEqualTo(new Robot().getName());
     }
 
     @Test
@@ -27,12 +24,12 @@ public class RobotTest {
         final String name = robot.getName();
         robot.reset();
         final String name2 = robot.getName();
-        assertThat(name, not(equalTo(name2)));
+        assertThat(name).isNotEqualTo(name2);
         assertIsValidName(name2);
     }
 
     private static void assertIsValidName(String name) {
-        assertThat(name.matches(EXPECTED_ROBOT_NAME_PATTERN), is(true));
+        assertThat(name.matches(EXPECTED_ROBOT_NAME_PATTERN)).isTrue();
     }
 
 }

@@ -1,6 +1,6 @@
 package com.harcyah.kata.reddit.easy_2016_04_04;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

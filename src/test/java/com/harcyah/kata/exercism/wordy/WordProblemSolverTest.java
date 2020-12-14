@@ -1,19 +1,11 @@
 package com.harcyah.kata.exercism.wordy;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public final class WordProblemSolverTest {
-
-    /*
-     * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
-     * ExpectedExceptions in particular.
-     */
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+public class WordProblemSolverTest {
 
     @Test
     public void testSingleAddition1() {
@@ -87,19 +79,17 @@ public final class WordProblemSolverTest {
 
     @Test
     public void testUnknownOperation() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("I'm sorry, I don't understand the question!");
-
-        new WordProblemSolver().solve("What is 52 cubed?");
+        assertThatThrownBy(() -> new WordProblemSolver().solve("What is 52 cubed?"))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("I'm sorry, I don't understand the question!");
     }
 
     @Test
     public void testInvalidQuestionFormat() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("I'm sorry, I don't understand the question!");
-
         // See https://en.wikipedia.org/wiki/President_of_the_United_States if you really need to know!
-        new WordProblemSolver().solve("Who is the President of the United States?");
+        assertThatThrownBy(() -> new WordProblemSolver().solve("Who is the President of the United States?"))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("I'm sorry, I don't understand the question!");
     }
 
 }

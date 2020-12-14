@@ -1,7 +1,7 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 

@@ -1,12 +1,13 @@
 package com.harcyah.kata.exercism.series;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class SeriesTest {
 
@@ -131,9 +132,10 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsAnErrorIfNotEnoughDigitsToSlice() {
-        new Series("01032987583").slices(12);
+        assertThatThrownBy(() -> new Series("01032987583").slices(12))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
 }

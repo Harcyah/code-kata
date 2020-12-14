@@ -2,17 +2,17 @@ package com.harcyah.kata.misc.square;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class SquareSolverTest {
 
@@ -83,7 +83,7 @@ public class SquareSolverTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void testWithLaurentDataset() throws IOException {
         Reader reader = new Reader();
         TreeSet<Point> points = reader.read();

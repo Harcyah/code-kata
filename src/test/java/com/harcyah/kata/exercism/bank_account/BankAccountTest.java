@@ -1,21 +1,19 @@
 package com.harcyah.kata.exercism.bank_account;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class BankAccountTest {
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+
     private BankAccount bankAccount;
 
-    @Before
+    @BeforeEach
     public void setup() {
         bankAccount = new BankAccount();
     }
@@ -68,13 +66,12 @@ public class BankAccountTest {
     }
 
     @Test
-    public void cannotWithdrawMoneyFromEmptyAccount() throws BankAccountActionInvalidException {
+    public void cannotWithdrawMoneyFromEmptyAccount() {
         bankAccount.open();
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Cannot withdraw money from an empty account");
-
-        bankAccount.withdraw(5);
+        assertThatThrownBy(() -> bankAccount.withdraw(5))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Cannot withdraw money from an empty account");
     }
 
     @Test
@@ -82,20 +79,18 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.deposit(6);
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Cannot withdraw more money than is currently in the account");
-
-        bankAccount.withdraw(7);
+        assertThatThrownBy(() -> bankAccount.withdraw(7))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Cannot withdraw more money than is currently in the account");
     }
 
     @Test
-    public void cannotDepositNegativeAmount() throws BankAccountActionInvalidException {
+    public void cannotDepositNegativeAmount() {
         bankAccount.open();
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Cannot deposit or withdraw negative amount");
-
-        bankAccount.deposit(-1);
+        assertThatThrownBy(() -> bankAccount.deposit(-1))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Cannot deposit or withdraw negative amount");
     }
 
     @Test
@@ -103,10 +98,9 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.deposit(105);
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Cannot deposit or withdraw negative amount");
-
-        bankAccount.withdraw(-5);
+        assertThatThrownBy(() -> bankAccount.withdraw(-5))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Cannot deposit or withdraw negative amount");
     }
 
     @Test
@@ -115,10 +109,9 @@ public class BankAccountTest {
         bankAccount.deposit(10);
         bankAccount.close();
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Account closed");
-
-        bankAccount.getBalance();
+        assertThatThrownBy(() -> bankAccount.getBalance())
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Account closed");
     }
 
     @Test
@@ -126,10 +119,9 @@ public class BankAccountTest {
         bankAccount.open();
         bankAccount.close();
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Account closed");
-
-        bankAccount.deposit(5);
+        assertThatThrownBy(() -> bankAccount.deposit(5))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Account closed");
     }
 
     @Test
@@ -138,18 +130,16 @@ public class BankAccountTest {
         bankAccount.deposit(20);
         bankAccount.close();
 
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Account closed");
-
-        bankAccount.withdraw(5);
+        assertThatThrownBy(() -> bankAccount.withdraw(5))
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Account closed");
     }
 
     @Test
-    public void bankAccountIsClosedBeforeItIsOpened() throws BankAccountActionInvalidException {
-        expectedException.expect(BankAccountActionInvalidException.class);
-        expectedException.expectMessage("Account closed");
-
-        bankAccount.getBalance();
+    public void bankAccountIsClosedBeforeItIsOpened() {
+        assertThatThrownBy(() -> bankAccount.getBalance())
+            .isInstanceOf(BankAccountActionInvalidException.class)
+            .hasMessage("Account closed");
     }
 
     @Test

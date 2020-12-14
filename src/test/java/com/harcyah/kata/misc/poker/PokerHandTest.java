@@ -1,10 +1,11 @@
 package com.harcyah.kata.misc.poker;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PokerHandTest {
 
@@ -36,14 +37,16 @@ public class PokerHandTest {
 
     private static final String HIGH_CARD = "7H 9H TS JS 3H";
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorThrowsExceptionIfStringArgumentHasIncorrectSize() throws Exception {
-        new PokerHand("lorem ipsum dolor sit amet");
+    @Test
+    public void testConstructorThrowsExceptionIfStringArgumentHasIncorrectSize() {
+        assertThatThrownBy(() -> new PokerHand("lorem ipsum dolor sit amet"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorThrowsExceptionIfSameCardAppearsTwice() throws Exception {
-        new PokerHand("7H 9H TS JS JS");
+    @Test
+    public void testConstructorThrowsExceptionIfSameCardAppearsTwice() {
+        assertThatThrownBy(() -> new PokerHand("7H 9H TS JS JS"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

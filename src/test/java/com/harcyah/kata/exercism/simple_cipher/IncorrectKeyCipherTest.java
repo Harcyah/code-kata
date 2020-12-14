@@ -1,32 +1,39 @@
 package com.harcyah.kata.exercism.simple_cipher;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class IncorrectKeyCipherTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAllCapsKey() {
-        new Cipher("ABCDEF");
+        assertThatThrownBy(() -> new Cipher("ABCDEF"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAnyCapsKey() {
-        new Cipher("abcdEFg");
+        assertThatThrownBy(() -> new Cipher("abcdEFg"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithNumericKey() {
-        new Cipher("12345");
+        assertThatThrownBy(() -> new Cipher("12345"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithAnyNumericKey() {
-        new Cipher("abcd345ef");
+        assertThatThrownBy(() -> new Cipher("abcd345ef"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void cipherThrowsWithEmptyKey() {
-        new Cipher("");
+        assertThatThrownBy(() -> new Cipher(""))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
 }

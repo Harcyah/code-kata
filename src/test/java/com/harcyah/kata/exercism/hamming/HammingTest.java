@@ -1,55 +1,57 @@
 package com.harcyah.kata.exercism.hamming;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class HammingTest {
 
     @Test
     public void testNoDifferenceBetweenIdenticalStrands() {
-        assertThat(Hamming.compute("A", "A"), is(0));
+        assertThat(Hamming.compute("A", "A")).isEqualTo(0);
     }
 
     @Test
     public void testCompleteHammingDistanceOfForSingleNucleotideStrand() {
-        assertThat(Hamming.compute("A", "G"), is(1));
+        assertThat(Hamming.compute("A", "G")).isEqualTo(1);
     }
 
     @Test
     public void testCompleteHammingDistanceForSmallStrand() {
-        assertThat(Hamming.compute("AG", "CT"), is(2));
+        assertThat(Hamming.compute("AG", "CT")).isEqualTo(2);
     }
 
     @Test
     public void testSmallHammingDistance() {
-        assertThat(Hamming.compute("AT", "CT"), is(1));
+        assertThat(Hamming.compute("AT", "CT")).isEqualTo(1);
     }
 
     @Test
     public void testSmallHammingDistanceInLongerStrand() {
-        assertThat(Hamming.compute("GGACG", "GGTCG"), is(1));
+        assertThat(Hamming.compute("GGACG", "GGTCG")).isEqualTo(1);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesFirstStrandNotLonger() {
-        Hamming.compute("AAAG", "AAA");
+        assertThatThrownBy(() -> Hamming.compute("AAAG", "AAA"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testValidatesOtherStrandNotLonger() {
-        Hamming.compute("AAA", "AAAG");
+        assertThatThrownBy(() -> Hamming.compute("AAA", "AAAG"))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     public void testLargeHammingDistance() {
-        assertThat(Hamming.compute("GATACA", "GCATAA"), is(4));
+        assertThat(Hamming.compute("GATACA", "GCATAA")).isEqualTo(4);
     }
 
     @Test
     public void testHammingDistanceInVeryLongStrand() {
-        assertThat(Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT"), is(9));
+        assertThat(Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT")).isEqualTo(9);
     }
 
 }

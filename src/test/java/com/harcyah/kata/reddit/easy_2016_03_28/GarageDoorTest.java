@@ -1,7 +1,7 @@
 package com.harcyah.kata.reddit.easy_2016_03_28;
 
 import com.google.common.collect.ImmutableList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

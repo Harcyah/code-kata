@@ -2,7 +2,7 @@ package com.harcyah.kata.exercism.queen_attack;
 
 import java.util.Objects;
 
-public final class BoardCoordinate {
+public class BoardCoordinate {
 
     private final int rank;
     private final int file;

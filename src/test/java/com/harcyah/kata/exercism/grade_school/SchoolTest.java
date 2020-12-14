@@ -1,6 +1,6 @@
 package com.harcyah.kata.exercism.grade_school;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.List;
