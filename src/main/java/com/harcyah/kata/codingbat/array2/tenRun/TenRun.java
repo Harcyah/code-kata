@@ -12,8 +12,6 @@ public class TenRun {
             } else {
                 if (lastPowerOfTen != null) {
                     nums[i] = lastPowerOfTen;
-                } else {
-                    // Do nothing
                 }
             }
         }

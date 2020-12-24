@@ -5,10 +5,8 @@ public class HappyG {
     public boolean happyG(String source) {
         for (int i = 0; i < source.length(); i++) {
             char c = source.charAt(i);
-            if (c == 'g') {
-                if (!leftHappyG(source, i) && !rightHappyG(source, i)) {
-                    return false;
-                }
+            if (c == 'g' && !leftHappyG(source, i) && !rightHappyG(source, i)) {
+                return false;
             }
         }
         return true;

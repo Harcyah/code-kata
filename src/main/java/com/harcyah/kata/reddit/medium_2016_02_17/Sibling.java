@@ -1,5 +1,8 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public enum Sibling {
 
     TOP(0, -1),
@@ -11,13 +14,8 @@ public enum Sibling {
     BOTTOM_LEFT(-1, 1),
     TOP_LEFT(-1, -1);
 
-    private int colShift;
-    private int rowShift;
-
-    private Sibling(int colShift, int rowShift) {
-        this.colShift = colShift;
-        this.rowShift = rowShift;
-    }
+    private final int colShift;
+    private final int rowShift;
 
     protected Square getNeighbour(int col, int row, int rank) {
         return new Square(col + (this.colShift * rank), row + (this.rowShift * rank));
@@ -28,7 +26,7 @@ public enum Sibling {
         // First neighbour must be an opponent one
         int rank = 1;
         Square neighbour = getNeighbour(col, row, rank);
-        if ((board.hasSquare(neighbour) == false) || (board.getChipAt(neighbour) != opponent)) {
+        if ((!board.hasSquare(neighbour)) || (board.getChipAt(neighbour) != opponent)) {
             return false;
         }
 

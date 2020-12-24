@@ -5,7 +5,7 @@ import java.math.BigInteger;
 public class Problem020 {
 
     public int getFactorialDigitSum(int limit) {
-        BigInteger bi = new BigInteger("1");
+        BigInteger bi = BigInteger.ONE;
         for (int i = 1; i < (limit + 1); i++) {
             BigInteger b = new BigInteger(i + "");
             bi = bi.multiply(b);

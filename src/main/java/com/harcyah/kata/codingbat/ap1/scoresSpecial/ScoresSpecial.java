@@ -3,16 +3,14 @@ package com.harcyah.kata.codingbat.ap1.scoresSpecial;
 public class ScoresSpecial {
 
     public int scoresSpecial(int[] scoresLeft, int[] scoresRight) {
-        return largestMultipleOf(scoresLeft, 10) + largestMultipleOf(scoresRight, 10);
+        return largestMultipleOf(scoresLeft) + largestMultipleOf(scoresRight);
     }
 
-    private int largestMultipleOf(int[] scoresLeft, int target) {
+    private int largestMultipleOf(int[] scoresLeft) {
         int max = 0;
-        for (int i = 0; i < scoresLeft.length; i++) {
-            if ((scoresLeft[i] % 10) == 0) {
-                if (max < scoresLeft[i]) {
-                    max = scoresLeft[i];
-                }
+        for (int j : scoresLeft) {
+            if (((j % 10) == 0) && (max < j)) {
+                max = j;
             }
         }
         return max;

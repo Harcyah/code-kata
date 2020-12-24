@@ -1,5 +1,10 @@
 package com.harcyah.kata.misc.nurse;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum Heal {
 
     DEUBLE_TOILETTE(45, 2090),
@@ -9,20 +14,7 @@ public enum Heal {
     SOUS_CUT(10, 700),
     PRISE_SANG(10, 780);
 
-    private int duration;
-    private int cost;
-
-    private Heal(int duration, int cost) {
-        this.duration = duration;
-        this.cost = cost;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public int getCost() {
-        return cost;
-    }
+    private final int duration;
+    private final int cost;
 
 }

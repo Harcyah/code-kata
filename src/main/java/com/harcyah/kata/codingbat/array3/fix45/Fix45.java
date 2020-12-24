@@ -12,10 +12,8 @@ public class Fix45 {
             // Let's find a 5 somewhere but not after a 4
             int five = -1;
             for (int j = 0; (j < nums.length) && (five == -1); j++) {
-                if (nums[j] == 5) {
-                    if ((j == 0) || ((j > 0) && (nums[j - 1] != 4))) {
-                        five = j;
-                    }
+                if (nums[j] == 5 && (j == 0 || nums[j - 1] != 4)) {
+                    five = j;
                 }
             }
 

@@ -12,7 +12,6 @@ public class More14 {
             if (nums[i] == 4) {
                 fours++;
             }
-            ;
         }
         return ones > fours;
     }

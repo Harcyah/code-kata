@@ -9,10 +9,10 @@ public class BytesRepresentation {
         MByte(6),
         GByte(9);
 
-        protected int ratio;
-        protected int max;
+        private final int ratio;
+        private final int max;
 
-        private Unit(int ratio) {
+        Unit(int ratio) {
             this.ratio = ratio;
             this.max = (int) Math.pow(10, ratio + 3);
         }

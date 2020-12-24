@@ -38,16 +38,12 @@ public class TwoTwo {
     }
 
     private boolean nextToTwo(int[] nums, int i) {
-        if ((i - 1) >= 0) {
-            if (nums[i - 1] == 2) {
-                return true;
-            }
+        if ((i - 1) >= 0 && nums[i - 1] == 2) {
+            return true;
         }
 
         if ((i + 1) < nums.length) {
-            if (nums[i + 1] == 2) {
-                return true;
-            }
+            return nums[i + 1] == 2;
         }
 
         return false;

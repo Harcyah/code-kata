@@ -50,10 +50,8 @@ public class RectangleCounter {
             for (Point b : possibleBs) {
                 for (Point c : possibleCs) {
                     Point d = new Point(b.getX(), c.getY());
-                    if (points.contains(d)) {
-                        if (horizontalLine(grid, topLeft, b) && verticalLine(grid, topLeft, c) && verticalLine(grid, b, d) && horizontalLine(grid, c, d)) {
-                            rectangles.add(new Rectangle(topLeft, b, c, d));
-                        }
+                    if (points.contains(d) && horizontalLine(grid, topLeft, b) && verticalLine(grid, topLeft, c) && verticalLine(grid, b, d) && horizontalLine(grid, c, d)) {
+                        rectangles.add(new Rectangle(topLeft, b, c, d));
                     }
                 }
             }
