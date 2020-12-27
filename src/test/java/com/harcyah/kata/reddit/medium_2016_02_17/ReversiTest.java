@@ -21,14 +21,12 @@ public class ReversiTest {
                 new Square(2, 3),
                 new Square(5, 4),
                 new Square(4, 5));
-        render(reversi, moves);
     }
 
     @Test
     public void testGetPossibleMovesSample2() throws Exception {
         Reversi reversi = new Reversi("sample2");
         Set<Square> moves = reversi.getPossibleMoves();
-        render(reversi, moves);
         assertThat(moves).hasSize(11);
     }
 
@@ -36,32 +34,7 @@ public class ReversiTest {
     public void testGetPossibleMovesSample3() throws Exception {
         Reversi reversi = new Reversi("sample3");
         Set<Square> moves = reversi.getPossibleMoves();
-        render(reversi, moves);
         assertThat(moves).hasSize(12);
-    }
-
-    private String render(Reversi reversi, Set<Square> moves) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(System.lineSeparator());
-        builder.append(" ");
-        for (int i = 0; i < Board.SIZE; i++) {
-            builder.append(i);
-        }
-        builder.append(System.lineSeparator());
-        for (int i = 0; i < Board.SIZE; i++) {
-            builder.append(i);
-            for (int j = 0; j < Board.SIZE; j++) {
-                if (moves.contains(new Square(i, j))) {
-                    builder.append("*");
-                } else {
-                    Chip chip = reversi.board.cells[i][j];
-                    builder.append(chip == null ? "-" : chip.name());
-                }
-            }
-            builder.append(System.lineSeparator());
-        }
-        builder.append(System.lineSeparator());
-        return builder.toString();
     }
 
 }

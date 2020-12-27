@@ -3,8 +3,10 @@ package com.harcyah.kata.reddit.easy_2016_02_22;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
+import static com.harcyah.kata.ResourceLoader.loadStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PlayingWithLightSwitchesTest {
@@ -52,7 +54,9 @@ public class PlayingWithLightSwitchesTest {
 
     @Test
     public void testFattyBoomBoomExample() throws IOException {
-        assertEquals(2500245, switches.applyFrom(getClass().getResourceAsStream("lots_of_switches.txt")));
+        try (InputStream stream = loadStream("/com/harcyah/kata/reddit/easy_2016_02_22/lots_of_switches.txt")) {
+            assertEquals(2500245, switches.applyFrom(stream));
+        }
     }
 
 }

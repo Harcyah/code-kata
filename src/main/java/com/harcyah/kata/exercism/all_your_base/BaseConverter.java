@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.all_your_base;
 
 public class BaseConverter {
 
-    private static final int[] ZERO = new int[]{0};
     private final int valueBase10;
 
     public BaseConverter(int base, int[] digits) {
@@ -44,7 +43,7 @@ public class BaseConverter {
             throw new IllegalArgumentException("Bases must be at least 2.");
         }
         if (valueBase10 == 0) {
-            return ZERO;
+            return new int[]{0};
         }
 
         int length = (int) (Math.log(valueBase10) / Math.log(base)) + 1;

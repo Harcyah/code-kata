@@ -14,8 +14,7 @@ public class KindergartenGarden {
     public KindergartenGarden(String garden, String[] students) {
         this.topRow = garden.substring(0, garden.indexOf('\n'));
         this.bottowRow = garden.substring(garden.indexOf('\n') + 1);
-        this.students = students;
-        Arrays.sort(this.students);
+        this.students = Stream.of(students).sorted().toArray(String[]::new);
     }
 
     public KindergartenGarden(String garden) {

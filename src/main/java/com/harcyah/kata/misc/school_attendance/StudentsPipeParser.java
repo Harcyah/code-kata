@@ -4,11 +4,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.awt.Color;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class StudentsPipeParser implements Parser {
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("d-MM-yyyy");
+    private static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M-d-yyyy");
 
     @Override
     public Student parse(String line) throws ParseException {
@@ -19,7 +20,8 @@ public class StudentsPipeParser implements Parser {
             tokens[0],
             Gender.from(tokens[3]),
             Color.getColor(tokens[4]),
-            dateFormat.parse(tokens[5]));
+            LocalDate.parse(tokens[5], dateFormat)
+        );
     }
 
 }

@@ -16,7 +16,7 @@ public class RomanNumeral {
         String number = String.valueOf(input);
         for (int i = number.length() - 1; i >= 0; i--) {
             char numeral = number.charAt(i);
-            int value = Integer.valueOf("" + numeral);
+            int value = Integer.parseInt("" + numeral);
             roman.insert(0, getRomanForValue(value, rank));
             rank++;
         }
@@ -44,12 +44,8 @@ public class RomanNumeral {
         }
     }
 
-    private String repeat(char c, int value) {
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < value; i++) {
-            sb.append(c);
-        }
-        return sb.toString();
+    private String repeat(char c, int count) {
+        return String.valueOf(c).repeat(count);
     }
 
     public String getRomanNumeral() {

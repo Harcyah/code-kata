@@ -1,18 +1,17 @@
 package com.harcyah.kata.projecteuler;
 
-import com.google.common.io.Resources;
-
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.harcyah.kata.ResourceLoader.loadLines;
 
 public class Problem007 {
 
     protected List<Integer> primes;
 
     public Problem007() throws NumberFormatException, IOException {
-        primes = Resources.readLines(Resources.getResource("primes-2-to-1299827.txt"), StandardCharsets.UTF_8)
+        primes = loadLines("/com/harcyah/kata/projecteuler/projecteuler_007.txt")
             .stream()
             .map(Integer::parseInt)
             .collect(Collectors.toList());

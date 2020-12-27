@@ -1,13 +1,12 @@
 package com.harcyah.kata.reddit.medium_2016_02_17;
 
 import com.google.common.collect.Sets;
-import com.google.common.io.Resources;
 
 import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Set;
+
+import static com.harcyah.kata.ResourceLoader.loadLines;
 
 // https://www.reddit.com/r/dailyprogrammer/comments/468pvf/20160217_challenge_254_intermediate_finding_legal/
 public class Reversi {
@@ -17,8 +16,7 @@ public class Reversi {
     protected Chip opponent;
 
     public Reversi(String source) throws IOException {
-        URL resource = Board.class.getResource(source);
-        List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
+        List<String> lines = loadLines(source);
 
         // Read players
         if (lines.get(0).equals(Chip.X.name())) {

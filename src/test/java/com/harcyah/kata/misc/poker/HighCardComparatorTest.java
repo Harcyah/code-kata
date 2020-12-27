@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HighCardComparatorTest {
 
-    private HighCardComparator comparator = new HighCardComparator();
+    private final HighCardComparator comparator = new HighCardComparator();
 
     @Test
     public void compareSimilarHands() throws Exception {

@@ -4,18 +4,20 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.harcyah.kata.misc.poker.suits.IllegalSuitException;
 import com.harcyah.kata.misc.poker.values.IllegalValueException;
+import lombok.EqualsAndHashCode;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@EqualsAndHashCode
 public class PokerHand implements Comparable<PokerHand> {
 
     private static final int CARDS = 5;
+    private static final HighCardComparator highCardComparator = new HighCardComparator();
 
     private final List<PokerCard> cards;
-    private final HighCardComparator highCardComparator = new HighCardComparator();
 
     public PokerHand(String definition) throws IllegalSuitException, IllegalValueException {
         Preconditions.checkArgument(definition.length() == 14);

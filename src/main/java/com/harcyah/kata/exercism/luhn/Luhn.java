@@ -1,47 +1,41 @@
 package com.harcyah.kata.exercism.luhn;
 
+import lombok.Getter;
+
+@Getter
 public class Luhn {
 
-    protected long value;
-    protected int[] addends;
-    protected int checksum = 0;
+    private static final int ZERO = 48;
+
+    private final String addends;
+    private final int checkSum;
+    private final long checkDigit;
+    private final boolean valid;
 
     public Luhn(long value) {
         int digits = (int) Math.log10(value) + 1;
-        this.value = value;
-        this.addends = new int[digits];
+        StringBuilder sb = new StringBuilder(" ".repeat(digits));
+        String valueAsString = String.valueOf(value);
+
+        int checksum = 0;
         for (int i = 0; i < digits; i++) {
             int index = digits - i - 1;
-            int digit = getDigit(value, index);
-            if (i % 2 == 1) {
+            int digit = Character.getNumericValue(valueAsString.charAt(index));
+            int check;
+            if ((i & 1) == 1) {
                 int doubledDigit = digit * 2;
-                addends[index] = doubledDigit > 10 ? doubledDigit - 9 : doubledDigit;
+                check = doubledDigit > 10 ? doubledDigit - 9 : doubledDigit;
             } else {
-                addends[index] = digit;
+                check = digit;
             }
-            checksum += addends[index];
+            sb.setCharAt(index, (char) (ZERO + check));
+            checksum += check;
         }
-    }
 
-    public static int getDigit(long number, int digit) {
-        // Could have used some math black magic
-        return Character.getNumericValue(String.valueOf(number).charAt(digit));
-    }
-
-    public boolean isValid() {
-        return checksum % 10 == 0;
-    }
-
-    public long getCheckDigit() {
-        return value % 10;
-    }
-
-    public int[] getAddends() {
-        return addends;
-    }
-
-    public int getCheckSum() {
-        return checksum;
+        this.addends = sb.toString();
+        this.checkSum = checksum;
+        this.checkDigit = value % 10;
+        this.valid = checkSum % 10 == 0;
     }
 
     public static long create(long value) {

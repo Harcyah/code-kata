@@ -1,14 +1,12 @@
 package com.harcyah.kata.projecteuler;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import com.google.common.io.Resources;
 import org.junit.jupiter.api.Test;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 
+import static com.harcyah.kata.ResourceLoader.loadString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Problem022Test {
@@ -23,13 +21,13 @@ public class Problem022Test {
     @Test
     public void testGetNamesScoreEasyCase() {
         Problem022 sut = new Problem022();
-        assertEquals(30, sut.getNamesScores(ImmutableList.of("ABCD", "ABCD")));
+        assertEquals(30, sut.getNamesScores(List.of("ABCD", "ABCD")));
     }
 
     @Test
     public void testGetNamesScoreHardCase() throws Exception {
         Problem022 sut = new Problem022();
-        String resource = Resources.toString(getClass().getResource("projecteuler_022.txt"), StandardCharsets.UTF_8);
+        String resource = loadString("/com/harcyah/kata/projecteuler/projecteuler_022.txt");
         String[] tokens = resource.split(",");
         List<String> names = Lists.newArrayList();
         for (String token : tokens) {

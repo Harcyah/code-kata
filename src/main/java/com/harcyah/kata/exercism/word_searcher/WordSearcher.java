@@ -1,5 +1,8 @@
 package com.harcyah.kata.exercism.word_searcher;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -30,7 +33,7 @@ public class WordSearcher {
 
     }
 
-    private class Needle {
+    private static class Needle {
 
         private final String word;
         private final WordLocation location;
@@ -51,23 +54,12 @@ public class WordSearcher {
         }
     }
 
+    @Getter
+    @AllArgsConstructor
     private static class Point {
 
         private final int x;
         private final int y;
-
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
 
         public Point translate(Point direction) {
             return new Point(x + direction.x, y + direction.y);

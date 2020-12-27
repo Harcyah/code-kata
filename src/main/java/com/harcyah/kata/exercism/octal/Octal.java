@@ -2,11 +2,9 @@ package com.harcyah.kata.exercism.octal;
 
 public class Octal {
 
-    protected String octal;
-    protected int decimal;
+    private int decimal;
 
     public Octal(String octal) {
-        this.octal = octal;
         this.decimal = 0;
 
         for (int i = 0; i < octal.length(); i++) {

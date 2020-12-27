@@ -1,41 +1,39 @@
 package com.harcyah.kata.reddit.medium_2016_04_06;
 
-import com.google.common.io.Resources;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import static com.harcyah.kata.ResourceLoader.loadLines;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractMagicSquareRearrangerTest {
 
     protected MagicSquareRearranger rearranger;
 
-    protected static Integer[][] square8x8Test0;
-    protected static Integer[][] square8x8Test1;
-    protected static Integer[][] square8x8Test2;
-    protected static Integer[][] square12x12Test0;
-    protected static Integer[][] square12x12Test1;
-    protected static Integer[][] square16x16;
-    protected static Integer[][] square20x20;
-    protected static Integer[][] square24x24;
+    private static Integer[][] square8x8Test0;
+    private static Integer[][] square8x8Test1;
+    private static Integer[][] square8x8Test2;
+    private static Integer[][] square12x12Test0;
+    private static Integer[][] square12x12Test1;
+    private static Integer[][] square16x16;
+    private static Integer[][] square20x20;
+    private static Integer[][] square24x24;
 
     @BeforeAll
     public static void setUpClass() throws IOException {
-        square8x8Test0 = readSquareFromResource("./8x8_0");
-        square8x8Test1 = readSquareFromResource("./8x8_1");
-        square8x8Test2 = readSquareFromResource("./8x8_2");
-        square12x12Test0 = readSquareFromResource("./12x12_0");
-        square12x12Test1 = readSquareFromResource("./12x12_1");
-        square16x16 = readSquareFromResource("./16x16");
-        square20x20 = readSquareFromResource("./20x20");
-        square24x24 = readSquareFromResource("./24x24");
+        square8x8Test0 = readSquareFromResource("8x8_0");
+        square8x8Test1 = readSquareFromResource("8x8_1");
+        square8x8Test2 = readSquareFromResource("8x8_2");
+        square12x12Test0 = readSquareFromResource("12x12_0");
+        square12x12Test1 = readSquareFromResource("12x12_1");
+        square16x16 = readSquareFromResource("16x16");
+        square20x20 = readSquareFromResource("20x20");
+        square24x24 = readSquareFromResource("24x24");
     }
 
     @BeforeEach
@@ -46,7 +44,7 @@ public abstract class AbstractMagicSquareRearrangerTest {
     protected abstract MagicSquareRearranger getRearranger();
 
     @Test
-    public void testGetSolutions() throws Exception {
+    public void testGetSolutions() {
         Integer[][] square = {{8, 1, 6}, {4, 9, 2}, {3, 5, 7}};
         List<Integer[]> solutions = rearranger.getSolutions(square);
         assertThat(solutions).hasSize(2);
@@ -55,8 +53,7 @@ public abstract class AbstractMagicSquareRearrangerTest {
     }
 
     private static Integer[][] readSquareFromResource(String resourceName) throws IOException {
-        URL resource = MagicSquareRearrangerRecursiveImpl.class.getResource(resourceName);
-        List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
+        List<String> lines = loadLines("/com/harcyah/kata/reddit/medium_2016_04_06/" + resourceName);
         Integer[][] square = new Integer[lines.size()][];
         for (int j = 0; j < lines.size(); j++) {
             String[] tokens = lines.get(j).split(" ");

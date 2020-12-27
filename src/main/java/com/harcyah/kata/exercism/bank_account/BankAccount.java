@@ -5,12 +5,12 @@ public class BankAccount {
     private int balance;
     private boolean closed = true;
 
-    public void open() {
+    public synchronized void open() {
         this.balance = 0;
         this.closed = false;
     }
 
-    public int getBalance() throws BankAccountActionInvalidException {
+    public synchronized int getBalance() throws BankAccountActionInvalidException {
         if (closed) {
             throw new BankAccountActionInvalidException("Account closed");
         }
@@ -43,7 +43,7 @@ public class BankAccount {
         this.balance -= value;
     }
 
-    public void close() {
+    public synchronized void close() {
         this.closed = true;
     }
 

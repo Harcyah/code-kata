@@ -2,7 +2,6 @@ package com.harcyah.kata.exercism.luhn;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LuhnTest {
@@ -18,17 +17,15 @@ public class LuhnTest {
     @Test
     public void addendsDoublesEveryOtherNumberFromRight() {
         Luhn luhn = new Luhn(12121);
-        int[] expectedOutput = new int[]{1, 4, 1, 4, 1};
 
-        assertArrayEquals(expectedOutput, luhn.getAddends());
+        assertEquals("14141", luhn.getAddends());
     }
 
     @Test
     public void addendsSubtracts9WhenDoubledNumberIsMoreThan9() {
         Luhn luhn = new Luhn(8631);
-        int[] expectedOutput = new int[]{7, 6, 6, 1};
 
-        assertArrayEquals(expectedOutput, luhn.getAddends());
+        assertEquals("7661", luhn.getAddends());
     }
 
     @Test

@@ -8,6 +8,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 	<dependencies>
@@ -154,6 +155,30 @@
                     <rulesets>
                         <ruleset>https://raw.githubusercontent.com/Harcyah/build-tools/master/src/main/resources/harcyah-pmd.xml</ruleset>
                     </rulesets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.1.4</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.2.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <includeTests>true</includeTests>
+                    <failOnError>true</failOnError>
+                    <excludeFilterFile>https://raw.githubusercontent.com/Harcyah/build-tools/master/src/main/resources/harcyah-spotbugs.xml</excludeFilterFile>
                 </configuration>
                 <executions>
                     <execution>

@@ -2,8 +2,10 @@ package com.harcyah.kata.misc.version;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.ComparisonChain;
+import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 
+@EqualsAndHashCode(of = {"major", "minor", "patch"})
 public class Version implements Comparable<Version> {
 
     private final VersionPart major;

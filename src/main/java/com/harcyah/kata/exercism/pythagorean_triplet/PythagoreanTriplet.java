@@ -1,22 +1,19 @@
 package com.harcyah.kata.exercism.pythagorean_triplet;
 
+import lombok.AllArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 public class PythagoreanTriplet {
 
     private final int a;
     private final int b;
     private final int c;
 
-    public PythagoreanTriplet(int a, int b, int c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-
     public long calculateProduct() {
-        return a * b * c;
+        return (long) a * b * c;
     }
 
     public int calculateSum() {
@@ -48,8 +45,6 @@ public class PythagoreanTriplet {
             return this;
         }
 
-        ;
-
         public List<PythagoreanTriplet> build() {
             List<PythagoreanTriplet> triplets = new ArrayList<>();
             for (int a = min; a <= max; a++) {
@@ -60,7 +55,7 @@ public class PythagoreanTriplet {
                             continue;
                         }
 
-                        if (sum == null || (sum != null && triplet.calculateSum() == sum)) {
+                        if (sum == null || triplet.calculateSum() == sum) {
                             triplets.add(triplet);
                         }
                     }

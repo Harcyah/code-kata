@@ -1,6 +1,7 @@
 package com.harcyah.kata.codingbat.string2.xyzMiddle;
 
 import com.google.common.collect.Lists;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 
@@ -30,19 +31,21 @@ public class XyzMiddle {
         for (int i = 0; i < str.length() - XYZ.length(); i++) {
             String xyz = str.substring(i, i + XYZ.length());
             if (XYZ.equals(xyz)) {
-                Pattern pattern = new Pattern();
-                pattern.prefix = str.substring(0, i);
-                pattern.suffix = str.substring(i + XYZ.length());
+                Pattern pattern = new Pattern(
+                    str.substring(0, i),
+                    str.substring(i + XYZ.length())
+                );
                 patterns.add(pattern);
             }
         }
         return patterns;
     }
 
-    protected class Pattern {
+    @AllArgsConstructor
+    protected static class Pattern {
 
-        protected String prefix;
-        protected String suffix;
+        private final String prefix;
+        private final String suffix;
 
         public boolean matches() {
             return Math.abs(prefix.length() - suffix.length()) <= 1;

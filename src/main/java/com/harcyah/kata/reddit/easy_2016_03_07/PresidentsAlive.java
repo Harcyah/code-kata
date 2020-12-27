@@ -1,22 +1,20 @@
 package com.harcyah.kata.reddit.easy_2016_03_07;
 
-import com.google.common.io.Resources;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
 
+import static com.harcyah.kata.ResourceLoader.loadLines;
+
 public class PresidentsAlive {
 
     public int findYearWithMostPresidentsAlive() throws IOException {
         Map<Integer, Integer> yearsCounter = new HashMap<>();
-        URL resource = getClass().getResource("presidents.csv");
-        List<String> lines = Resources.readLines(resource, StandardCharsets.UTF_8);
+        List<String> lines = loadLines("/com/harcyah/kata/reddit/easy_2016_03_07/presidents.csv");
         lines.remove(0);
 
         for (String line : lines) {

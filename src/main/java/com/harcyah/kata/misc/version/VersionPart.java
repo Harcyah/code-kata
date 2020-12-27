@@ -13,8 +13,6 @@ import java.util.regex.Pattern;
 @EqualsAndHashCode
 public class VersionPart implements Comparable<VersionPart> {
 
-    public static final VersionPart UNKNOWN = new VersionPart();
-
     private static final Table<VersionType, VersionType, VersionPartComparator> COMPARATORS = HashBasedTable.create();
 
     private static final Pattern NUMBER_PATTERN = Pattern.compile("(\\d+)");
@@ -36,6 +34,8 @@ public class VersionPart implements Comparable<VersionPart> {
         COMPARATORS.put(VersionType.NUMBER, VersionType.STRING, (p1, p2) -> -1);
         COMPARATORS.put(VersionType.NUMBER, VersionType.ALPHANUMERIC, (p1, p2) -> -1);
     }
+
+    public static final VersionPart UNKNOWN = new VersionPart();
 
     protected VersionPart() {
         this.number = DEFAULT_NUMBER;
@@ -92,6 +92,9 @@ public class VersionPart implements Comparable<VersionPart> {
         }
 
         VersionPartComparator comparator = COMPARATORS.get(this.type, that.type);
+        if (comparator == null) {
+            throw new UnsupportedOperationException("Cannot find comparator between " + this.type + " and " + that.type);
+        }
 
         return comparator.compare(this, that);
     }

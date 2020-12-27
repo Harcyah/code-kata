@@ -1,12 +1,11 @@
 package com.harcyah.kata.projecteuler;
 
-import com.google.common.io.Resources;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import static com.harcyah.kata.ResourceLoader.loadLines;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Problem067Test {
@@ -14,7 +13,7 @@ public class Problem067Test {
     @Test
     public void testProblem067() throws IOException {
         int[][] triangle = new int[100][];
-        List<String> lines = Resources.readLines(getClass().getResource("projecteuler_067.txt"), StandardCharsets.UTF_8);
+        List<String> lines = loadLines("/com/harcyah/kata/projecteuler/projecteuler_067.txt");
         for (int i = 0; i < lines.size(); i++) {
             String[] tokens = lines.get(i).split(" ");
             triangle[i] = new int[tokens.length];
