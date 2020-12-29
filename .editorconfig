@@ -22,3 +22,12 @@ indent_size = 2
 
 [*.erb]
 indent_size = 2
+
+[*.lua]
+end_of_line = crlf
+
+[*.vmsg]
+end_of_line = crlf
+
+[*.proto]
+indent_size = 2
