@@ -88,7 +88,7 @@
                     <rules>
                         <banDuplicatePomDependencyVersions/>
                         <requireMavenVersion>
-                            <version>3.0.5</version>
+                            <version>3.2.5</version>
                         </requireMavenVersion>
                         <requirePluginVersions>
                             <unCheckedPluginList>org.apache.maven.plugins:maven-resources-plugin,org.apache.maven.plugins:maven-jar-plugin,org.apache.maven.plugins:maven-clean-plugin,org.apache.maven.plugins:maven-install-plugin,org.apache.maven.plugins:maven-deploy-plugin</unCheckedPluginList>
